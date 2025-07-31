@@ -34,9 +34,12 @@ async function scaffold() {
   const projectPath = path.resolve(process.cwd(), answers.projectName);
   console.log(`\n📂 Creating project in ${projectPath}`);
 
-  // 2. Copy template
+  // 2. Copy template (including dotfiles)
   const templateDir = path.join(__dirname, '../template');
-  await fs.copy(templateDir, projectPath);
+  await fs.copy(templateDir, projectPath, {
+    overwrite: true,
+    filter: () => true // Ensures dotfiles like .gitignore are included
+  });
 
   // 3. Remove any .git folder from template
   const gitFolder = path.join(projectPath, '.git');
@@ -45,32 +48,40 @@ async function scaffold() {
     console.log('🧹 Removed template .git folder');
   }
 
-  // 4. Rename .env.local to .env if it exists
+  // 4. Fix .gitignore if npm renamed it
+  const gitignoreCopyPath = path.join(projectPath, '.gitignore copy');
+  const gitignorePath = path.join(projectPath, '.gitignore');
+  if (await fs.pathExists(gitignoreCopyPath)) {
+    await fs.move(gitignoreCopyPath, gitignorePath, { overwrite: true });
+    console.log('🔄 Renamed ".gitignore copy" → ".gitignore"');
+  }
+
+  // 5. Rename .env.local to .env if it exists
   const envLocalPath = path.join(projectPath, '.env.local');
   const envPath = path.join(projectPath, '.env');
   if (await fs.pathExists(envLocalPath)) {
     await fs.move(envLocalPath, envPath, { overwrite: true });
-    console.log('🔑 Renamed .env.local to .env');
+    console.log('🔑 Renamed .env.local → .env');
   }
 
-  // 5. Update package.json with project name & description
+  // 6. Update package.json with project name & description
   const pkgPath = path.join(projectPath, 'package.json');
   const pkg = await fs.readJSON(pkgPath);
   pkg.name = answers.projectName;
   pkg.description = answers.description;
   await fs.writeJSON(pkgPath, pkg, { spaces: 2 });
 
-  // 6. Install dependencies
+  // 7. Install dependencies
   console.log('📦 Installing dependencies (this may take a minute)...');
   execSync('npm install', { cwd: projectPath, stdio: 'inherit' });
 
-  // 7. Initialize Git repo if selected
+  // 8. Initialize Git repo if selected
   if (answers.initGit) {
     console.log('🔧 Initializing Git repository...');
     execSync('git init', { cwd: projectPath, stdio: 'inherit' });
   }
 
-  // 8. Reminder about environment variables
+  // 9. Reminder about environment variables
   console.log(`
 ⚠️  IMPORTANT: Update the environment variables in ${answers.projectName}/.env
 They are already pre-filled with placeholders:
