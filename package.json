@@ -1,0 +1,13 @@
+{
+    "name": "adhoc-relewise-poc",
+    "version": "1.0.0",
+    "description": "Internal CLI to scaffold new Relewise Node.js POCs",
+    "bin": {
+        "adhoc-relewise-poc": "./bin/index.js"
+    },
+    "type": "module",
+    "dependencies": {
+        "fs-extra": "^11.1.1",
+        "inquirer": "^9.0.0"
+    }
+}
