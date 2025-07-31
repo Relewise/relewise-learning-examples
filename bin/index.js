@@ -70,11 +70,11 @@ async function scaffold() {
     execSync('git init', { cwd: projectPath, stdio: 'inherit' });
   }
 
-  // 8. Show environment variable instructions
+  // 8. Reminder about environment variables
   console.log(`
-⚠️  IMPORTANT: Update your environment variables in ${answers.projectName}/.env
+⚠️  IMPORTANT: Update the environment variables in ${answers.projectName}/.env
+They are already pre-filled with placeholders:
 ---------------------------------------------------------
-# Environment variables for Relewise integration
 RELEWISE_DATASET_ID=<YOUR-DATASET-ID>
 RELEWISE_API_KEY=<YOUR-API-KEY>
 RELEWISE_SERVER_URL=<YOUR-SERVER-URL>
