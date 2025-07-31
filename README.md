@@ -34,25 +34,27 @@ You will be prompted for:
 When generated, a new project will look like this:
 
 ```
-my-relewise-poc/
-├─ .github/
-│  └─ copilot-instructions.md
-├─ .vscode/
-│  └─ launch.json
-├─ docs/
-│  └─ relewise-response-patterns.md
-├─ src/
-│  ├─ utils/
-│  │  └─ relewiseTypeGuards.ts
-│  └─ index.ts
-├─ .gitignore
-├─ eslint.config.js
-├─ package.json
-├─ tsconfig.json
-└─ README.md
+MY-RELEWISE-POC/
+├── .github/
+│   └── copilot-instructions.md
+├── .vscode/
+│   └── launch.json
+├── docs/
+│   └── relewise-response-patterns.md
+├── product_data/
+│   └── product_data_example.json
+├── src/
+│   ├── utils/
+│   │   └── relewiseTypeGuards.ts
+│   ├── index.ts
+│   └── searchExample.ts
+├── .env
+├── .gitignore
+├── eslint.config.js
+├── package-lock.json
+├── package.json
+└── tsconfig.json
 ```
-
----
 
 ## 🛠️ How It Works
 
