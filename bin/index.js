@@ -45,22 +45,41 @@ async function scaffold() {
     console.log('🧹 Removed template .git folder');
   }
 
-  // 4. Update package.json with project name & description
+  // 4. Rename .env.local to .env if it exists
+  const envLocalPath = path.join(projectPath, '.env.local');
+  const envPath = path.join(projectPath, '.env');
+  if (await fs.pathExists(envLocalPath)) {
+    await fs.move(envLocalPath, envPath, { overwrite: true });
+    console.log('🔑 Renamed .env.local to .env');
+  }
+
+  // 5. Update package.json with project name & description
   const pkgPath = path.join(projectPath, 'package.json');
   const pkg = await fs.readJSON(pkgPath);
   pkg.name = answers.projectName;
   pkg.description = answers.description;
   await fs.writeJSON(pkgPath, pkg, { spaces: 2 });
 
-  // 5. Run npm install for all dependencies
+  // 6. Install dependencies
   console.log('📦 Installing dependencies (this may take a minute)...');
   execSync('npm install', { cwd: projectPath, stdio: 'inherit' });
 
-  // 6. Initialize Git repo if selected
+  // 7. Initialize Git repo if selected
   if (answers.initGit) {
     console.log('🔧 Initializing Git repository...');
     execSync('git init', { cwd: projectPath, stdio: 'inherit' });
   }
+
+  // 8. Show environment variable instructions
+  console.log(`
+⚠️  IMPORTANT: Update your environment variables in ${answers.projectName}/.env
+---------------------------------------------------------
+# Environment variables for Relewise integration
+RELEWISE_DATASET_ID=<YOUR-DATASET-ID>
+RELEWISE_API_KEY=<YOUR-API-KEY>
+RELEWISE_SERVER_URL=<YOUR-SERVER-URL>
+---------------------------------------------------------
+  `);
 
   console.log('\n✅ Project scaffolded successfully!');
   console.log(`\nNext steps:
