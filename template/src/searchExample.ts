@@ -8,7 +8,7 @@ import {
   SearchCollectionBuilder,
   SearchTermPredictionBuilder,
 } from '@relewise/client';
-import { isProductSearchResponse, isSearchTermPredictionResponse } from './utils/relewiseTypeGuards';
+import { isProductSearchResponse, isSearchTermPredictionResponse } from './utils/relewiseTypeGuards.js';
 
 const {
   RELEWISE_DATASET_ID,
@@ -75,7 +75,7 @@ export async function searchProducts({
 
 /** Default export: makes it runnable from index.ts */
 export default async function runSearchExample(termArg?: string) {
-  const term = termArg || '<ADD-YOUR-SEARCHTERM HERE>';
+  const term = termArg || 'Some Search Term';
 
   const resp = await searchProducts({ term, page: 1, pageSize: 10, includeTermPredictions: true });
 

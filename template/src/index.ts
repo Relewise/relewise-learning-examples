@@ -1,8 +1,12 @@
 import 'dotenv/config';
 import path from 'path';
 import fs from 'fs';
+import { fileURLToPath } from 'url';
 
-const sampleName = process.argv[2];
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+
+const [sampleName, ...sampleArgs] = process.argv.slice(2);
 
 if (!sampleName) {
   console.error('❌ Please specify a sample to run.');
@@ -13,7 +17,11 @@ if (!sampleName) {
 
 async function runSample() {
   try {
-    const samplePath = path.resolve(__dirname, `${sampleName}.ts`);
+    // Resolve correct extension depending on whether we are running in dev or after build
+    const isTs = fs.existsSync(path.resolve(__dirname, `${sampleName}.ts`));
+    const ext = isTs ? '.ts' : '.js';
+
+    const samplePath = path.resolve(__dirname, `${sampleName}${ext}`);
     if (!fs.existsSync(samplePath)) {
       console.error(`❌ Sample "${sampleName}" not found in src/`);
       listAvailableSamples();
@@ -21,7 +29,12 @@ async function runSample() {
     }
 
     console.log(`🚀 Running sample: ${sampleName}`);
-    await import(samplePath);
+    const sampleModule = await import(samplePath);
+
+    // If the sample exports a default function, execute it with CLI args
+    if (typeof sampleModule.default === 'function') {
+      await sampleModule.default(...sampleArgs);
+    }
   } catch (err) {
     console.error(`❌ Error running sample "${sampleName}":`, err);
   }
@@ -29,8 +42,10 @@ async function runSample() {
 
 function listAvailableSamples() {
   console.log('\nAvailable samples:');
-  const files = fs.readdirSync(__dirname).filter((f) => f.endsWith('Example.ts'));
-  files.forEach((file) => console.log(' - ' + file.replace('.ts', '')));
+  const files = fs
+    .readdirSync(__dirname)
+    .filter((f) => f.endsWith('Example.ts') || f.endsWith('Example.js'));
+  files.forEach((file) => console.log(' - ' + file.replace(/\.(ts|js)$/, '')));
 }
 
 runSample();
