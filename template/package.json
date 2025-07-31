@@ -4,9 +4,11 @@
     "type": "module",
     "main": "index.js",
     "scripts": {
-        "dev": "node --loader ts-node/esm src/index.ts",
+        "dev": "node --loader ts-node/esm src/index.ts productImportExample",
         "build": "tsc",
-        "start": "node dist/index.js"
+        "start": "node dist/index.js",
+        "lint": "eslint src --ext .ts,.js",
+        "lint:fix": "eslint src --ext .ts,.js --fix"
     },
     "keywords": [],
     "author": "",
