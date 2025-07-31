@@ -125,7 +125,7 @@ adhoc-relewise-poc my-local-test
 
 ---
 
-## 📄 Query Result Structure
+## 📄 Product Data Structure
 
 The `product_data_example.json` file contains an array of products to be used for the Product import example.
 Each product is structured to support **multi-language**, **multi-market**, and **multi-channel** contexts.

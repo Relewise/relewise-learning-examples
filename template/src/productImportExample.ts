@@ -39,8 +39,8 @@ async function importProductsExample() {
         return;
     }
 
-    const integrator = new Integrator(RELEWISE_DATASET_ID as string, RELEWISE_API_KEY as string, {
-        serverUrl: RELEWISE_SERVER_URL as string,
+    const integrator = new Integrator(RELEWISE_DATASET_ID!, RELEWISE_API_KEY!, {
+        serverUrl: RELEWISE_SERVER_URL!,
     });
 
     const date: number = Date.now();
@@ -135,6 +135,11 @@ async function importProductsExample() {
                                 acc.LowStock = DataValueFactory.multilingual([]);
                             }
 
+                            // If availability is 0 - set SoldOut to true for this language
+                            acc.SoldOut.value.values.push({
+                                language: { value: element.language },
+                                text: String(element.number === 0),
+                            });
                             acc.LowStock.value.values.push({
                                 language: { value: element.language },
                                 text: String(element.number <= 3),
@@ -204,7 +209,21 @@ async function importProductsExample() {
     }
 
     if (productUpdates.length > 0) {
-        await integrator.batch(productUpdates);
+        const batchResponse = await integrator.batch(productUpdates);
+
+        if (
+            batchResponse &&
+            'responses' in batchResponse &&
+            Array.isArray(batchResponse.responses)
+        ) {
+            // Safe to access batchResponse.responses
+            // You can further type guard each response if needed
+            console.log('Batch import responses:', batchResponse.responses);
+        } else if (batchResponse === undefined) {
+            console.warn('⚠️ No response returned from Relewise.');
+        } else {
+            console.warn('⚠️ Unexpected response structure from Relewise:', batchResponse);
+        }
         console.log(`✅ Imported ${productUpdates.length} products to Relewise.`);
     } else {
         console.log('⚠️ No products to import.');
