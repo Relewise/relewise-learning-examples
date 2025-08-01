@@ -1,3 +1,27 @@
+/**
+ * Example: Product Import to Relewise MCP
+ *
+ * This file demonstrates how to import product data into Relewise using the TypeScript SDK and Integrator.
+ *
+ * Key Features:
+ * - Loads product data from a local JSON file.
+ * - Maps product fields to Relewise's data model using builder and factory patterns.
+ * - Handles multilingual, assortment, campaign, and custom fields.
+ * - Uses DataValueFactory to ensure correct data types for all product properties.
+ * - Batches product updates for efficient import.
+ * - Provides robust error handling and logging.
+ *
+ * Usage:
+ * 1. Ensure your `.env` file contains RELEWISE_DATASET_ID, RELEWISE_API_KEY, and RELEWISE_SERVER_URL.
+ * 2. Place your product data JSON in `product_data/product_data_example.json`.
+ * 3. Build with `npx tsc` and run with `node dist/productImportExample.js` or import/run from `index.ts`.
+ * 4. Use this as a template for other Relewise-powered import scenarios.
+ *
+ * For more, see:
+ * - https://github.com/Relewise/relewise-sdk-javascript
+ * - Project's .github/copilot-instructions.md
+ */
+
 import 'dotenv/config';
 import { Trackable, DataValueFactory } from '@relewise/client';
 import { Integrator, ProductUpdateBuilder } from '@relewise/integrations';
@@ -18,14 +42,22 @@ import { fileURLToPath } from 'url';
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
+// Load and validate environment variables
 const { RELEWISE_DATASET_ID, RELEWISE_API_KEY, RELEWISE_SERVER_URL } = process.env;
-
 if (!RELEWISE_DATASET_ID || !RELEWISE_API_KEY || !RELEWISE_SERVER_URL) {
     throw new Error(
         'Missing RELEWISE_DATASET_ID, RELEWISE_API_KEY, or RELEWISE_SERVER_URL in .env',
     );
 }
 
+/**
+ * Imports products from a local JSON file into Relewise MCP.
+ *
+ * - Loads product data and maps to Relewise's product update format.
+ * - Handles multilingual, assortment, campaign, and custom fields.
+ * - Uses DataValueFactory for all data values to ensure correct typing.
+ * - Batches updates and logs results/errors.
+ */
 async function importProductsExample() {
     // Load product data from local JSON file
     const dataPath = path.resolve(__dirname, '../product_data/product_data_example.json');
@@ -39,6 +71,7 @@ async function importProductsExample() {
         return;
     }
 
+    // Instantiate the Relewise integrator client
     const integrator = new Integrator(RELEWISE_DATASET_ID!, RELEWISE_API_KEY!, {
         serverUrl: RELEWISE_SERVER_URL!,
     });
@@ -50,11 +83,11 @@ async function importProductsExample() {
         try {
             const productTyped: ProductData = product;
 
+            // Build the product update using the builder pattern
             const content = new ProductUpdateBuilder({
                 id: productTyped.unique_id.toString(),
                 productUpdateKind: 'UpdateAndAppend',
             })
-                //.brand({ id: productTyped.brand.id, displayName: productTyped.brand.displayName })
                 .brand(
                     ((): Brand => ({
                         id: productTyped.brand.id,
@@ -109,6 +142,7 @@ async function importProductsExample() {
                     })),
                 )
                 .data({
+                    // Map all product data fields using DataValueFactory
                     Description: DataValueFactory.multilingual(
                         productTyped.description.map((element) => ({
                             language: element.language,
@@ -208,21 +242,12 @@ async function importProductsExample() {
         }
     }
 
+    // Batch import all product updates to Relewise
     if (productUpdates.length > 0) {
         const batchResponse = await integrator.batch(productUpdates);
-
-        if (
-            batchResponse &&
-            'responses' in batchResponse &&
-            Array.isArray(batchResponse.responses)
-        ) {
-            // Safe to access batchResponse.responses
-            // You can further type guard each response if needed
-            console.log('Batch import responses:', batchResponse.responses);
-        } else if (batchResponse === undefined) {
-            console.warn('⚠️ No response returned from Relewise.');
-        } else {
-            console.warn('⚠️ Unexpected response structure from Relewise:', batchResponse);
+        if (batchResponse) {
+            // Log the full batch response; further type guards can be added if needed
+            console.log('Batch import responses:', batchResponse);
         }
         console.log(`✅ Imported ${productUpdates.length} products to Relewise.`);
     } else {

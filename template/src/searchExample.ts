@@ -1,3 +1,24 @@
+/**
+ * Example: Type-Safe Product Search with Relewise SDK
+ *
+ * This file demonstrates how to perform a product search using the Relewise TypeScript SDK.
+ *
+ * Key Features:
+ * - Uses the builder pattern (`ProductSearchBuilder`, `SearchCollectionBuilder`) for request construction.
+ * - Supports pagination, facets, and search term predictions in a single batch request.
+ * - Handles all responses with strict type guards for safety and future-proofing.
+ * - Designed for clarity, extensibility, and as a template for other search scenarios.
+ *
+ * Usage:
+ * 1. Ensure your `.env` file contains RELEWISE_DATASET_ID, RELEWISE_API_KEY, and RELEWISE_SERVER_URL.
+ * 2. Build with `npx tsc` and run with `node dist/searchExample.js` or import/run from `index.ts`.
+ * 3. Use this as a reference for implementing other Relewise-powered search or prediction features.
+ *
+ * For more, see:
+ * - https://github.com/Relewise/relewise-sdk-javascript
+ * - Project's .github/copilot-instructions.md
+ */
+
 import dotenv from 'dotenv';
 dotenv.config();
 
@@ -7,6 +28,7 @@ import {
     UserFactory,
     SearchCollectionBuilder,
     SearchTermPredictionBuilder,
+    DataValueFactory,
 } from '@relewise/client';
 import {
     isProductSearchResponse,
@@ -25,11 +47,21 @@ if (!RELEWISE_DATASET_ID || !RELEWISE_API_KEY) {
     throw new Error('Missing RELEWISE_DATASET_ID or RELEWISE_API_KEY in .env');
 }
 
+// Instantiate the Relewise search client
 const searcher = new Searcher(RELEWISE_DATASET_ID, RELEWISE_API_KEY, {
     serverUrl: RELEWISE_SERVER_URL,
 });
 
-/** Search products by term with optional pagination + facets + optional term predictions */
+/**
+ * Performs a product search with optional term predictions using the Relewise SDK.
+ *
+ * @param {Object} params - Search parameters
+ * @param {string} params.term - The search term
+ * @param {number} [params.page=1] - Page number for pagination
+ * @param {number} [params.pageSize=20] - Number of products per page
+ * @param {boolean} [params.includeTermPredictions=true] - Whether to include search term predictions
+ * @returns {Promise<{products: any, predictions: any}>} - The search and prediction responses
+ */
 export async function searchProducts({
     term,
     page = 1,
@@ -41,6 +73,7 @@ export async function searchProducts({
     pageSize?: number;
     includeTermPredictions?: boolean;
 }) {
+    // Prepare shared settings for all requests
     const settings = {
         language: LANGUAGE,
         currency: CURRENCY,
@@ -48,8 +81,10 @@ export async function searchProducts({
         user: UserFactory.anonymous(),
     };
 
+    // Create a collection builder to batch multiple requests
     const coll = new SearchCollectionBuilder(settings);
 
+    // Build the product search request
     const productBuilder = new ProductSearchBuilder(settings)
         .setSelectedProductProperties({ displayName: true, pricing: true })
         .setSelectedVariantProperties({ displayName: true })
@@ -60,10 +95,21 @@ export async function searchProducts({
                 .addBrandFacet()
                 .addSalesPriceRangeFacet('Product')
                 .addVariantSpecificationFacet('Size'),
+        )
+        // Exclude sold-out products using a product data filter
+        .filters((fb) =>
+            fb.addProductDataFilter(
+                'SoldOut',
+                (cb) => cb.addEqualsCondition(DataValueFactory.string('false')),
+                false,
+                false,
+                true,
+            ),
         );
 
     coll.addRequest(productBuilder.build());
 
+    // Optionally add a search term prediction request
     let hasPredictions = false;
     if (includeTermPredictions) {
         const predBuilder = new SearchTermPredictionBuilder(settings).setTerm(term).take(8);
@@ -71,15 +117,22 @@ export async function searchProducts({
         hasPredictions = true;
     }
 
+    // Send the batch request to Relewise MCP
     const batchResponse = await searcher.batch(coll.build());
     const responses = batchResponse?.responses ?? [];
 
+    // Return both responses for further type-safe handling
     return hasPredictions
         ? { products: responses[0] ?? null, predictions: responses[1] ?? null }
         : { products: responses[0] ?? null, predictions: undefined };
 }
 
-/** Default export: makes it runnable from index.ts */
+/**
+ * Default export: Runs a sample search and logs results.
+ *
+ * This function can be run directly or imported from `index.ts`.
+ * It demonstrates safe handling and output of products, facets, and predictions.
+ */
 export default async function runSearchExample(termArg?: string) {
     const term = termArg || 'Some Search Term';
 
