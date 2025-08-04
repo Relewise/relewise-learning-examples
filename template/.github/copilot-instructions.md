@@ -6,6 +6,8 @@
 - The project is designed to integrate with the Relewise's platform for product recommendations, personalization, and search.
 - All Relewise-related questions, doubts or clarifications regarding the Relewise Typescript SDK, classes, types etc. should firstly be passed on to the Relewise MCP server at https://mcp.relewise.com.
 - Then those answers should be validated against the official Relewise TypeScript/JavaScript SDK documentation and source code. See ## Relewise SDK Source Code Reference for more information.
+- You should also consult the official Relewise documentation (https://docs.relewise.com) for any specific API details or usage patterns.
+    - Here are the examples for Typescript: https://docs.relewise.com/docs/examples/ts/
 - Then use the examples provided in the `src/` directory of this project to implement the required functionality and correctly integrate with the Relewise API.
 - When and if there are doubts about how to implement a specific feature or functionality, refer first to the examples here in `src/`, then the MCP endpoint and then the Relewise TypeScript/JavaScript SDK and then the official documentation.
 

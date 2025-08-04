@@ -35,13 +35,7 @@ import {
     isSearchTermPredictionResponse,
 } from './utils/relewiseTypeGuards.js';
 
-const {
-    RELEWISE_DATASET_ID,
-    RELEWISE_API_KEY,
-    RELEWISE_SERVER_URL,
-    LANGUAGE = 'da-dk',
-    CURRENCY = 'EUR',
-} = process.env;
+const { RELEWISE_DATASET_ID, RELEWISE_API_KEY, RELEWISE_SERVER_URL } = process.env;
 
 if (!RELEWISE_DATASET_ID || !RELEWISE_API_KEY) {
     throw new Error('Missing RELEWISE_DATASET_ID or RELEWISE_API_KEY in .env');
@@ -75,8 +69,8 @@ export async function searchProducts({
 }) {
     // Prepare shared settings for all requests
     const settings = {
-        language: LANGUAGE,
-        currency: CURRENCY,
+        language: process.env.LANGUAGE || 'da-dk',
+        currency: process.env.CURRENCY || 'EUR',
         displayedAtLocation: 'Search Page',
         user: UserFactory.anonymous(),
     };

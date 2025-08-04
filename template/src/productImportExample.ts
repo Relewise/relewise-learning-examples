@@ -103,7 +103,7 @@ async function importProductsExample() {
                             id: mainCategory.id,
                             displayName: mainCategory.name.map((element: CategoryName) => ({
                                 value: element.displayName,
-                                language: element.language,
+                                language: element.language || process.env.LANGUAGE || 'da-dk',
                             })),
                         });
 
@@ -114,7 +114,8 @@ async function importProductsExample() {
                                 displayName: mainCategory.subCategory.name.map(
                                     (element: CategoryName) => ({
                                         value: element.displayName,
-                                        language: element.language,
+                                        language:
+                                            element.language || process.env.LANGUAGE || 'da-dk',
                                     }),
                                 ),
                             });
@@ -125,27 +126,27 @@ async function importProductsExample() {
                 )
                 .displayName(
                     productTyped.name.map((element) => ({
-                        language: element.language,
+                        language: element.language || process.env.LANGUAGE || 'da-dk',
                         value: element.name,
                     })),
                 )
                 .listPrice(
                     productTyped.list_price.map((element: Price) => ({
                         amount: element.amount,
-                        currency: element.currency,
+                        currency: element.currency || process.env.CURRENCY || 'EUR',
                     })),
                 )
                 .salesPrice(
                     productTyped.sales_price.map((element: Price) => ({
                         amount: element.amount,
-                        currency: element.currency,
+                        currency: element.currency || process.env.CURRENCY || 'EUR',
                     })),
                 )
                 .data({
                     // Map all product data fields using DataValueFactory
                     Description: DataValueFactory.multilingual(
                         productTyped.description.map((element) => ({
-                            language: element.language,
+                            language: element.language || process.env.LANGUAGE || 'da-dk',
                             value: element.text,
                         })),
                     ),
@@ -157,9 +158,9 @@ async function importProductsExample() {
                     ),
                     ...productTyped.availability.reduce(
                         (acc: Record<string, any>, element: Availability) => {
-                            acc[`${element.language}_StockLevel`] = DataValueFactory.number(
-                                element.number,
-                            );
+                            acc[
+                                `${element.language || process.env.LANGUAGE || 'da-dk'}_StockLevel`
+                            ] = DataValueFactory.number(element.number);
 
                             // Initialize multilingual SoldOut and LowStock if missing
                             if (!acc.SoldOut) {
@@ -171,7 +172,9 @@ async function importProductsExample() {
 
                             // If availability is 0 - set SoldOut to true for this language
                             acc.SoldOut.value.values.push({
-                                language: { value: element.language },
+                                language: {
+                                    value: element.language || process.env.LANGUAGE || 'da-dk',
+                                },
                                 text: String(element.number === 0),
                             });
                             acc.LowStock.value.values.push({
