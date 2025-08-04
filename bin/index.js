@@ -75,13 +75,17 @@ async function scaffold() {
   console.log('📦 Installing dependencies (this may take a minute)...');
   execSync('npm install', { cwd: projectPath, stdio: 'inherit' });
 
-  // 8. Initialize Git repo if selected
+  // 8. Build the project
+  console.log('🔨 Building the project...');
+  execSync('npm run build', { cwd: projectPath, stdio: 'inherit' });
+
+  // 9. Initialize Git repo if selected
   if (answers.initGit) {
     console.log('🔧 Initializing Git repository...');
     execSync('git init', { cwd: projectPath, stdio: 'inherit' });
   }
 
-  // 9. Reminder about environment variables
+  // 10. Reminder about environment variables
   console.log(`
 ⚠️  IMPORTANT: Update the environment variables in ${answers.projectName}/.env
 They are already pre-filled with placeholders:
