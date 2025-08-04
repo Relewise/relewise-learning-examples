@@ -23,8 +23,8 @@ import dotenv from 'dotenv';
 dotenv.config();
 
 import { ProductCategorySearchBuilder } from '@relewise/client';
-import { isProductCategorySearchResponse } from './utils/relewiseTypeGuards.js';
-import { searcher, createSettings } from './config/relewiseConfig.js';
+import { isProductCategorySearchResponse } from '../../utils/relewiseTypeGuards.js';
+import { searcher, createSettings } from '../../config/relewiseConfig.js';
 
 /**
  * Performs a product category search using the Relewise SDK.

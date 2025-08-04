@@ -34,11 +34,11 @@ import {
     ProductData,
     Promoted,
     OnSale,
-} from './types/interfaces.js';
+} from '../../types/interfaces.js';
 import fs from 'fs/promises';
 import path from 'path';
 import { fileURLToPath } from 'url';
-import { integrator, LANGUAGE, CURRENCY } from './config/relewiseConfig.js';
+import { integrator, LANGUAGE, CURRENCY } from '../../config/relewiseConfig.js';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -53,7 +53,7 @@ const __dirname = path.dirname(__filename);
  */
 async function importProductsExample() {
     // Load product data from local JSON file
-    const dataPath = path.resolve(__dirname, '../product_data/product_data_example.json');
+    const dataPath = path.resolve(__dirname, '../../../product_data/product_data_example.json');
     let allProductsToSync: ProductData[];
 
     try {

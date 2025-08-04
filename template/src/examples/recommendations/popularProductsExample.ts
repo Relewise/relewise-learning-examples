@@ -24,8 +24,8 @@ dotenv.config();
 
 // Import Relewise SDK classes and type guards
 import { PopularProductsBuilder } from '@relewise/client';
-import { isProductRecommendationResponse } from './utils/relewiseTypeGuards.js';
-import { recommender, createSettings } from './config/relewiseConfig.js';
+import { isProductRecommendationResponse } from '../../utils/relewiseTypeGuards.js';
+import { recommender, createSettings } from '../../config/relewiseConfig.js';
 
 /**
  * Runs a popular products recommendation request using the Relewise SDK.

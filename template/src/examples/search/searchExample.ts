@@ -31,8 +31,8 @@ import {
 import {
     isProductSearchResponse,
     isSearchTermPredictionResponse,
-} from './utils/relewiseTypeGuards.js';
-import { searcher, createSettings } from './config/relewiseConfig.js';
+} from '../../utils/relewiseTypeGuards.js';
+import { searcher, createSettings } from '../../config/relewiseConfig.js';
 
 /**
  * Performs a product search with optional term predictions using the Relewise SDK.
@@ -64,7 +64,6 @@ export async function searchProducts({
     // Build the product search request
     const productBuilder = new ProductSearchBuilder(settings)
         .setSelectedProductProperties({ displayName: true, pricing: true })
-        .setSelectedVariantProperties({ displayName: true })
         .setTerm(term)
         .pagination((p) => p.setPage(page).setPageSize(pageSize))
         .facets((f) =>

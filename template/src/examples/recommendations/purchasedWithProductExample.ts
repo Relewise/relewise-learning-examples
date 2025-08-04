@@ -23,8 +23,8 @@ import dotenv from 'dotenv';
 dotenv.config();
 
 import { PurchasedWithProductBuilder } from '@relewise/client';
-import { isProductRecommendationResponse } from './utils/relewiseTypeGuards.js';
-import { recommender, createSettings } from './config/relewiseConfig.js';
+import { isProductRecommendationResponse } from '../../utils/relewiseTypeGuards.js';
+import { recommender, createSettings } from '../../config/relewiseConfig.js';
 
 /**
  * Requests recommendations for products frequently purchased with the given product.
@@ -56,7 +56,7 @@ export async function getPurchasedWithProductRecommendations(productId: string, 
  * It demonstrates safe handling and output of recommended products.
  */
 export default async function runPurchasedWithProductExample(productIdArg?: string) {
-    const productId = productIdArg || 'YOUR_PRODUCT_ID_HERE'; // Replace with a real product ID
+    const productId = productIdArg || '00198c54-6c62-4e08-be40-a539963985d0'; // Real product ID from actual data
     const recommendations = await getPurchasedWithProductRecommendations(productId);
     if (Array.isArray(recommendations) && recommendations.length > 0) {
         console.log('Purchased With Product Recommendations:', recommendations);

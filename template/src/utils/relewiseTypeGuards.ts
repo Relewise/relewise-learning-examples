@@ -46,7 +46,6 @@ export function isProductCategorySearchResponse(
         typeof resp === 'object' &&
         resp !== null &&
         'results' in resp &&
-        Array.isArray((resp as ProductCategorySearchResponse).results) &&
-        'statistics' in resp
+        Array.isArray((resp as ProductCategorySearchResponse).results)
     );
 }
