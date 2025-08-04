@@ -3,8 +3,11 @@
 ## Project Overview
 
 - This is a TypeScript project with a simple entry point at `src/index.ts`.
-- The project is designed to integrate with the Relewise MCP server for product recommendations, personalization, and search.
-- All Relewise-related queries should use the MCP server at https://mcp.relewise.com.
+- The project is designed to integrate with the Relewise's platform for product recommendations, personalization, and search.
+- All Relewise-related questions, doubts or clarifications regarding the Relewise Typescript SDK, classes, types etc. should firstly be passed on to the Relewise MCP server at https://mcp.relewise.com.
+- Then those answers should be validated against the official Relewise TypeScript/JavaScript SDK documentation and source code. See ## Relewise SDK Source Code Reference for more information.
+- Then use the examples provided in the `src/` directory of this project to implement the required functionality and correctly integrate with the Relewise API.
+- When and if there are doubts about how to implement a specific feature or functionality, refer first to the examples here in `src/`, then the MCP endpoint and then the Relewise TypeScript/JavaScript SDK and then the official documentation.
 
 ## Key Files & Structure
 
@@ -46,7 +49,7 @@ Each example is fully documented and follows the integration patterns described 
     - When you encounter unexpected behavior, errors, or need to verify the accepted values for builder methods (e.g., `basedOn` for `PopularProductsBuilder`).
     - To see the latest implementation details, available builder methods, or type definitions that may not be fully documented elsewhere.
 - How to use the SDK codebase:
-    - Browse the `src/` directory for all builder classes, request/response types, and utility functions.
+    - Browse the `packages/client/src` directory for all builder classes, request/response types, and utility functions.
     - Use the GitHub search to find method signatures, accepted values, and comments directly in the code (e.g., search for `basedOn` in `popularProductsBuilder.ts`).
     - Review the commit history for recent changes or bug fixes that may affect your integration.
 - Where to look:
@@ -54,4 +57,4 @@ Each example is fully documented and follows the integration patterns described 
     - Data contracts (types): `packages/client/src/models/data-contracts.ts`
     - Example usage: The README and test files in the SDK repo.
 
-> **Tip:** Always prefer the SDK source code for the most up-to-date and precise information about method signatures, accepted values, and type safety, especially when the documentation or type definitions are ambiguous.
+> **Tip:** Always prefer the SDK source code for the most up-to-date and precise information about method signatures, accepted values, and type safety, especially when the documentation or answers from the MCP endpoint are ambiguous or faulty.

@@ -9,7 +9,7 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 async function scaffold() {
-  console.log('🚀 Welcome to the Adhoc Relewise POC scaffolder!\n');
+  console.log('🚀 Welcome to the Relewise example and POC scaffolder!\n');
 
   // 1. Prompt user for details
   const answers = await inquirer.prompt([
