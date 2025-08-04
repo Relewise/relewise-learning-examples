@@ -11,7 +11,7 @@
  */
 
 import 'dotenv/config';
-import { Searcher, Recommender, UserFactory } from '@relewise/client';
+import { Searcher, Recommender, Tracker, UserFactory } from '@relewise/client';
 import { Integrator } from '@relewise/integrations';
 
 // Load and validate environment variables
@@ -32,6 +32,7 @@ const clientOptions = {
 // Pre-configured client instances
 export const searcher = new Searcher(RELEWISE_DATASET_ID, RELEWISE_API_KEY, clientOptions);
 export const recommender = new Recommender(RELEWISE_DATASET_ID, RELEWISE_API_KEY, clientOptions);
+export const tracker = new Tracker(RELEWISE_DATASET_ID, RELEWISE_API_KEY, clientOptions);
 
 // Integrator for product imports (requires serverUrl)
 if (!RELEWISE_SERVER_URL) {

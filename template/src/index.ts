@@ -25,6 +25,8 @@ async function runSample() {
             path.resolve(__dirname, `examples/recommendations/${sampleName}.js`),
             path.resolve(__dirname, `examples/import/${sampleName}.ts`),
             path.resolve(__dirname, `examples/import/${sampleName}.js`),
+            path.resolve(__dirname, `examples/tracking/${sampleName}.ts`),
+            path.resolve(__dirname, `examples/tracking/${sampleName}.js`),
             path.resolve(__dirname, `${sampleName}.ts`),
             path.resolve(__dirname, `${sampleName}.js`),
         ];
@@ -61,6 +63,7 @@ function listAvailableSamples() {
     const searchDir = path.resolve(__dirname, 'examples/search');
     const recsDir = path.resolve(__dirname, 'examples/recommendations');
     const importDir = path.resolve(__dirname, 'examples/import');
+    const trackingDir = path.resolve(__dirname, 'examples/tracking');
 
     // Search examples
     if (fs.existsSync(searchDir)) {
@@ -87,6 +90,15 @@ function listAvailableSamples() {
             .readdirSync(importDir)
             .filter((f) => f.endsWith('Example.ts') || f.endsWith('Example.js'));
         importFiles.forEach((file) => console.log(' - ' + file.replace(/\.(ts|js)$/, '')));
+    }
+
+    // Tracking examples
+    if (fs.existsSync(trackingDir)) {
+        console.log('\n📊 Tracking Examples:');
+        const trackingFiles = fs
+            .readdirSync(trackingDir)
+            .filter((f) => f.endsWith('Example.ts') || f.endsWith('Example.js'));
+        trackingFiles.forEach((file) => console.log(' - ' + file.replace(/\.(ts|js)$/, '')));
     }
 
     // Root level examples (legacy)
