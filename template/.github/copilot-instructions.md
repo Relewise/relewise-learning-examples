@@ -4,12 +4,23 @@
 
 - This is a TypeScript project with a simple entry point at `src/index.ts`.
 - The project is designed to integrate with the Relewise's platform for product recommendations, personalization, and search.
-- All Relewise-related questions, doubts or clarifications regarding the Relewise Typescript SDK, classes, types etc. should firstly be passed on to the Relewise MCP server at https://mcp.relewise.com.
-- Then those answers should be validated against the official Relewise TypeScript/JavaScript SDK documentation and source code. See ## Relewise SDK Source Code Reference for more information.
-- You should also consult the official Relewise documentation (https://docs.relewise.com) for any specific API details or usage patterns.
-    - Here are the examples for Typescript: https://docs.relewise.com/docs/examples/ts/
-- Then use the examples provided in the `src/` directory of this project to implement the required functionality and correctly integrate with the Relewise API.
-- When and if there are doubts about how to implement a specific feature or functionality, refer first to the examples here in `src/`, then the MCP endpoint and then the Relewise TypeScript/JavaScript SDK and then the official documentation.
+- **CRITICAL:** For any specific SDK usage, method signatures, or API patterns, ALWAYS verify against the official SDK source code FIRST before providing examples.
+- All Relewise-related questions, doubts or clarifications regarding the Relewise Typescript SDK, classes, types etc. should be validated using this process:
+
+### SDK Verification Process (MANDATORY)
+
+1. **First**: Search the official SDK repository at https://github.com/Relewise/relewise-sdk-javascript for actual method signatures and usage patterns
+2. **Second**: Consult the Relewise MCP server at https://mcp.relewise.com for high-level guidance
+3. **Third**: Check the official Relewise documentation (https://docs.relewise.com) for conceptual understanding
+4. **Fourth**: Use the examples provided in the `src/` directory of this project as implementation templates
+5. **Always**: Validate any code examples against the actual SDK source before providing them
+
+### Common Pitfalls to Avoid
+
+- **Never assume API signatures** - always verify in the SDK source code
+- **Never use builder patterns** that don't exist in the actual SDK (e.g., `ProductDataRelevanceModifierBuilder`)
+- **Always check import requirements** by looking at the actual SDK exports
+- **Verify parameter types and order** from the source, not from assumptions
 
 ## Key Files & Structure
 
@@ -28,15 +39,30 @@
 
 ## Example Usage
 
-Instead of embedding full code examples here, see the following files in the `src/` directory for up-to-date, runnable examples:
+Instead of embedding full code examples here, see the following files in the `src/examples/` directory for up-to-date, runnable examples:
 
-- `src/searchExample.ts`: Demonstrates a type-safe product search using the Relewise SDK, including term predictions and facets.
-- `src/popularProductsExample.ts`: Shows how to request popular product recommendations with strict type guards and builder patterns.
-- `src/productImportExample.ts`: Provides an example of importing product data into Relewise.
+### Search Examples
 
-Each example is fully documented and follows the integration patterns described in this instructions file.
+- `src/examples/search/searchExample.ts`: Demonstrates basic product search with facets and term predictions
+- `src/examples/search/searchCategoryExample.ts`: Category hierarchy search with faceted browsing
+- `src/examples/search/cdpPersonalizedSearchExample.ts`: **Advanced CDP integration with commented relevance modifier examples using correct SDK syntax**
 
-> For details, open the relevant file in your editor or view it in your repository.
+### Recommendation Examples
+
+- `src/examples/recommendations/popularProductsExample.ts`: Popular product recommendations with real product data
+- `src/examples/recommendations/purchasedWithProductExample.ts`: Collaborative filtering recommendations
+
+### Import Examples
+
+- `src/examples/import/productImportExample.ts`: Product data import with real data from `product_data/` folder
+
+### Shared Configuration
+
+- `src/config/relewiseConfig.ts`: Centralized configuration eliminating boilerplate across all examples
+
+Each example is fully documented, uses real product data, and follows verified integration patterns.
+
+> **Important:** The CDP search example contains extensive commented relevance modifier examples with correct SDK syntax. These have been verified against the actual SDK source code.
 
 ## References
 
@@ -46,7 +72,9 @@ Each example is fully documented and follows the integration patterns described 
 ## Relewise SDK Source Code Reference
 
 - The official Relewise TypeScript/JavaScript SDK is open source and available at: https://github.com/Relewise/relewise-sdk-javascript
+- **MANDATORY USAGE**: Always search the SDK repository BEFORE providing any specific API usage examples
 - When to consult the SDK codebase:
+    - **Always** when providing method signatures, builder patterns, or API examples
     - If the official documentation is unclear, incomplete, or you need to understand the exact behavior of a builder, method, or type.
     - When you encounter unexpected behavior, errors, or need to verify the accepted values for builder methods (e.g., `basedOn` for `PopularProductsBuilder`).
     - To see the latest implementation details, available builder methods, or type definitions that may not be fully documented elsewhere.
@@ -55,8 +83,24 @@ Each example is fully documented and follows the integration patterns described 
     - Use the GitHub search to find method signatures, accepted values, and comments directly in the code (e.g., search for `basedOn` in `popularProductsBuilder.ts`).
     - Review the commit history for recent changes or bug fixes that may affect your integration.
 - Where to look:
-    - Builders: `packages/client/src/builders/`
+    - Builders: `packages/client/src/builders/` (especially `relevanceModifierBuilder.ts`, `searchBuilder.ts`)
     - Data contracts (types): `packages/client/src/models/data-contracts.ts`
     - Example usage: The README and test files in the SDK repo.
 
-> **Tip:** Always prefer the SDK source code for the most up-to-date and precise information about method signatures, accepted values, and type safety, especially when the documentation or answers from the MCP endpoint are ambiguous or faulty.
+### Specific Examples of Required Source Code Verification
+
+- **Relevance Modifiers**: Always check `packages/client/src/builders/relevanceModifierBuilder.ts` for exact method signatures
+- **Search Builders**: Verify patterns in `packages/client/src/builders/` directory
+- **Data Types**: Check `packages/client/src/models/data-contracts.ts` for type definitions
+- **Factory Methods**: Look for `ValueSelectorFactory`, `DataValueFactory`, etc. usage patterns
+
+> **Critical:** Never assume builder patterns or method signatures exist without verifying in the actual SDK source code. Many intuitive patterns (like `ProductDataRelevanceModifierBuilder`) do not exist in the actual SDK.
+
+### Example Verification Workflow
+
+1. **User asks for relevance modifier example**
+2. **FIRST**: Search `github_repo` for `addProductDataRelevanceModifier` in `Relewise/relewise-sdk-javascript`
+3. **Find actual signature**: `addProductDataRelevanceModifier(key, conditions, multiplierSelector, ...)`
+4. **Verify imports needed**: `ConditionBuilder`, `DataValueFactory`, `ValueSelectorFactory`
+5. **THEN provide accurate example** based on real SDK code
+6. **Reference the source location** for the user's verification
