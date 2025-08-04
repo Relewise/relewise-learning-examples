@@ -22,19 +22,9 @@
 import dotenv from 'dotenv';
 dotenv.config();
 
-import { Recommender, PurchasedWithProductBuilder, UserFactory } from '@relewise/client';
+import { PurchasedWithProductBuilder } from '@relewise/client';
 import { isProductRecommendationResponse } from './utils/relewiseTypeGuards.js';
-
-const { RELEWISE_DATASET_ID, RELEWISE_API_KEY, RELEWISE_SERVER_URL } = process.env;
-
-if (!RELEWISE_DATASET_ID || !RELEWISE_API_KEY) {
-    throw new Error('Missing RELEWISE_DATASET_ID or RELEWISE_API_KEY in .env');
-}
-
-// Instantiate the Relewise recommender client
-const recommender = new Recommender(RELEWISE_DATASET_ID, RELEWISE_API_KEY, {
-    serverUrl: RELEWISE_SERVER_URL,
-});
+import { recommender, createSettings } from './config/relewiseConfig.js';
 
 /**
  * Requests recommendations for products frequently purchased with the given product.
@@ -45,12 +35,7 @@ const recommender = new Recommender(RELEWISE_DATASET_ID, RELEWISE_API_KEY, {
  */
 export async function getPurchasedWithProductRecommendations(productId: string, take: number = 8) {
     // Set up the builder and specify the context product using .product({ productId })
-    const builder = new PurchasedWithProductBuilder({
-        language: process.env.LANGUAGE || 'da-dk',
-        currency: process.env.CURRENCY || 'EUR',
-        displayedAtLocation: 'Product Page',
-        user: UserFactory.anonymous(),
-    })
+    const builder = new PurchasedWithProductBuilder(createSettings('Product Detail Page'))
         .product({ productId })
         .setNumberOfRecommendations(take)
         .setSelectedProductProperties({ displayName: true, pricing: true });

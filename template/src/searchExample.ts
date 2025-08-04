@@ -23,9 +23,7 @@ import dotenv from 'dotenv';
 dotenv.config();
 
 import {
-    Searcher,
     ProductSearchBuilder,
-    UserFactory,
     SearchCollectionBuilder,
     SearchTermPredictionBuilder,
     DataValueFactory,
@@ -34,17 +32,7 @@ import {
     isProductSearchResponse,
     isSearchTermPredictionResponse,
 } from './utils/relewiseTypeGuards.js';
-
-const { RELEWISE_DATASET_ID, RELEWISE_API_KEY, RELEWISE_SERVER_URL } = process.env;
-
-if (!RELEWISE_DATASET_ID || !RELEWISE_API_KEY) {
-    throw new Error('Missing RELEWISE_DATASET_ID or RELEWISE_API_KEY in .env');
-}
-
-// Instantiate the Relewise search client
-const searcher = new Searcher(RELEWISE_DATASET_ID, RELEWISE_API_KEY, {
-    serverUrl: RELEWISE_SERVER_URL,
-});
+import { searcher, createSettings } from './config/relewiseConfig.js';
 
 /**
  * Performs a product search with optional term predictions using the Relewise SDK.
@@ -68,12 +56,7 @@ export async function searchProducts({
     includeTermPredictions?: boolean;
 }) {
     // Prepare shared settings for all requests
-    const settings = {
-        language: process.env.LANGUAGE || 'da-dk',
-        currency: process.env.CURRENCY || 'EUR',
-        displayedAtLocation: 'Search Page',
-        user: UserFactory.anonymous(),
-    };
+    const settings = createSettings('Search Page');
 
     // Create a collection builder to batch multiple requests
     const coll = new SearchCollectionBuilder(settings);

@@ -24,7 +24,7 @@
 
 import 'dotenv/config';
 import { Trackable, DataValueFactory } from '@relewise/client';
-import { Integrator, ProductUpdateBuilder } from '@relewise/integrations';
+import { ProductUpdateBuilder } from '@relewise/integrations';
 import {
     Brand,
     Category,
@@ -38,17 +38,10 @@ import {
 import fs from 'fs/promises';
 import path from 'path';
 import { fileURLToPath } from 'url';
+import { integrator, LANGUAGE, CURRENCY } from './config/relewiseConfig.js';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
-
-// Load and validate environment variables
-const { RELEWISE_DATASET_ID, RELEWISE_API_KEY, RELEWISE_SERVER_URL } = process.env;
-if (!RELEWISE_DATASET_ID || !RELEWISE_API_KEY || !RELEWISE_SERVER_URL) {
-    throw new Error(
-        'Missing RELEWISE_DATASET_ID, RELEWISE_API_KEY, or RELEWISE_SERVER_URL in .env',
-    );
-}
 
 /**
  * Imports products from a local JSON file into Relewise MCP.
@@ -70,11 +63,6 @@ async function importProductsExample() {
         console.error(`❌ Failed to load product data from ${dataPath}:`, err);
         return;
     }
-
-    // Instantiate the Relewise integrator client
-    const integrator = new Integrator(RELEWISE_DATASET_ID!, RELEWISE_API_KEY!, {
-        serverUrl: RELEWISE_SERVER_URL!,
-    });
 
     const date: number = Date.now();
     const productUpdates: Trackable[] = [];
@@ -103,7 +91,7 @@ async function importProductsExample() {
                             id: mainCategory.id,
                             displayName: mainCategory.name.map((element: CategoryName) => ({
                                 value: element.displayName,
-                                language: element.language || process.env.LANGUAGE || 'da-dk',
+                                language: LANGUAGE,
                             })),
                         });
 
@@ -114,8 +102,7 @@ async function importProductsExample() {
                                 displayName: mainCategory.subCategory.name.map(
                                     (element: CategoryName) => ({
                                         value: element.displayName,
-                                        language:
-                                            element.language || process.env.LANGUAGE || 'da-dk',
+                                        language: LANGUAGE,
                                     }),
                                 ),
                             });
@@ -126,27 +113,27 @@ async function importProductsExample() {
                 )
                 .displayName(
                     productTyped.name.map((element) => ({
-                        language: element.language || process.env.LANGUAGE || 'da-dk',
+                        language: LANGUAGE,
                         value: element.name,
                     })),
                 )
                 .listPrice(
                     productTyped.list_price.map((element: Price) => ({
                         amount: element.amount,
-                        currency: element.currency || process.env.CURRENCY || 'EUR',
+                        currency: CURRENCY,
                     })),
                 )
                 .salesPrice(
                     productTyped.sales_price.map((element: Price) => ({
                         amount: element.amount,
-                        currency: element.currency || process.env.CURRENCY || 'EUR',
+                        currency: CURRENCY,
                     })),
                 )
                 .data({
                     // Map all product data fields using DataValueFactory
                     Description: DataValueFactory.multilingual(
                         productTyped.description.map((element) => ({
-                            language: element.language || process.env.LANGUAGE || 'da-dk',
+                            language: LANGUAGE,
                             value: element.text,
                         })),
                     ),
@@ -158,9 +145,7 @@ async function importProductsExample() {
                     ),
                     ...productTyped.availability.reduce(
                         (acc: Record<string, any>, element: Availability) => {
-                            acc[
-                                `${element.language || process.env.LANGUAGE || 'da-dk'}_StockLevel`
-                            ] = DataValueFactory.number(element.number);
+                            acc[`${LANGUAGE}_StockLevel`] = DataValueFactory.number(element.number);
 
                             // Initialize multilingual SoldOut and LowStock if missing
                             if (!acc.SoldOut) {
@@ -173,12 +158,12 @@ async function importProductsExample() {
                             // If availability is 0 - set SoldOut to true for this language
                             acc.SoldOut.value.values.push({
                                 language: {
-                                    value: element.language || process.env.LANGUAGE || 'da-dk',
+                                    value: LANGUAGE,
                                 },
                                 text: String(element.number === 0),
                             });
                             acc.LowStock.value.values.push({
-                                language: { value: element.language },
+                                language: { value: LANGUAGE },
                                 text: String(element.number <= 3),
                             });
 

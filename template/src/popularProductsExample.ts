@@ -23,27 +23,9 @@ import dotenv from 'dotenv';
 dotenv.config();
 
 // Import Relewise SDK classes and type guards
-import { Recommender, PopularProductsBuilder, UserFactory } from '@relewise/client';
+import { PopularProductsBuilder } from '@relewise/client';
 import { isProductRecommendationResponse } from './utils/relewiseTypeGuards.js';
-
-// Load configuration from environment variables
-const {
-    RELEWISE_DATASET_ID,
-    RELEWISE_API_KEY,
-    RELEWISE_SERVER_URL,
-    LANGUAGE = 'da-dk',
-    CURRENCY = 'EUR',
-} = process.env;
-
-// Validate required environment variables
-if (!RELEWISE_DATASET_ID || !RELEWISE_API_KEY) {
-    throw new Error('Missing RELEWISE_DATASET_ID or RELEWISE_API_KEY in .env');
-}
-
-// Instantiate the Relewise recommender client
-const recommender = new Recommender(RELEWISE_DATASET_ID, RELEWISE_API_KEY, {
-    serverUrl: RELEWISE_SERVER_URL,
-});
+import { recommender, createSettings } from './config/relewiseConfig.js';
 
 /**
  * Runs a popular products recommendation request using the Relewise SDK.
@@ -57,12 +39,7 @@ const recommender = new Recommender(RELEWISE_DATASET_ID, RELEWISE_API_KEY, {
 async function runPopularProductsExample() {
     // Build the request using the builder pattern
     // Demonstrates use of basedOn and sinceMinutesAgo
-    const builder = new PopularProductsBuilder({
-        language: LANGUAGE,
-        currency: CURRENCY,
-        displayedAtLocation: 'Frontpage', // e.g., where the recommendations will be shown
-        user: UserFactory.anonymous(), // Use UserFactory for anonymous or identified users
-    })
+    const builder = new PopularProductsBuilder(createSettings('Frontpage'))
         .setNumberOfRecommendations(8) // How many products to recommend
         .setSelectedProductProperties({ displayName: true, pricing: true }) // Which product fields to include
         // Use basedOn to recommend popular products by purchase or view count
@@ -75,7 +52,7 @@ async function runPopularProductsExample() {
     // Log the request for debugging and transparency
     console.log('PopularProductsRequest:', JSON.stringify(request, null, 2));
 
-    // Send the request to Relewise MCP
+    // Send the request to Relewise and await the response
     const response = await recommender.recommendPopularProducts(request);
 
     // Use a type guard to safely access recommendations
