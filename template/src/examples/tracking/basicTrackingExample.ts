@@ -21,7 +21,6 @@
 
 import { tracker, CURRENCY } from '../../config/relewiseConfig.js';
 import { UserFactory } from '@relewise/client';
-import { setTimeout } from 'node:timers/promises';
 
 /**
  * Demonstrates basic product view tracking
@@ -179,17 +178,9 @@ export default async function basicTrackingExample(userId?: string) {
 
     // Simulate a typical e-commerce user journey
     await trackCategoryView('headphones', testUserId);
-    await setTimeout(500); // Small delay between events
-
     await trackSearchQuery('noise cancelling headphones', testUserId);
-    await setTimeout(500);
-
     await trackProductView(testUserId);
-    await setTimeout(500);
-
     await trackAddToCart(testUserId);
-    await setTimeout(500);
-
     await trackPurchase(testUserId);
 
     console.log('\n🎉 Complete user journey tracked!');

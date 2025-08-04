@@ -49,6 +49,8 @@ npm run dev searchExample "test"
 
 If successful, you should see search results (or appropriate error messages).
 
+> **Note:** If you haven't imported product data yet, you'll see empty results `Products: []` with facet structure - this is expected and indicates the API connection is working correctly.
+
 ---
 
 ## 📦 Step 2: Provide Entities (Data Import)
@@ -110,14 +112,15 @@ _Following [Relewise Implementation Step 2](https://docs.relewise.com/docs/devel
 
 Behavioral tracking is crucial for personalization. Let's implement the essential tracking events.
 
-### 3.1 Create Tracking Examples
+### 3.1 Run the Tracking Example
 
-We need to create tracking examples since they're currently missing:
+We've created a comprehensive tracking example that demonstrates all essential behavioral events:
 
 ```bash
-# Let's create the tracking examples
-mkdir -p src/examples/tracking
+npm run dev basicTrackingExample demo_user_123
 ```
+
+This example simulates a complete user journey and tracks all the behavioral data that Relewise needs for personalization.
 
 ### 3.2 Basic Tracking Implementation
 
@@ -200,12 +203,15 @@ If you have existing order data, import it once during initial setup:
 // Import historical orders (do this ONCE before going live)
 const historicalOrders = await loadHistoricalOrders();
 for (const order of historicalOrders) {
-    await tracker.track({
+    await tracker.trackOrder({
         user: UserFactory.byAuthenticatedId(order.customerId),
-        order: {
-            trackingNumber: order.orderNumber,
-            // ... order details
-        },
+        orderNumber: order.orderNumber,
+        subtotal: { amount: order.total, currency: 'EUR' },
+        lineItems: order.items.map((item) => ({
+            productId: item.productId,
+            quantity: item.quantity,
+            lineTotal: item.lineTotal,
+        })),
     });
 }
 ```
