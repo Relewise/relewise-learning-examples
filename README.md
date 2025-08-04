@@ -4,11 +4,15 @@ This is an **internal CLI tool** for quickly scaffolding new Relewise Proof-of-C
 
 It includes:
 - TypeScript (with strict settings)
-- ESLint + Prettier preconfigured
+- ESLint + Prettier preconfigured (with custom formatting rules)
 - Relewise SDK (`@relewise/client`, `@relewise/integrations`)
-- `.vscode` launch configuration
+- `.vscode` launch configuration with MCP server integration
+- Comprehensive `examples/` folder with search, recommendations, import, and tracking
+- Configuration management with `src/config/relewiseConfig.ts`
+- Type definitions and utilities for external data integration
 - Example `docs/` folder for internal documentation
 - Ready-to-use `src/` folder with utilities and starter code
+- **QUICKSTART.md** - Complete step-by-step tutorial
 - Git initialization (optional)
 - Automatic dependency installation
 
@@ -38,21 +42,44 @@ MY-RELEWISE-POC/
 ├── .github/
 │   └── copilot-instructions.md
 ├── .vscode/
-│   └── launch.json
+│   ├── launch.json
+│   ├── mcp.json
+│   └── settings.json
 ├── docs/
 │   └── relewise-response-patterns.md
 ├── product_data/
 │   └── product_data_example.json
 ├── src/
+│   ├── config/
+│   │   └── relewiseConfig.ts
+│   ├── examples/
+│   │   ├── import/
+│   │   │   └── productImportExample.ts
+│   │   ├── recommendations/
+│   │   │   ├── popularProductsExample.ts
+│   │   │   └── purchasedWithProductExample.ts
+│   │   ├── search/
+│   │   │   ├── cdpPersonalizedSearchExample.ts
+│   │   │   ├── searchCategoryExample.ts
+│   │   │   └── searchExample.ts
+│   │   ├── tracking/
+│   │   │   └── basicTrackingExample.ts
+│   │   └── README.md
+│   ├── types/
+│   │   ├── externalData.ts
+│   │   └── interfaces.ts
 │   ├── utils/
+│   │   ├── externalDataServices.ts
 │   │   └── relewiseTypeGuards.ts
-│   ├── index.ts
-│   └── searchExample.ts
-├── .env
+│   └── index.ts
+├── .env.local
 ├── .gitignore
+├── .prettierrc
 ├── eslint.config.js
 ├── package-lock.json
 ├── package.json
+├── QUICKSTART.md
+├── README.md
 └── tsconfig.json
 ```
 
@@ -71,7 +98,7 @@ The CLI (`bin/index.js`):
 ## ✨ Example
 
 ```bash
-$ npx github:your-org/adhoc-relewise-poc
+$ npx github:Relewise/adhoc-relewise-poc
 
 🚀 Welcome to the Adhoc Relewise POC scaffolder!
 
@@ -88,7 +115,17 @@ $ npx github:your-org/adhoc-relewise-poc
 
 Next steps:
   cd my-relewise-poc
-  npm run dev
+  
+  # 1. Set up your environment variables
+  cp .env.local .env
+  # Edit .env with your Relewise credentials
+  
+  # 2. Follow the quickstart tutorial
+  cat QUICKSTART.md
+  
+  # 3. Run examples
+  npm run dev searchExample "headphones"
+  npm run dev popularProductsExample
 ```
 
 ---
@@ -96,12 +133,30 @@ Next steps:
 ## 🧩 Template Project
 
 The template includes:
-- **TypeScript** (`tsconfig.json` based on internal standards)
-- **Linting & Formatting** (`eslint`, `prettier`)
-- **Relewise SDK** preinstalled
-- `.vscode` folder for debugging
-- `docs/` folder for documentation
-- Example utilities under `src/utils`
+- **TypeScript** (`tsconfig.json` with strict settings and ES modules)
+- **Linting & Formatting** (`eslint`, `prettier` with custom rules)
+- **Relewise SDK** preinstalled with latest versions
+- **VS Code Integration**:
+  - Debug configurations (`.vscode/launch.json`)
+  - MCP server for Relewise documentation (`.vscode/mcp.json`)
+  - Workspace settings (`.vscode/settings.json`)
+- **Comprehensive Examples**:
+  - Search (basic, category, personalized with CDP)
+  - Recommendations (popular products, purchased-with-product)
+  - Product import with multilingual support
+  - User tracking implementation
+- **Configuration Management**:
+  - Centralized Relewise configuration (`src/config/relewiseConfig.ts`)
+  - Environment variable validation
+  - Pre-configured clients (searcher, recommender, integrator)
+- **Type Safety**:
+  - Custom type definitions (`src/types/`)
+  - Type guards for external data (`src/utils/relewiseTypeGuards.ts`)
+- **Documentation**:
+  - Complete quickstart tutorial (`QUICKSTART.md`)
+  - Copilot instructions for AI assistance (`.github/copilot-instructions.md`)
+  - Example documentation patterns (`docs/`)
+- **Real Product Data**: Sample dataset for immediate testing (`product_data/`)
 
 ---
 
@@ -116,12 +171,62 @@ The template includes:
 
 If you are modifying this CLI:
 ```bash
-git clone git@github.com:your-org/adhoc-relewise-poc.git
+git clone git@github.com:Relewise/adhoc-relewise-poc.git
 cd adhoc-relewise-poc
 npm install
 npm link  # to test locally
 adhoc-relewise-poc my-local-test
 ```
+
+---
+
+## 🎯 Available Examples
+
+The generated project includes comprehensive examples that you can run immediately:
+
+### Search Examples
+```bash
+npm run dev searchExample "headphones"
+npm run dev searchCategoryExample "audio"
+npm run dev cdpPersonalizedSearchExample user_1 "headphones"
+```
+
+### Recommendation Examples
+```bash
+npm run dev popularProductsExample
+npm run dev purchasedWithProductExample "00198c54-6c62-4e08-be40-a539963985d0"
+```
+
+### Import & Tracking Examples
+```bash
+npm run dev productImportExample
+npm run dev basicTrackingExample
+```
+
+Each example is fully documented and uses real product data from the included `product_data_example.json` file.
+
+---
+
+## 📚 Getting Started Guide
+
+The generated project includes a comprehensive `QUICKSTART.md` that provides:
+
+- **Step-by-step setup instructions** with environment configuration
+- **Implementation walkthrough** following official Relewise documentation
+- **Hands-on examples** you can run immediately
+- **Best practices** for production implementation
+- **Troubleshooting guide** for common issues
+
+### Key Features:
+- Environment setup with `.env.local` template
+- SDK verification process for reliable integrations
+- Real product data examples with multilingual support
+- CDP integration patterns for personalized experiences
+
+### VS Code Integration:
+- **MCP Server**: Direct access to Relewise documentation within VS Code
+- **Debug Configurations**: Pre-configured launch settings for all examples
+- **AI Assistance**: Copilot instructions for accurate Relewise SDK usage
 
 ---
 
