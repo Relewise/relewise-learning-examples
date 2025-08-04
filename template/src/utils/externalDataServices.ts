@@ -43,6 +43,7 @@ export class MockCDPService {
                 preferredCategories: ['Hi-Fi', 'Headphones'],
                 shippingCostThreshold: 15,
                 nearestWarehouse: 'EU_CENTRAL',
+                campaignIds: ['summer-sale-2024', 'audiophile-special'],
             },
             user_2: {
                 userId: 'user_2',
@@ -62,6 +63,7 @@ export class MockCDPService {
                 preferredCategories: ['Monitors', 'Computers and accessories'],
                 shippingCostThreshold: 5,
                 nearestWarehouse: 'EU_WEST',
+                campaignIds: ['tech-week-2024', 'monitor-deals'],
             },
             user_3: {
                 userId: 'user_3',
@@ -84,6 +86,7 @@ export class MockCDPService {
                 preferredCategories: ['Peripherals', 'Computers and accessories'],
                 shippingCostThreshold: 10,
                 nearestWarehouse: 'EU_NORTH',
+                campaignIds: ['accessories-bundle', 'ergonomic-week'],
             },
         };
 

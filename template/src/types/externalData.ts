@@ -25,6 +25,7 @@ export interface CDPUserProfile {
     preferredCategories: string[];
     shippingCostThreshold: number;
     nearestWarehouse: string;
+    campaignIds?: string[]; // Active campaign IDs for this user
 }
 
 export interface WeatherContext {

@@ -17,8 +17,18 @@
  * - Preferred categories
  *
  * Usage:
- * - Run: `npm run dev cdpPersonalizedSearchExample user_1 "running shoes"`
+ * - Run: `npm run dev cdpPersonalizedSearchExample user_1 "headphones"`
  * - The first argument is the user ID, second is the search term
+ *
+ * Note: This example includes commented relevance modifier examples.
+ * To use them, uncomment the code and add these imports:
+ * ```typescript
+ * import {
+ *     DataValueFactory,
+ *     ValueSelectorFactory,
+ *     ConditionBuilder
+ * } from '@relewise/client';
+ * ```
  */
 
 import { ProductSearchBuilder, UserFactory } from '@relewise/client';
@@ -76,9 +86,99 @@ export async function searchWithCDPPersonalization({
             return facetBuilder;
         });
 
-        // Note: In a real implementation, you would use relevance modifiers here
-        // to boost preferred brands, price ranges, etc. based on CDP data
-        // This example demonstrates the integration pattern and data flow
+        // Examples of relevance modifiers for CDP-driven personalization
+        // Uncomment and adapt these examples based on your specific CDP data structure:
+
+        /*
+        // 1. Boost preferred brands based on CDP affinity scores
+        searchBuilder.relevanceModifiers((rm) => {
+            cdpProfile.top3Brands.forEach((brand, index) => {
+                const multiplier = 1.5 - index * 0.2; // Decreasing boost: 1.5, 1.3, 1.1
+                rm.addProductDataRelevanceModifier(
+                    'Brand',
+                    (c) => c.addEqualsCondition(DataValueFactory.string(brand)),
+                    ValueSelectorFactory.fixedDoubleValueSelector(multiplier),
+                );
+            });
+            return rm;
+        });
+
+        // 2. Boost products within preferred price range
+        searchBuilder.relevanceModifiers((rm) => {
+            rm.addProductDataRelevanceModifier(
+                'SalesPrice',
+                (c) => c.addRangeCondition(
+                    DataValueFactory.number(cdpProfile.preferredPriceRange.min),
+                    DataValueFactory.number(cdpProfile.preferredPriceRange.max)
+                ),
+                ValueSelectorFactory.fixedDoubleValueSelector(1.3),
+            );
+            return rm;
+        });
+
+        // 3. Boost recently viewed but not purchased items (browse abandonment recovery)
+        if (cdpProfile.recentlyViewedButNotPurchased.length > 0) {
+            searchBuilder.relevanceModifiers((rm) => {
+                cdpProfile.recentlyViewedButNotPurchased.forEach((productId) => {
+                    rm.addProductRelevanceModifier(
+                        (c) => c.addIdFilter(productId),
+                        ValueSelectorFactory.fixedDoubleValueSelector(1.4),
+                    );
+                });
+                return rm;
+            });
+        }
+
+        // 4. Boost products from preferred categories
+        searchBuilder.relevanceModifiers((rm) => {
+            cdpProfile.preferredCategories.forEach((category) => {
+                rm.addProductDataRelevanceModifier(
+                    'Category',
+                    (c) => c.addEqualsCondition(DataValueFactory.string(category)),
+                    ValueSelectorFactory.fixedDoubleValueSelector(1.2),
+                );
+            });
+            return rm;
+        });
+
+        // 5. Apply spending pattern adjustments for high-value customers
+        if (cdpProfile.spendingPatternMultiplier > 1.0) {
+            searchBuilder.relevanceModifiers((rm) => {
+                rm.addProductDataRelevanceModifier(
+                    'SalesPrice',
+                    (c) => c.addGreaterThanCondition(DataValueFactory.number(200)),
+                    ValueSelectorFactory.fixedDoubleValueSelector(cdpProfile.spendingPatternMultiplier),
+                );
+                return rm;
+            });
+        }
+
+        // 6. Geographic/warehouse-based relevance (shipping optimization)
+        if (cdpProfile.nearestWarehouse) {
+            searchBuilder.relevanceModifiers((rm) => {
+                rm.addProductDataRelevanceModifier(
+                    'WarehouseLocation',
+                    (c) => c.addEqualsCondition(DataValueFactory.string(cdpProfile.nearestWarehouse)),
+                    ValueSelectorFactory.fixedDoubleValueSelector(1.1),
+                );
+                return rm;
+            });
+        }
+
+        // 7. Boost products with campaign IDs (like your example)
+        if (cdpProfile.campaignIds && cdpProfile.campaignIds.length > 0) {
+            searchBuilder.relevanceModifiers((rm) => {
+                cdpProfile.campaignIds.forEach((campaignId) => {
+                    rm.addProductDataRelevanceModifier(
+                        'campaignIds',
+                        (c) => c.addContainsCondition(DataValueFactory.string(campaignId)),
+                        ValueSelectorFactory.fixedDoubleValueSelector(1.3),
+                    );
+                });
+                return rm;
+            });
+        }
+        */
     } else {
         console.log('🔄 Using default search (no CDP data available)');
     }
