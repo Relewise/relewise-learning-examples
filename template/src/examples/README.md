@@ -6,7 +6,8 @@ This directory contains comprehensive examples demonstrating various Relewise SD
 
 ### 🔍 Search Examples (`examples/search/`)
 
-- **`searchExample.ts`** - Basic product search with facets, filters, and term predictions
+- **`termBasedSearchExample.ts`** - Term-based product search with facets, filters, and term predictions
+- **`categoryBasedSearchExample.ts`** - Category-based search for Product Listing Pages (PLP) with breadcrumbs and filtering
 - **`searchCategoryExample.ts`** - Product category hierarchy search with facets
 - **`cdpPersonalizedSearchExample.ts`** - CDP-driven personalized search with external data integration
 
@@ -25,7 +26,8 @@ Use the main entry point to run any example:
 
 ```bash
 # Search examples
-npm run dev searchExample "headphones"
+npm run dev termBasedSearchExample "headphones"
+npm run dev categoryBasedSearchExample "5"  # Hi-Fi category
 npm run dev searchCategoryExample "category-id"
 npm run dev cdpPersonalizedSearchExample user_1 "headphones"
 

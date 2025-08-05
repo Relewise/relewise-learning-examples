@@ -77,9 +77,10 @@ MY-RELEWISE-POC/
 │   │   │   ├── popularProductsExample.ts
 │   │   │   └── purchasedWithProductExample.ts
 │   │   ├── search/
+│   │   │   ├── categoryBasedSearchExample.ts
 │   │   │   ├── cdpPersonalizedSearchExample.ts
 │   │   │   ├── searchCategoryExample.ts
-│   │   │   └── searchExample.ts
+│   │   │   └── termBasedSearchExample.ts
 │   │   ├── tracking/
 │   │   │   └── basicTrackingExample.ts
 │   │   └── README.md
@@ -142,7 +143,8 @@ Next steps:
   cat QUICKSTART.md
   
   # 3. Run examples
-  npm run dev searchExample "headphones"
+  npm run dev termBasedSearchExample "headphones"
+  npm run dev categoryBasedSearchExample "5"
   npm run dev popularProductsExample
 ```
 
@@ -205,7 +207,8 @@ The generated project includes comprehensive examples that you can run immediate
 
 ### Search Examples
 ```bash
-npm run dev searchExample "headphones"
+npm run dev termBasedSearchExample "headphones"
+npm run dev categoryBasedSearchExample "5"  # Hi-Fi category from sample data
 npm run dev searchCategoryExample "5"  # Hi-Fi category from sample data
 npm run dev cdpPersonalizedSearchExample user_1 "headphones"
 ```

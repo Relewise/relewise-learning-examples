@@ -23,7 +23,8 @@ A comprehensive collection of **educational examples** demonstrating advanced in
 3. **Build and run examples**:
     ```bash
     npm run build
-    npm run dev searchExample "headphones"
+    npm run dev termBasedSearchExample "headphones"
+    npm run dev categoryBasedSearchExample "5"
     npm run dev cdpPersonalizedSearchExample user_1 "headphones"
     npm run dev popularProductsExample
     ```
@@ -113,7 +114,8 @@ All examples use **actual product data** instead of mock data:
 
 | Example                               | Description             | Key Features                                      |
 | ------------------------------------- | ----------------------- | ------------------------------------------------- |
-| **`searchExample.ts`**                | Basic product search    | Facets, filters, term predictions, real data      |
+| **`termBasedSearchExample.ts`**       | Term-based search       | Facets, filters, term predictions, real data      |
+| **`categoryBasedSearchExample.ts`**   | Category PLP search     | Category filtering, breadcrumbs, PLP patterns     |
 | **`searchCategoryExample.ts`**        | Category search         | Hierarchy navigation, faceted browsing            |
 | **`cdpPersonalizedSearchExample.ts`** | CDP integration         | User profiling, brand preferences, external data  |
 | **`popularProductsExample.ts`**       | Popular products        | Popularity algorithms, type-safe responses        |
@@ -124,8 +126,12 @@ All examples use **actual product data** instead of mock data:
 
 ```bash
 # Search with real product terms
-npm run dev searchExample "headphones"
-npm run dev searchExample "monitor"
+npm run dev termBasedSearchExample "headphones"
+npm run dev termBasedSearchExample "monitor"
+
+# Category-based search for PLPs
+npm run dev categoryBasedSearchExample "5"  # Hi-Fi category
+npm run dev categoryBasedSearchExample "10" # Computers category
 
 # Personalized search with user context
 npm run dev cdpPersonalizedSearchExample user_1 "headphones"

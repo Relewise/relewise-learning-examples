@@ -10,7 +10,7 @@ const [sampleName, ...sampleArgs] = process.argv.slice(2);
 
 if (!sampleName) {
     console.error('❌ Please specify a sample to run.');
-    console.log('Example: npm run dev searchExample');
+    console.log('Example: npm run dev termBasedSearchExample');
     listAvailableSamples();
     process.exit(1);
 }

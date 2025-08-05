@@ -1,7 +1,7 @@
 /**
- * Example: Type-Safe Product Search with Relewise SDK
+ * Example: Term-Based Product Search with Relewise SDK
  *
- * This file demonstrates how to perform a product search using the Relewise TypeScript SDK.
+ * This file demonstrates how to perform a term-based product search using the Relewise TypeScript SDK.
  *
  * Key Features:
  * - Uses the builder pattern (`ProductSearchBuilder`, `SearchCollectionBuilder`) for request construction.
@@ -11,7 +11,7 @@
  *
  * Usage:
  * 1. Ensure your `.env` file contains RELEWISE_DATASET_ID, RELEWISE_API_KEY, and RELEWISE_SERVER_URL.
- * 2. Build with `npx tsc` and run with `node dist/searchExample.js` or import/run from `index.ts`.
+ * 2. Build with `npx tsc` and run with `node dist/termBasedSearchExample.js` or import/run from `index.ts`.
  * 3. Use this as a reference for implementing other Relewise-powered search or prediction features.
  *
  * For more, see:
@@ -104,12 +104,12 @@ export async function searchProducts({
 }
 
 /**
- * Default export: Runs a sample search and logs results.
+ * Default export: Runs a sample term-based search and logs results.
  *
  * This function can be run directly or imported from `index.ts`.
  * It demonstrates safe handling and output of products, facets, and predictions.
  */
-export default async function runSearchExample(termArg?: string) {
+export default async function runTermBasedSearchExample(termArg?: string) {
     const term = termArg || 'Some Search Term';
 
     const resp = await searchProducts({
