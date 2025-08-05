@@ -25,7 +25,7 @@ It includes:
 You can run this CLI directly from GitHub using `npx`:
 
 ```bash
-npx github:Relewise/adhoc-relewise-poc
+npx github:Relewise/adhoc-relewise-examples
 ```
 
 You will be prompted for:
@@ -117,7 +117,7 @@ The CLI (`bin/index.js`):
 ## ✨ Example
 
 ```bash
-$ npx github:Relewise/adhoc-relewise-poc
+$ npx github:Relewise/adhoc-relewise-examples
 
 🚀 Welcome to Relewise Examples and AI instructions!
 
@@ -192,7 +192,7 @@ The template includes:
 
 If you are modifying this CLI:
 ```bash
-git clone git@github.com:Relewise/adhoc-relewise-poc.git
+git clone git@github.com:Relewise/adhoc-relewise-examples.git
 cd adhoc-relewise-examples
 npm install
 npm link  # to test locally
