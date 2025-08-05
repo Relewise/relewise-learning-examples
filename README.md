@@ -1,10 +1,11 @@
-# Adhoc Relewise Examples and AI instructions
+# Adhoc Relewise Examples CLI
 
-This is an **internal CLI tool** for quick scaffolding of Relewise examples and AI instructions with a preconfigured Node.js + TypeScript setup.  
+A **CLI tool** for quick scaffolding of Relewise examples with a preconfigured Node.js + TypeScript setup.  
 
 📖 **[View the Complete Quickstart Guide →](./template/QUICKSTART.md)**  
 
-It includes:
+## ✨ Features
+
 - TypeScript (with strict settings)
 - ESLint + Prettier preconfigured (with custom formatting rules)
 - Relewise SDK (`@relewise/client`, `@relewise/integrations`)
@@ -20,12 +21,40 @@ It includes:
 
 ---
 
-## 🚀 Usage
+## 🚀 Installation & Usage
 
-You can run this CLI directly from GitHub using `npx`:
+### Option 1: Run directly with npx (Recommended)
+
+```bash
+npx @relewise/adhoc-examples-cli
+```
+
+### Option 2: Install globally
+
+```bash
+npm install -g @relewise/adhoc-examples-cli
+relewise-examples
+```
+
+### Option 3: Run from GitHub
 
 ```bash
 npx github:Relewise/adhoc-relewise-examples
+```
+
+## 📋 Requirements
+
+- Node.js 16 or higher
+- npm or yarn
+
+## 🛠️ CLI Options
+
+```bash
+# Show help
+npx @relewise/adhoc-examples-cli --help
+
+# Show version
+npx @relewise/adhoc-examples-cli --version
 ```
 
 You will be prompted for:

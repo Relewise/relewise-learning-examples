@@ -1,0 +1,52 @@
+{
+    "name": "@relewise/adhoc-examples-cli",
+    "version": "1.0.0",
+    "description": "CLI tool to scaffold new Relewise Node.js projects with TypeScript, examples, and AI instructions",
+    "author": "Relewise",
+    "license": "MIT",
+    "homepage": "https://github.com/Relewise/adhoc-relewise-examples#readme",
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/Relewise/adhoc-relewise-examples.git"
+    },
+    "bugs": {
+        "url": "https://github.com/Relewise/adhoc-relewise-examples/issues"
+    },
+    "keywords": [
+        "relewise",
+        "cli",
+        "scaffold",
+        "typescript",
+        "examples",
+        "search",
+        "recommendations",
+        "ai"
+    ],
+    "bin": {
+        "relewise-examples": "./bin/index.js"
+    },
+    "type": "module",
+    "engines": {
+        "node": ">=16.0.0"
+    },
+    "files": [
+        "bin/",
+        "template/",
+        "README.md",
+        "LICENSE"
+    ],
+    "scripts": {
+        "test": "node test/validate-cli.js",
+        "prepublishOnly": "npm test",
+        "validate": "npm test"
+    },
+    "dependencies": {
+        "fs-extra": "^11.1.1",
+        "inquirer": "^9.0.0"
+    },
+    "devDependencies": {
+        "@types/fs-extra": "^11.0.4",
+        "@types/inquirer": "^9.0.7",
+        "@types/node": "^20.0.0"
+    }
+}

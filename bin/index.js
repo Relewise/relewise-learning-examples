@@ -8,6 +8,56 @@ import { execSync } from 'child_process';
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
+function showHelp() {
+  console.log(`
+🚀 Relewise Examples CLI
+
+A CLI tool to scaffold new Relewise Node.js projects with TypeScript, examples, and AI instructions.
+
+USAGE:
+  npx @relewise/adhoc-examples-cli
+  relewise-examples
+
+OPTIONS:
+  -h, --help     Show this help message
+  -v, --version  Show version number
+
+DESCRIPTION:
+  This tool creates a new Relewise project with:
+  - TypeScript configuration
+  - ESLint + Prettier setup
+  - Relewise SDK integration
+  - Example code for search, recommendations, tracking
+  - AI instructions and documentation
+  - VS Code configuration
+
+EXAMPLES:
+  npx @relewise/adhoc-examples-cli
+  npx github:Relewise/adhoc-relewise-examples
+
+For more information, visit: https://github.com/Relewise/adhoc-relewise-examples
+`);
+}
+
+function showVersion() {
+  // Read version from package.json
+  const packagePath = path.join(__dirname, '..', 'package.json');
+  const packageJson = JSON.parse(fs.readFileSync(packagePath, 'utf8'));
+  console.log(packageJson.version);
+}
+
+// Check for command line arguments
+const args = process.argv.slice(2);
+if (args.includes('-h') || args.includes('--help')) {
+  showHelp();
+  process.exit(0);
+}
+
+if (args.includes('-v') || args.includes('--version')) {
+  showVersion();
+  process.exit(0);
+}
+
 async function scaffold() {
   console.log('🚀 Welcome to the Relewise examples and AI instructions setup!\n');
 

@@ -1,0 +1,20 @@
+# Exclude development files
+node_modules/
+dist/
+.env
+.DS_Store
+
+# Exclude editor files
+.vscode/
+.idea/
+
+# Exclude temporary files
+*.log
+*.tmp
+.cache/
+
+# Exclude test coverage
+coverage/
+
+# Exclude OS generated files
+Thumbs.db

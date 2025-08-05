@@ -1,0 +1,14 @@
+# Exclude everything by default
+*
+
+# Include necessary files for npm package
+!bin/
+!template/
+!README.md
+!LICENSE
+!package.json
+
+# Exclude sensitive files even if in included directories
+.env
+*.log
+.DS_Store
