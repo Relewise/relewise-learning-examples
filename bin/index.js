@@ -9,19 +9,19 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 async function scaffold() {
-  console.log('🚀 Welcome to the Relewise example and POC scaffolder!\n');
+  console.log('🚀 Welcome to the Relewise examples and AI instructions setup!\n');
 
   // 1. Prompt user for details
   const answers = await inquirer.prompt([
     {
       name: 'projectName',
       message: 'Project name:',
-      default: 'my-relewise-poc'
+      default: 'my-relewise-examples'
     },
     {
       name: 'description',
       message: 'Project description:',
-      default: 'An Adhoc Relewise Proof of Concept project'
+      default: 'Relewise examples and AI instructions for learning and experimentation'
     },
     {
       name: 'initGit',
