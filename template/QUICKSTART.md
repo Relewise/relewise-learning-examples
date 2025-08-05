@@ -44,7 +44,7 @@ Your API Key must have **Read & Write permissions** for:
 ### 1.2 Verify Setup
 
 ```bash
-npm run dev searchExample "test"
+npm run dev termBasedSearchExample "test"
 ```
 
 If successful, you should see a result similar to this (or appropriate error messages).
@@ -189,7 +189,7 @@ Verify your products were imported:
 
 ```bash
 npm run build
-npm run dev searchExample "TV"
+npm run dev termBasedSearchExample "TV"
 ```
 
 **Expected Results:**
@@ -444,7 +444,7 @@ Now that you have data, index configuration, and tracking, implement search func
 ### 6.1 Basic Product Search
 
 ```bash
-npm run dev searchExample "headphones"
+npm run dev termBasedSearchExample "headphones"
 ```
 
 **Key features demonstrated:**
@@ -695,7 +695,7 @@ Congratulations! You now have a deep understanding of how to create a working Re
 - 📊 `basicTrackingExample` - Complete behavioral tracking
 - 📥 `productImportExample` - Real multilingual product data import
 - � `historicalDataImportExample` - Historical order data import with multi-market patterns
-- �🔍 `searchExample` - Basic product search with facets
+- �🔍 `termBasedSearchExample` - Basic product search with facets
 - 🔍 `searchCategoryExample` - Category-based navigation
 - 🔍 `cdpPersonalizedSearchExample` - Advanced personalization with external data
 - 🎯 `popularProductsExample` - Popularity-based recommendations
