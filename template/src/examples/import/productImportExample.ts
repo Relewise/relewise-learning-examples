@@ -91,7 +91,7 @@ async function importProductsExample() {
                             id: mainCategory.id,
                             displayName: mainCategory.name.map((element: CategoryName) => ({
                                 value: element.displayName,
-                                language: LANGUAGE,
+                                language: element.language,
                             })),
                         });
 
@@ -102,7 +102,7 @@ async function importProductsExample() {
                                 displayName: mainCategory.subCategory.name.map(
                                     (element: CategoryName) => ({
                                         value: element.displayName,
-                                        language: LANGUAGE,
+                                        language: element.language,
                                     }),
                                 ),
                             });
@@ -113,27 +113,27 @@ async function importProductsExample() {
                 )
                 .displayName(
                     productTyped.name.map((element) => ({
-                        language: LANGUAGE,
+                        language: element.language,
                         value: element.name,
                     })),
                 )
                 .listPrice(
                     productTyped.list_price.map((element: Price) => ({
                         amount: element.amount,
-                        currency: CURRENCY,
+                        currency: element.currency,
                     })),
                 )
                 .salesPrice(
                     productTyped.sales_price.map((element: Price) => ({
                         amount: element.amount,
-                        currency: CURRENCY,
+                        currency: element.currency,
                     })),
                 )
                 .data({
                     // Map all product data fields using DataValueFactory
                     Description: DataValueFactory.multilingual(
                         productTyped.description.map((element) => ({
-                            language: LANGUAGE,
+                            language: element.language,
                             value: element.text,
                         })),
                     ),
@@ -145,7 +145,7 @@ async function importProductsExample() {
                     ),
                     ...productTyped.availability.reduce(
                         (acc: Record<string, any>, element: Availability) => {
-                            acc[`${LANGUAGE}_StockLevel`] = DataValueFactory.number(element.number);
+                            acc[`${element.language}_StockLevel`] = DataValueFactory.number(element.number);
 
                             // Initialize multilingual SoldOut and LowStock if missing
                             if (!acc.SoldOut) {
@@ -158,12 +158,12 @@ async function importProductsExample() {
                             // If availability is 0 - set SoldOut to true for this language
                             acc.SoldOut.value.values.push({
                                 language: {
-                                    value: LANGUAGE,
+                                    value: element.language,
                                 },
                                 text: String(element.number === 0),
                             });
                             acc.LowStock.value.values.push({
-                                language: { value: LANGUAGE },
+                                language: { value: element.language },
                                 text: String(element.number <= 3),
                             });
 
