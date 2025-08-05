@@ -28,7 +28,7 @@
  */
 
 import 'dotenv/config';
-import { Trackable, UserFactory } from '@relewise/client';
+import { UserFactory, Order, Trackable } from '@relewise/client';
 import { integrator } from '../../config/relewiseConfig.js';
 import fs from 'fs/promises';
 import path from 'path';
@@ -59,9 +59,12 @@ interface HistoricalOrder {
  */
 async function importHistoricalOrders() {
     console.log('🔄 Starting historical order data import...');
-    
+
     // Load historical order data from local JSON file
-    const dataPath = path.resolve(__dirname, '../../../product_data/historical_orders_example.json');
+    const dataPath = path.resolve(
+        __dirname,
+        '../../../product_data/historical_orders_example.json',
+    );
     let historicalOrders: HistoricalOrder[];
 
     try {
@@ -84,7 +87,7 @@ async function importHistoricalOrders() {
             // Create user with proper classifications
             const user = UserFactory.byAuthenticatedId(orderData.customerId);
             user.classifications = orderData.userClassifications;
-            
+
             // Add company association for B2B orders
             if (orderData.companyId) {
                 user.company = { id: orderData.companyId };
@@ -92,15 +95,15 @@ async function importHistoricalOrders() {
 
             // Calculate order total
             const orderTotal = orderData.lineItems.reduce(
-                (total, item) => total + (item.quantity * item.lineTotal), 
-                0
+                (total, item) => total + item.quantity * item.lineTotal,
+                0,
             );
 
             // Create order tracking object
-            const order: Trackable = {
+            const order: Order = {
                 $type: 'Relewise.Client.DataTypes.Order, Relewise.Client',
                 orderNumber: orderData.orderNumber,
-                lineItems: orderData.lineItems.map(item => ({
+                lineItems: orderData.lineItems.map((item) => ({
                     product: { id: item.productId },
                     quantity: item.quantity,
                     lineTotal: item.lineTotal,
@@ -111,8 +114,6 @@ async function importHistoricalOrders() {
                     amount: orderTotal,
                     currency: { value: orderData.currency },
                 },
-                // Important: Use actual order date for historical data
-                utcTime: orderData.orderDate,
             };
 
             orders.push(order);
@@ -122,12 +123,11 @@ async function importHistoricalOrders() {
             if (orders.length >= batchSize) {
                 await processBatch(orders, processedCount, historicalOrders.length);
                 orders.length = 0; // Clear the array
-                
+
                 // Rate limiting - pause between batches
                 console.log('⏸️  Pausing 2 seconds between batches to respect API limits...');
-                await new Promise(resolve => setTimeout(resolve, 2000));
+                await new Promise((resolve) => setTimeout(resolve, 2000));
             }
-
         } catch (error) {
             console.error(`❌ Error processing order ${orderData.orderNumber}:`, error);
             errorCount++;
@@ -143,14 +143,20 @@ async function importHistoricalOrders() {
     console.log('\n📊 Historical Data Import Summary:');
     console.log(`✅ Successfully processed: ${processedCount} orders`);
     console.log(`❌ Errors encountered: ${errorCount} orders`);
-    console.log(`📈 Import completion: ${((processedCount / historicalOrders.length) * 100).toFixed(1)}%`);
-    
+    console.log(
+        `📈 Import completion: ${((processedCount / historicalOrders.length) * 100).toFixed(1)}%`,
+    );
+
     if (errorCount === 0) {
         console.log('\n🎉 Historical data import completed successfully!');
         console.log('💡 Personalization benefits should be available immediately.');
-        console.log('🔄 You can now run search and recommendation examples to see improved results.');
+        console.log(
+            '🔄 You can now run search and recommendation examples to see improved results.',
+        );
     } else {
-        console.log(`\n⚠️  Import completed with ${errorCount} errors. Check logs above for details.`);
+        console.log(
+            `\n⚠️  Import completed with ${errorCount} errors. Check logs above for details.`,
+        );
     }
 }
 
@@ -159,16 +165,17 @@ async function importHistoricalOrders() {
  */
 async function processBatch(orders: Trackable[], processedCount: number, totalCount: number) {
     try {
-        console.log(`📤 Processing batch: ${processedCount - orders.length + 1}-${processedCount} of ${totalCount}`);
-        
+        console.log(
+            `📤 Processing batch: ${processedCount - orders.length + 1}-${processedCount} of ${totalCount}`,
+        );
+
         const batchResponse = await integrator.batch(orders);
-        
+
         if (batchResponse) {
             console.log(`✅ Batch processed successfully (${orders.length} orders)`);
         } else {
             console.log(`⚠️  Batch response was empty, but no error thrown`);
         }
-        
     } catch (error) {
         console.error(`❌ Failed to process batch:`, error);
         throw error; // Re-throw to be handled by caller
