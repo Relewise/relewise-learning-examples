@@ -1,14 +1,15 @@
-# Exclude everything by default
-*
-
-# Include necessary files for npm package
-!bin/
-!template/
-!README.md
-!LICENSE
-!package.json
-
-# Exclude sensitive files even if in included directories
-.env
+# Exclude development and build files
+node_modules/
+dist/
+coverage/
+.cache/
 *.log
 .DS_Store
+.env*
+
+# Exclude editor files
+.vscode/
+.idea/
+
+# But include template/.vscode since it's part of the scaffold
+!template/.vscode/
