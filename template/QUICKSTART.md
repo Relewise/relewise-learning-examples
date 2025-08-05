@@ -44,7 +44,6 @@ Your API Key must have **Read & Write permissions** for:
 ### 1.2 Verify Setup
 
 ```bash
-npm run build
 npm run dev searchExample "test"
 ```
 
@@ -330,10 +329,9 @@ For existing businesses with order history, importing historical data provides i
 - You want immediate personalization instead of waiting for new behavioral data
 - You're migrating from another personalization platform
 
-> **Important SDK Limitation:** The current Relewise JavaScript SDK does not support importing historical data with preserved timestamps. The `Trackable` interface and `integrator.batch()` method do not include timestamp fields. All imported orders will be timestamped with the current import time. This means the import provides order structure and customer purchase patterns but not historical timeline data.
+> **Historical Data Import Approach:** Relewise supports historical data import using the JavaScript SDK's batch functionality. All imported orders will be timestamped with the current import time for analytics tracking, which provides a clean baseline for reporting. To preserve the original order timeline for personalization algorithms, you can include a `"HistoricOrderDate"` data field with the original order date (using `DataValueFactory.string()` with ISO date format). This dual-timestamp approach gives you both accurate import tracking and proper personalization weighting.
 
-> **Historical Date Workaround:** You can preserve historical order dates for recommendation weighting by using a data field called `"HistoricOrderDate"`. Set this field with the original order date (as an ISO string wrapped in `DataValueFactory.string()`) in each order's data. Relewise will use these dates for weighting and decay in recommendations, ensuring older orders have less influence than newer ones. Note: Revenue analytics will still show orders as imported on the current date, but personalization algorithms will respect the historical timeline.
-The custom weighing is a feature that Relewise Support will assist with. 
+> **Personalization Timeline Preservation:** When you include the `HistoricOrderDate` data field, Relewise's recommendation algorithms will use these dates for proper weighting and decay, ensuring older orders have appropriate influence compared to newer ones. This means your recommendations will reflect the true customer journey timeline. Revenue analytics will show orders as imported on the current date (providing clear audit trails), while personalization respects the historical timeline. The Relewise Support team can assist with configuring custom weighting strategies for your specific business needs. 
 
 **Option 1: Use the Provided Example Script**
 
