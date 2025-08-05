@@ -1,6 +1,6 @@
-# Adhoc Relewise POC Scaffolder
+# Adhoc Relewise Examples and AI instructions
 
-This is an **internal CLI tool** for quickly scaffolding new Relewise Proof-of-Concept (POC) projects with a preconfigured Node.js + TypeScript setup.  
+This is an **internal CLI tool** for quick scaffolding of Relewise examples and AI instructions with a preconfigured Node.js + TypeScript setup.  
 
 📖 **[View the Complete Quickstart Guide →](./template/QUICKSTART.md)**  
 
@@ -55,7 +55,7 @@ For complete setup instructions, see the **[QUICKSTART.md](./template/QUICKSTART
 When generated, a new project will look like this:
 
 ```
-MY-RELEWISE-POC/
+MY-RELEWISE-EXAMPLES/
 ├── .github/
 │   └── copilot-instructions.md
 ├── .vscode/
@@ -119,13 +119,13 @@ The CLI (`bin/index.js`):
 ```bash
 $ npx github:Relewise/adhoc-relewise-poc
 
-🚀 Welcome to the Adhoc Relewise POC scaffolder!
+🚀 Welcome to Relewise Examples and AI instructions!
 
-? Project name: my-relewise-poc
-? Project description: Test POC for Relewise
+? Project name: my-relewise-examples
+? Project description: Examples and AI instructions for Developing for Relewise
 ? Initialize a new Git repository? (Y/n) Y
 
-📂 Creating project in /path/to/my-relewise-poc
+📂 Creating project in /path/to/my-relewise-examples
 🧹 Removed template .git folder
 📦 Installing dependencies (this may take a minute)...
 🔧 Initializing Git repository...
@@ -133,7 +133,7 @@ $ npx github:Relewise/adhoc-relewise-poc
 ✅ Project scaffolded successfully!
 
 Next steps:
-  cd my-relewise-poc
+  cd my-relewise-examples
   
   # 1. Configure your environment variables
   # Edit .env with your Relewise credentials (already created from template)
@@ -193,10 +193,10 @@ The template includes:
 If you are modifying this CLI:
 ```bash
 git clone git@github.com:Relewise/adhoc-relewise-poc.git
-cd adhoc-relewise-poc
+cd adhoc-relewise-examples
 npm install
 npm link  # to test locally
-adhoc-relewise-poc my-local-test
+adhoc-relewise-examples my-local-test
 ```
 
 ---
