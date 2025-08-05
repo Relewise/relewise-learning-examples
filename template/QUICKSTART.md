@@ -310,7 +310,24 @@ For existing businesses with order history, importing historical data provides i
 - You want immediate personalization instead of waiting for new behavioral data
 - You're migrating from another personalization platform
 
-**Option 1: Bulk Historical Import (Recommended for large datasets)**
+**Option 1: Use the Provided Example Script**
+
+We've included a complete historical data import example with sample order data:
+
+```bash
+npm run dev historicalDataImportExample
+```
+
+This script demonstrates:
+- Loading historical orders from `product_data/historical_orders_example.json`
+- Multi-market order patterns (DK, SE, NO, GB)
+- B2B and B2C customer segmentation
+- Rate limiting and batch processing
+- Progress tracking and error handling
+
+**Option 2: Bulk Historical Import (For your own data)**
+
+For importing your own historical order data:
 
 ```typescript
 // Import historical orders for immediate personalization baseline
@@ -331,6 +348,8 @@ for (let i = 0; i < historicalOrders.length; i += batchSize) {
                 quantity: item.quantity,
                 lineTotal: item.lineTotal,
             })),
+            // Important: Use actual order date for historical data
+            utcTime: new Date(order.orderDate).toISOString(),
         });
     }
     
@@ -339,7 +358,7 @@ for (let i = 0; i < historicalOrders.length; i += batchSize) {
 }
 ```
 
-**Option 2: Gradual Import (Recommended for smaller datasets)**
+**Option 3: Gradual Import (For smaller datasets)**
 
 ```typescript
 // Import gradually during low-traffic periods
@@ -639,7 +658,8 @@ Congratulations! You now have a working Relewise implementation with:
 
 - 📊 `basicTrackingExample` - Complete behavioral tracking
 - 📥 `productImportExample` - Real multilingual product data import
-- 🔍 `searchExample` - Basic product search with facets
+- � `historicalDataImportExample` - Historical order data import with multi-market patterns
+- �🔍 `searchExample` - Basic product search with facets
 - 🔍 `searchCategoryExample` - Category-based navigation
 - 🔍 `cdpPersonalizedSearchExample` - Advanced personalization with external data
 - 🎯 `popularProductsExample` - Popularity-based recommendations
