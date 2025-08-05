@@ -44,7 +44,7 @@ Your API Key must have **Read & Write permissions** for:
 ### 1.2 Verify Setup
 
 ```bash
-npm run dev termBasedSearchExample "test"
+npm run dev termBasedSearchExample "TV"
 ```
 
 If successful, you should see a result similar to this (or appropriate error messages).
@@ -68,7 +68,7 @@ Facets: {
 Predictions: []
 ```
 
-> **Note:** Even if you have imported product data, you'll see empty results `Products: []` with facet structure - this is expected and indicates the API connection is working correctly. Reason being that "test" does not return anything in particular and the index has not yet been configured. 
+> **Note:** Even if you have imported product data, you'll see empty results `Products: []` with facet structure - this is expected and indicates the API connection is working correctly. Reason being that "TV" does not return anything in particular and the index has not yet been configured. 
 
 ---
 

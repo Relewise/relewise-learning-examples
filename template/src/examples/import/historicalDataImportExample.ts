@@ -209,7 +209,6 @@ function demonstrateOrderPatterns() {
     console.log('   • Cross-market personalization patterns');
     console.log('   • B2B vs B2C behavioral differences');
     console.log('   • Product affinity and bundle recommendations');
-    console.log('   • Customer lifetime value analysis');
 }
 
 /** Default export: runnable from index.ts */
