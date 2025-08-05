@@ -188,7 +188,6 @@ Verify your products were imported:
 ### 4.2 Test Search Index
 
 ```bash
-npm run build
 npm run dev termBasedSearchExample "TV"
 ```
 
