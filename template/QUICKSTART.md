@@ -12,15 +12,7 @@ This tutorial follows the [official Relewise implementation steps](https://docs.
 
 ## 🚀 Step 1: Project Setup
 
-### 1.1 Clone and Install
-
-```bash
-git clone <your-repo>
-cd my-project
-npm install
-```
-
-### 1.2 Environment Configuration
+### 1.1 Environment Configuration
 
 Your project includes a pre-configured `.env` file with placeholders. Update it with your Relewise credentials:
 
@@ -49,16 +41,35 @@ Your API Key must have **Read & Write permissions** for:
 
 > **Important:** Start with the sandbox environment (`https://sandbox-api.relewise.com`) for development and testing.
 
-### 1.3 Verify Setup
+### 1.2 Verify Setup
 
 ```bash
 npm run build
 npm run dev searchExample "test"
 ```
 
-If successful, you should see search results (or appropriate error messages).
+If successful, you should see a result similar to this (or appropriate error messages).
+```json
+Products: []
+Facets: {
+  items: [
+    {
+      '$type': 'Relewise.Client.DataTypes.Search.Facets.Result.BrandFacetResult, Relewise.Client',
+      available: [],
+      field: 'Brand'
+    },
+    {
+      '$type': 'Relewise.Client.DataTypes.Search.Facets.Result.PriceRangeFacetResult, Relewise.Client',
+      available: [Object],
+      priceSelectionStrategy: 'Product',
+      field: 'SalesPrice'
+    }
+  ]
+}
+Predictions: []
+```
 
-> **Note:** If you haven't imported product data yet, you'll see empty results `Products: []` with facet structure - this is expected and indicates the API connection is working correctly.
+> **Note:** Even if you have imported product data, you'll see empty results `Products: []` with facet structure - this is expected and indicates the API connection is working correctly. Reason being that "test" does not return anything in particular and the index has not yet been configured. 
 
 ---
 
@@ -108,11 +119,16 @@ Look at `src/examples/import/productImportExample.ts`:
 
 ### 2.4 Import Your Own Data
 
+If you would like to import your own data, you would need to refactor the import example to fit your own data structure.<br>
+You can choose to follow below guidance. 
+
 1. **Prepare your data** - Use `product_data/product_data_example.json` as a template
 2. **Update import script** - Modify `productImportExample.ts` with your data source
 3. **Run import** - Execute the import and verify data in My Relewise admin panel
 
 > **Pro Tip:** Start small - import 10-20 products first to test the structure, then scale up.
+
+> **Historical Orders:** If you have existing order history to import for immediate personalization benefits, see [Section 5.3: Historical Data Import Strategy](#53-historical-data-import-strategy) for detailed guidance and working examples.
 
 ---
 
@@ -141,13 +157,17 @@ Configure search for the languages actually present in your imported data:
 ### 3.3 Field Weight Configuration
 
 Set field importance for search relevance (scale 0-255):
-- **Product Name**: Weight 200 (highest priority)
-- **Brand**: Weight 150 (strong brand matching)
-- **Category**: Weight 120 (category relevance)
-- **Description**: Weight 80 (descriptive content)
-- **SKU/Product ID**: Weight 50 (exact matching)
+- **Id**: Weight 200 (highest priority)
+- **Displayname**: Weight 200 (highest priority)
+- **Brand Displayname**: Weight 120 (strong brand matching)
+- **Category Displayname**: Weight 150 (category relevance)
+- **Description**: Weight 50 (descriptive content)
+    - Description need to be added as a "custom field" in the Index configuration, as it resides in the "Data" collection key in the product data structure.
+- Tick **Include Field in Predictions** manually.
 
 > **Important:** Field weights use a 0-255 scale where higher numbers = higher importance in search ranking.
+
+![Alt text](./assets/indexconfig.png)
 
 ### 3.4 Verify Index Status
 
@@ -162,7 +182,7 @@ After data import and index configuration, validate everything is working correc
 ### 4.1 Test Data Import Success
 
 Verify your products were imported:
-1. Check My Relewise admin panel → Products
+1. Check My Relewise admin panel → Entities → Products
 2. Look for your imported products with correct multilingual data
 3. Verify categories and brands are properly structured
 
@@ -170,7 +190,7 @@ Verify your products were imported:
 
 ```bash
 npm run build
-npm run dev searchExample "test"
+npm run dev searchExample "TV"
 ```
 
 **Expected Results:**
@@ -266,7 +286,7 @@ await tracker.trackOrder({
 
 Understanding different user types is critical for GDPR compliance and personalization effectiveness.
 
-**Anonymous Users (no consent required):**
+**Anonymous Users (no consent given):**
 
 ```typescript
 const anonymousUser = UserFactory.anonymous();
@@ -275,7 +295,7 @@ const anonymousUser = UserFactory.anonymous();
 // GDPR: No consent required
 ```
 
-**Temporary/Session Users (with consent):**
+**Temporary/Session Users (with consent given - meaning "yes" to some or all cookies, but not logged in):**
 
 ```typescript
 const sessionUser = UserFactory.byTemporaryId('session_' + sessionId);
@@ -285,7 +305,7 @@ const sessionUser = UserFactory.byTemporaryId('session_' + sessionId);
 // Duration: Until session expires
 ```
 
-**Authenticated Users (with full consent):**
+**Authenticated Users (Logged in users, regardless of the consent):**
 
 ```typescript
 const authenticatedUser = UserFactory.byAuthenticatedId('customer_456');
@@ -306,9 +326,14 @@ const authenticatedUser = UserFactory.byAuthenticatedId('customer_456');
 For existing businesses with order history, importing historical data provides immediate personalization benefits.
 
 **When to Import Historical Data:**
-- You have existing customer order history (last 6-12 months recommended)
+- You have existing customer order history (last 3-6 months recommended, depending on how often products/catalogues are replaced)
 - You want immediate personalization instead of waiting for new behavioral data
 - You're migrating from another personalization platform
+
+> **Important SDK Limitation:** The current Relewise JavaScript SDK does not support importing historical data with preserved timestamps. The `Trackable` interface and `integrator.batch()` method do not include timestamp fields. All imported orders will be timestamped with the current import time. This means the import provides order structure and customer purchase patterns but not historical timeline data.
+
+> **Historical Date Workaround:** You can preserve historical order dates for recommendation weighting by using a data field called `"HistoricOrderDate"`. Set this field with the original order date (as an ISO string wrapped in `DataValueFactory.string()`) in each order's data. Relewise will use these dates for weighting and decay in recommendations, ensuring older orders have less influence than newer ones. Note: Revenue analytics will still show orders as imported on the current date, but personalization algorithms will respect the historical timeline.
+The custom weighing is a feature that Relewise Support will assist with. 
 
 **Option 1: Use the Provided Example Script**
 
@@ -338,20 +363,26 @@ const batchSize = 100;
 for (let i = 0; i < historicalOrders.length; i += batchSize) {
     const batch = historicalOrders.slice(i, i + batchSize);
     
-    for (const order of batch) {
-        await tracker.trackOrder({
-            user: UserFactory.byAuthenticatedId(order.customerId),
-            orderNumber: order.orderNumber,
-            subtotal: { amount: order.total, currency: order.currency },
-            lineItems: order.items.map((item) => ({
-                productId: item.productId,
-                quantity: item.quantity,
-                lineTotal: item.lineTotal,
-            })),
-            // Important: Use actual order date for historical data
-            utcTime: new Date(order.orderDate).toISOString(),
-        });
-    }
+    const trackableOrders = batch.map(order => ({
+        $type: 'Relewise.Client.DataTypes.Order, Relewise.Client',
+        orderNumber: order.orderNumber,
+        user: UserFactory.byAuthenticatedId(order.customerId),
+        subtotal: { amount: order.total, currency: { value: order.currency } },
+        lineItems: order.items.map((item) => ({
+            product: { id: item.productId },
+            quantity: item.quantity,
+            lineTotal: item.lineTotal,
+        })),
+        // Use data field to preserve historical order date for recommendation weighting
+        data: {
+            'HistoricOrderDate': DataValueFactory.string(new Date(order.orderDate).toISOString())
+        }
+        // Note: Order will be timestamped with current import time in analytics
+        // but Relewise will use HistoricOrderDate for personalization algorithms
+    }));
+    
+    // Use integrator.batch() for bulk order import
+    await integrator.batch(trackableOrders);
     
     // Rate limiting - pause between batches
     await new Promise(resolve => setTimeout(resolve, 1000));
@@ -367,25 +398,40 @@ const customers = await getAllActiveCustomers();
 for (const customer of customers) {
     const customerOrders = await getCustomerOrders(customer.id, { since: '2024-01-01' });
     
-    for (const order of customerOrders) {
-        await tracker.trackOrder({
-            user: UserFactory.byAuthenticatedId(customer.id),
-            orderNumber: order.orderNumber,
-            subtotal: { amount: order.total, currency: order.currency },
-            lineItems: order.items,
-            // Important: Use actual order date for historical data
-            utcTime: new Date(order.orderDate).toISOString(),
-        });
-    }
+    const trackableOrders = customerOrders.map(order => ({
+        $type: 'Relewise.Client.DataTypes.Order, Relewise.Client',
+        orderNumber: order.orderNumber,
+        user: UserFactory.byAuthenticatedId(customer.id),
+        subtotal: { amount: order.total, currency: { value: order.currency } },
+        lineItems: order.items.map(item => ({
+            product: { id: item.productId },
+            quantity: item.quantity,
+            lineTotal: item.lineTotal,
+        })),
+        // Use data field to preserve historical order date for recommendation weighting
+        data: {
+            'HistoricOrderDate': DataValueFactory.string(new Date(order.orderDate).toISOString())
+        }
+        // Note: Order will be timestamped with current import time in analytics
+        // but Relewise will use HistoricOrderDate for personalization algorithms
+    }));
+    
+    // Use integrator.batch() for bulk order import
+    await integrator.batch(trackableOrders);
 }
 ```
 
 **Historical Import Best Practices:**
-- **Time Range**: Import 6-12 months of data (more recent = more relevant)
+- **Time Range**: Import 3-6 months of data (more recent = more relevant)
 - **Data Quality**: Ensure product IDs match your current catalog
 - **Rate Limiting**: Don't overwhelm the API - batch and add delays
 - **Incremental**: Start with your most valuable customers first
-- **Validation**: Verify import success in My Relewise dashboard
+- **Validation**: Verify import success in My Relewise dashboard (The Perfomance tab on a product in MyRelewise).
+- **Historical Dating**: Use `data: { 'HistoricOrderDate': DataValueFactory.string(originalDate) }` to preserve order dates for recommendation weighting
+- **Analytics vs Personalization**: Revenue will show on import date, but recommendations will respect historical timeline
+- **Contact Relewise**: For advanced historical import scenarios, consult with Relewise support
+
+![Alt text](./assets/performance.png)
 
 > **Important**: Historical data import should be done ONCE during initial setup. After going live, use real-time tracking only.
 
@@ -427,7 +473,7 @@ npm run dev searchCategoryExample "5"
 
 **Troubleshooting Category Search:**
 - If no results: Verify category ID exists in your imported data
-- Check My Relewise admin panel → Categories for available category IDs
+- Check My Relewise admin panel → Entities → Product Categories for available category IDs
 - Ensure search index includes category fields
 
 ### 6.3 Personalized Search with CDP Integration
@@ -471,18 +517,11 @@ npm run dev popularProductsExample
 - Category landing pages
 - Empty cart suggestions
 
-### 7.2 Collaborative Filtering
+### 7.2 Cross/Upsell Products
 
 ```bash
 npm run dev purchasedWithProductExample "00198c54-6c62-4e08-be40-a539963985d0"
 ```
-
-**Understanding Recommendation Scores:**
-- Results include a `rank` score where **lower values = higher relevance**
-- Rank 1 = most commonly purchased together
-- Rank 2 = second most commonly purchased together
-- Results are sorted in ascending order by rank (best recommendations first)
-
 **Use cases:**
 
 - Product detail pages ("Customers also bought")
@@ -598,8 +637,7 @@ CURRENCY=EUR
 
 - **⚠️ Do NOT Cache Search/Recommendation Results** - Relewise results are personalized and should never be cached as this defeats personalization
 - **Batching** - Batch tracking calls when possible to reduce API overhead
-- **Timeouts** - Set reasonable API timeouts (e.g., 3-5 seconds)
-- **Fallbacks** - Always have fallback content ready if Relewise is unavailable
+- **Fallbacks** - Always have fallback content ready in the unlikely event that Relewise is unavailable
 
 ### Monitoring and Analytics
 
@@ -643,7 +681,7 @@ CURRENCY=EUR
 
 ## 🎉 Next Steps
 
-Congratulations! You now have a working Relewise implementation with:
+Congratulations! You now have a deep understanding of how to create a working Relewise implementation with:
 
 ✅ **Complete Entity Management** - Product import with real multilingual data structure  
 ✅ **Search Index Configuration** - Properly configured field weights and language support  
@@ -665,7 +703,7 @@ Congratulations! You now have a working Relewise implementation with:
 - 🎯 `popularProductsExample` - Popularity-based recommendations
 - 🎯 `purchasedWithProductExample` - Collaborative filtering
 
-**2. Production Architecture**
+**2. Architecture**
 
 - Shared configuration eliminating code duplication
 - Environment-driven settings for multiple deployments
@@ -705,8 +743,7 @@ Congratulations! You now have a working Relewise implementation with:
 - **Content search** - Implement search for blogs, support articles
 - **Multi-language expansion** - Setup for additional international markets
 - **B2B features** - Company-based personalization and catalogs
-- **Custom analytics** - Advanced reporting and business intelligence
-- **Performance optimization** - Caching strategies and API optimization
+- **Performance optimization** - Query and API optimizations
 
 ### Important Reminders
 

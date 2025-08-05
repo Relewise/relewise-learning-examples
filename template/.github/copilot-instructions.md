@@ -15,12 +15,42 @@
 4. **Fourth**: Use the examples provided in the `src/` directory of this project as implementation templates
 5. **Always**: Validate any code examples against the actual SDK source before providing them
 
+### Critical SDK Knowledge Base
+
+**Historical Data Import Limitations (VERIFIED):**
+- The `Trackable` interface only contains: `$type: string` and `custom?: Record<string, string | null>`
+- Order, Cart and Product interfaces use `data?: Record<string, DataValue>` for structured custom data
+- NO timestamp fields exist in `Trackable` interface - no `utcTime`, `timestamp`, or similar
+- `tracker.trackOrder()` method signature does NOT include a `utcTime` parameter
+- `integrator.batch()` accepts `Trackable[]` but cannot preserve historical timestamps
+- All imported orders via SDK are timestamped with current import time, NOT historical dates
+- Historical dates can be preserved using `data: { 'HistoricOrderDate': DataValueFactory.string(dateISO) }` for recommendation weighting
+- For true historical timestamp weighing, users must contact Relewise support
+
+**Method Signatures (VERIFIED):**
+- `tracker.trackOrder()`: Parameters are `{ user, subtotal, orderNumber, lineItems, cartName?, trackingNumber?, data? }`
+- `integrator.batch()`: Parameters are `(trackable: Trackable[], options?: RelewiseRequestOptions)`
+- `Trackable` types include: `Order`, `ProductView`, `Cart`, etc. but without timestamp capabilities
+- `Order`, `Cart` and `Product` use `data?: Record<string, DataValue>` field for custom data, accessed via `DataValueFactory`
+
+**Field Usage Patterns (VERIFIED):**
+- **`custom` field**: Available on `Trackable` base interface as `Record<string, string | null>` for simple string metadata
+- **`data` field**: Available on `Order`, `Cart`, `Product`, etc. as `Record<string, DataValue>` for typed custom data
+- **DataValueFactory**: Required for `data` field values - use `.string()`, `.number()`, `.boolean()`, `.multilingual()`, etc.
+- **Historical Order Dates**: Use `data: { 'HistoricOrderDate': DataValueFactory.string(isoDate) }` NOT `custom`
+
 ### Common Pitfalls to Avoid
 
 - **Never assume API signatures** - always verify in the SDK source code
 - **Never use builder patterns** that don't exist in the actual SDK (e.g., `ProductDataRelevanceModifierBuilder`)
 - **Always check import requirements** by looking at the actual SDK exports
 - **Verify parameter types and order** from the source, not from assumptions
+- **NEVER add `utcTime` or timestamp parameters** to `trackOrder()` calls - this parameter does not exist
+- **NEVER claim historical timestamp support** via `integrator.batch()` - the SDK cannot preserve historical dates
+- **Use `data` field correctly**: For Order/Cart/Product custom data, use `data: { 'key': DataValueFactory.string(value) }`, not `custom`
+- **Don't confuse field types**: `custom` is for simple strings, `data` is for typed values via DataValueFactory
+- **Always import DataValueFactory**: Required when using the `data` field in orders, carts, products, etc.
+- **Always clarify SDK limitations** when discussing historical data import
 
 ## Key Files & Structure
 
@@ -55,6 +85,7 @@ Instead of embedding full code examples here, see the following files in the `sr
 ### Import Examples
 
 - `src/examples/import/productImportExample.ts`: Product data import with real data from `product_data/` folder
+- `src/examples/import/historicalDataImportExample.ts`: Historical order import with proper `HistoricOrderDate` data field usage
 
 ### Shared Configuration
 

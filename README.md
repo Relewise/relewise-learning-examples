@@ -9,7 +9,7 @@ It includes:
 - ESLint + Prettier preconfigured (with custom formatting rules)
 - Relewise SDK (`@relewise/client`, `@relewise/integrations`)
 - `.vscode` launch configuration with MCP server integration
-- Comprehensive `examples/` folder with search, recommendations, import, and tracking
+- Comprehensive `examples/` folder with search, recommendations, import, historical data import, and tracking
 - Configuration management with `src/config/relewiseConfig.ts`
 - Type definitions and utilities for external data integration
 - Example `docs/` folder for internal documentation
@@ -71,7 +71,8 @@ MY-RELEWISE-POC/
 │   │   └── relewiseConfig.ts
 │   ├── examples/
 │   │   ├── import/
-│   │   │   └── productImportExample.ts
+│   │   │   ├── productImportExample.ts
+│   │   │   └── historicalDataImportExample.ts
 │   │   ├── recommendations/
 │   │   │   ├── popularProductsExample.ts
 │   │   │   └── purchasedWithProductExample.ts
@@ -161,6 +162,7 @@ The template includes:
   - Search (basic, category, personalized with CDP)
   - Recommendations (popular products, purchased-with-product)
   - Product import with multilingual support
+  - Historical data import with proper timeline preservation
   - User tracking implementation
 - **Configuration Management**:
   - Centralized Relewise configuration (`src/config/relewiseConfig.ts`)
@@ -219,6 +221,7 @@ npm run dev purchasedWithProductExample "00198c54-6c62-4e08-be40-a539963985d0"
 ### Import & Tracking Examples
 ```bash
 npm run dev productImportExample
+npm run dev historicalDataImportExample
 npm run dev basicTrackingExample
 ```
 
@@ -240,6 +243,7 @@ The generated project includes a comprehensive `QUICKSTART.md` that provides:
 - Environment setup with `.env.local` template
 - SDK verification process for reliable integrations
 - Real product data examples with multilingual support
+- Historical data import with timeline preservation for personalization
 - CDP integration patterns for personalized experiences
 
 ### VS Code Integration:

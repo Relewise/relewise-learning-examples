@@ -21,6 +21,9 @@
  * - Historical data import should be done ONCE during initial setup
  * - After going live, use real-time tracking only
  * - Ensure product IDs in historical data match your current catalog
+ * - Uses HistoricOrderDate data field to preserve original order timeline for personalization
+ * - Orders track to current import time for analytics, but use data field for recommendation weighting
+ * - For optimal results, import historical data in chronological order
  *
  * For more, see:
  * - https://github.com/Relewise/relewise-sdk-javascript
@@ -28,7 +31,7 @@
  */
 
 import 'dotenv/config';
-import { UserFactory, Order, Trackable } from '@relewise/client';
+import { UserFactory, Order, Trackable, DataValueFactory } from '@relewise/client';
 import { integrator } from '../../config/relewiseConfig.js';
 import fs from 'fs/promises';
 import path from 'path';
@@ -56,6 +59,10 @@ interface HistoricalOrder {
  *
  * This provides immediate personalization benefits by establishing baseline
  * behavioral data before implementing real-time tracking.
+ * 
+ * Note: SDK limitation - all orders will be timestamped with current import time,
+ * not the original historical order dates. The benefit is in customer purchase
+ * patterns and product relationships, not temporal data.
  */
 async function importHistoricalOrders() {
     console.log('🔄 Starting historical order data import...');
@@ -99,7 +106,7 @@ async function importHistoricalOrders() {
                 0,
             );
 
-            // Create order tracking object
+            // Create order tracking object with historical date
             const order: Order = {
                 $type: 'Relewise.Client.DataTypes.Order, Relewise.Client',
                 orderNumber: orderData.orderNumber,
@@ -113,6 +120,11 @@ async function importHistoricalOrders() {
                 subtotal: {
                     amount: orderTotal,
                     currency: { value: orderData.currency },
+                },
+                // CRITICAL: Include historical order date for proper recommendation weighting
+                // This data field preserves the original order timeline for personalization algorithms
+                data: {
+                    'HistoricOrderDate': DataValueFactory.string(new Date(orderData.orderDate).toISOString()),
                 },
             };
 
