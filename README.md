@@ -1,6 +1,6 @@
-# Adhoc Relewise Examples CLI
+# Create Relewise Learning Example
 
-A **CLI tool** for quick scaffolding of Relewise examples with a preconfigured Node.js + TypeScript setup.  
+A **CLI tool** for quick scaffolding of Relewise learning projects with a preconfigured Node.js + TypeScript setup.  
 
 📖 **[View the Complete Quickstart Guide →](./template/QUICKSTART.md)**  
 
@@ -21,22 +21,15 @@ A **CLI tool** for quick scaffolding of Relewise examples with a preconfigured N
 
 ---
 
-## 🚀 Installation & Usage
+## 🚀 Usage
 
-### Option 1: Run directly with npx (Recommended)
-
-```bash
-npx @relewise/adhoc-examples-cli
-```
-
-### Option 2: Install globally
+### Option 1: Run with npx (Recommended)
 
 ```bash
-npm install -g @relewise/adhoc-examples-cli
-relewise-examples
+npx @relewise/create-relewise-learning-example
 ```
 
-### Option 3: Run from GitHub
+### Option 2: Run directly from GitHub
 
 ```bash
 npx github:Relewise/adhoc-relewise-examples
@@ -51,10 +44,10 @@ npx github:Relewise/adhoc-relewise-examples
 
 ```bash
 # Show help
-npx @relewise/adhoc-examples-cli --help
+npx @relewise/create-relewise-learning-example --help
 
 # Show version
-npx @relewise/adhoc-examples-cli --version
+npx @relewise/create-relewise-learning-example --version
 ```
 
 You will be prompted for:
@@ -146,15 +139,15 @@ The CLI (`bin/index.js`):
 ## ✨ Example
 
 ```bash
-$ npx github:Relewise/adhoc-relewise-examples
+$ npx @relewise/create-relewise-learning-example
 
-🚀 Welcome to Relewise Examples and AI instructions!
+🚀 Welcome to the Relewise examples and AI instructions setup!
 
-? Project name: my-relewise-examples
-? Project description: Examples and AI instructions for Developing for Relewise
+? Project name: my-relewise-learning
+? Project description: My Relewise learning and experimentation project
 ? Initialize a new Git repository? (Y/n) Y
 
-📂 Creating project in /path/to/my-relewise-examples
+📂 Creating project in /path/to/my-relewise-learning
 🧹 Removed template .git folder
 📦 Installing dependencies (this may take a minute)...
 🔧 Initializing Git repository...
@@ -162,7 +155,7 @@ $ npx github:Relewise/adhoc-relewise-examples
 ✅ Project scaffolded successfully!
 
 Next steps:
-  cd my-relewise-examples
+  cd my-relewise-learning
   
   # 1. Configure your environment variables
   # Edit .env with your Relewise credentials (already created from template)
@@ -173,8 +166,6 @@ Next steps:
   
   # 3. Run examples
   npm run dev termBasedSearchExample "headphones"
-  npm run dev categoryBasedSearchExample "5"
-  npm run dev popularProductsExample
 ```
 
 ---
@@ -225,7 +216,7 @@ git clone git@github.com:Relewise/adhoc-relewise-examples.git
 cd adhoc-relewise-examples
 npm install
 npm link  # to test locally
-adhoc-relewise-examples my-local-test
+create-relewise-learning-example my-local-test
 ```
 
 ---

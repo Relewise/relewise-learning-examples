@@ -10,20 +10,20 @@ const __dirname = path.dirname(__filename);
 
 function showHelp() {
   console.log(`
-🚀 Relewise Examples CLI
+🚀 Create Relewise Learning Example
 
-A CLI tool to scaffold new Relewise Node.js projects with TypeScript, examples, and AI instructions.
+A CLI tool to scaffold new Relewise learning projects with TypeScript, examples, and AI instructions.
 
 USAGE:
-  npx @relewise/adhoc-examples-cli
-  relewise-examples
+  npx @relewise/create-relewise-learning-example
+  npx github:Relewise/adhoc-relewise-examples
 
 OPTIONS:
   -h, --help     Show this help message
   -v, --version  Show version number
 
 DESCRIPTION:
-  This tool creates a new Relewise project with:
+  This tool creates a new Relewise learning project with:
   - TypeScript configuration
   - ESLint + Prettier setup
   - Relewise SDK integration
@@ -32,7 +32,7 @@ DESCRIPTION:
   - VS Code configuration
 
 EXAMPLES:
-  npx @relewise/adhoc-examples-cli
+  npx @relewise/create-relewise-learning-example
   npx github:Relewise/adhoc-relewise-examples
 
 For more information, visit: https://github.com/Relewise/adhoc-relewise-examples

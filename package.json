@@ -1,7 +1,7 @@
 {
-    "name": "@relewise/adhoc-examples-cli",
+    "name": "@relewise/create-relewise-learning-example",
     "version": "1.0.0",
-    "description": "CLI tool to scaffold new Relewise Node.js projects with TypeScript, examples, and AI instructions",
+    "description": "CLI tool to scaffold new Relewise learning projects with TypeScript, examples, and AI instructions",
     "author": "Relewise",
     "license": "MIT",
     "homepage": "https://github.com/Relewise/adhoc-relewise-examples#readme",
@@ -18,12 +18,15 @@
         "scaffold",
         "typescript",
         "examples",
+        "learning",
+        "tutorial",
         "search",
         "recommendations",
-        "ai"
+        "ai",
+        "create"
     ],
     "bin": {
-        "relewise-examples": "./bin/index.js"
+        "create-relewise-learning-example": "./bin/index.js"
     },
     "type": "module",
     "engines": {
