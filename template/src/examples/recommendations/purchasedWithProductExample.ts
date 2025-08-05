@@ -54,12 +54,18 @@ export async function getPurchasedWithProductRecommendations(productId: string, 
  *
  * This function can be run directly or imported from `index.ts`.
  * It demonstrates safe handling and output of recommended products.
+ * 
+ * Note: Results include a 'rank' score where lower values indicate stronger relevance.
+ * Rank 1 = most commonly purchased together, rank 2 = second most common, etc.
+ * Results are sorted in ascending order by rank for optimal relevance.
  */
 export default async function runPurchasedWithProductExample(productIdArg?: string) {
     const productId = productIdArg || '00198c54-6c62-4e08-be40-a539963985d0'; // Real product ID from actual data
     const recommendations = await getPurchasedWithProductRecommendations(productId);
     if (Array.isArray(recommendations) && recommendations.length > 0) {
-        console.log('Purchased With Product Recommendations:', recommendations);
+        console.log('Purchased With Product Recommendations (sorted by relevance):');
+        console.log('Note: Lower rank = higher relevance (rank 1 = most commonly purchased together)');
+        console.log(recommendations);
     } else {
         console.log('No recommendations found.');
     }

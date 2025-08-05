@@ -2,6 +2,8 @@
 
 This is an **internal CLI tool** for quickly scaffolding new Relewise Proof-of-Concept (POC) projects with a preconfigured Node.js + TypeScript setup.  
 
+📖 **[View the Complete Quickstart Guide →](./template/QUICKSTART.md)**  
+
 It includes:
 - TypeScript (with strict settings)
 - ESLint + Prettier preconfigured (with custom formatting rules)
@@ -30,6 +32,21 @@ You will be prompted for:
 1. **Project name** – The folder name for the new project.
 2. **Description** – Used in `package.json`.
 3. **Git initialization** – Whether to automatically run `git init`.
+
+### 📋 Required Relewise Credentials
+
+Before running examples, you'll need:
+
+- **Dataset ID** - Your Relewise dataset identifier
+- **API Key** - Must have **Read & Write permissions** for:
+  - Product search and recommendations
+  - User tracking and behavioral data
+  - Product import/export operations
+- **Server URL** - Use sandbox for testing: `https://sandbox-api.relewise.com`
+
+> 💡 **Tip**: Start with the sandbox environment for development. You can find your credentials in the Relewise dashboard under Settings > API Keys.
+
+For complete setup instructions, see the **[QUICKSTART.md](./template/QUICKSTART.md)** guide included with every generated project.
 
 ---
 
@@ -116,9 +133,9 @@ $ npx github:Relewise/adhoc-relewise-poc
 Next steps:
   cd my-relewise-poc
   
-  # 1. Set up your environment variables
-  cp .env.local .env
-  # Edit .env with your Relewise credentials
+  # 1. Configure your environment variables
+  # Edit .env with your Relewise credentials (already created from template)
+  nano .env
   
   # 2. Follow the quickstart tutorial
   cat QUICKSTART.md
@@ -187,7 +204,7 @@ The generated project includes comprehensive examples that you can run immediate
 ### Search Examples
 ```bash
 npm run dev searchExample "headphones"
-npm run dev searchCategoryExample "audio"
+npm run dev searchCategoryExample "5"  # Hi-Fi category from sample data
 npm run dev cdpPersonalizedSearchExample user_1 "headphones"
 ```
 
@@ -196,6 +213,8 @@ npm run dev cdpPersonalizedSearchExample user_1 "headphones"
 npm run dev popularProductsExample
 npm run dev purchasedWithProductExample "00198c54-6c62-4e08-be40-a539963985d0"
 ```
+
+> **Note**: The `purchasedWithProductExample` returns recommendations with `rank` scores. Lower rank values (e.g., 1, 2, 3) indicate stronger relevance - products ranked 1 are most commonly purchased together with the specified product. Results are sorted in ascending order by rank for optimal relevance.
 
 ### Import & Tracking Examples
 ```bash

@@ -22,7 +22,7 @@ npm install
 
 ### 1.2 Environment Configuration
 
-Create `.env` file with your Relewise credentials:
+Your project includes a pre-configured `.env` file with placeholders. Update it with your Relewise credentials:
 
 ```env
 # Required: Your Relewise credentials
@@ -37,6 +37,15 @@ RELEWISE_SERVER_URL=https://sandbox-api.relewise.com  # for testing
 LANGUAGE=en-US
 CURRENCY=EUR
 ```
+
+#### 🔑 API Key Requirements
+
+Your API Key must have **Read & Write permissions** for:
+- **Product search and recommendations** - Required for all search and recommendation examples
+- **User tracking and behavioral data** - Required for tracking examples and personalized features
+- **Product import/export operations** - Required for product import examples
+
+> **Important:** Start with the sandbox environment (`https://sandbox-api.relewise.com`) for development and testing. You can find your credentials in the Relewise dashboard under Settings > API Keys.
 
 > **Important:** Start with the sandbox environment (`https://sandbox-api.relewise.com`) for development and testing.
 
@@ -437,10 +446,10 @@ CURRENCY=USD
 
 ### Performance Optimization
 
-- **Caching** - Cache search results appropriately
-- **Batching** - Batch tracking calls when possible
-- **Timeouts** - Set reasonable API timeouts
-- **Fallbacks** - Always have fallback content ready
+- **⚠️ Do NOT Cache Search/Recommendation Results** - Relewise results are personalized and should never be cached as this defeats personalization
+- **Batching** - Batch tracking calls when possible to reduce API overhead
+- **Timeouts** - Set reasonable API timeouts (e.g., 3-5 seconds)
+- **Fallbacks** - Always have fallback content ready if Relewise is unavailable
 
 ### Monitoring and Analytics
 
