@@ -314,10 +314,10 @@ const authenticatedUser = UserFactory.byAuthenticatedId('customer_456');
 ```
 
 **Best Practices:**
-- Start with anonymous users for new visitors
-- Upgrade to temporary ID when user shows engagement (adds to cart, searches multiple times)
-- Use authenticated ID only after user login and consent
-- Always respect user privacy preferences and consent levels
+- Anonymous users are always to be used, if no consent is given!
+- If any kind of consent is given, but a user is not logged in, use temporary ID.
+- Use authenticated ID only after user login and consent.
+- Always respect user privacy preferences and consent levels.
 
 ### 5.3 Historical Data Import Strategy
 
