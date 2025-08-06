@@ -17,7 +17,7 @@ jobs:
 
       - run: npm ci
 
-      - run: npm build
+      - run: npm run test
 
       - name: Determine NPM Tag
         id: determine-tag
