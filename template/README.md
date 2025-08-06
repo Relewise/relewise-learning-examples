@@ -16,7 +16,7 @@ A comprehensive collection of **educational examples** demonstrating advanced in
     RELEWISE_DATASET_ID=your-dataset-id
     RELEWISE_API_KEY=your-api-key
     RELEWISE_SERVER_URL=https://api.relewise.com  # or https://sandbox-api.relewise.com
-    LANGUAGE=en-US
+    LANGUAGE=en-gb
     CURRENCY=EUR
     ```
 
@@ -190,7 +190,7 @@ RELEWISE_SERVER_URL=https://api.relewise.com           # Production
 # RELEWISE_SERVER_URL=https://sandbox-api.relewise.com  # Sandbox
 
 # Optional (with fallbacks)
-LANGUAGE=en-US
+LANGUAGE=en-gb
 CURRENCY=EUR
 ```
 

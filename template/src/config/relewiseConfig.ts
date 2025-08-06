@@ -17,7 +17,7 @@ import { Integrator } from '@relewise/integrations';
 // Load and validate environment variables
 const { RELEWISE_DATASET_ID, RELEWISE_API_KEY, RELEWISE_SERVER_URL } = process.env;
 
-export const LANGUAGE = process.env.LANGUAGE || 'da-dk';
+export const LANGUAGE = process.env.LANGUAGE || 'en-gb';
 export const CURRENCY = process.env.CURRENCY || 'EUR';
 
 if (!RELEWISE_DATASET_ID || !RELEWISE_API_KEY) {

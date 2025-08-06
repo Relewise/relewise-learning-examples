@@ -19,7 +19,7 @@
  * - Error handling for tracking failures
  */
 
-import { tracker, CURRENCY } from '../../config/relewiseConfig.js';
+import { tracker, CURRENCY, LANGUAGE } from '../../config/relewiseConfig.js';
 import { UserFactory } from '@relewise/client';
 
 /**
@@ -56,7 +56,7 @@ async function trackSearchQuery(searchTerm: string, userId?: string) {
     try {
         await tracker.trackSearchTerm({
             term: searchTerm,
-            language: 'en-US',
+            language: LANGUAGE,
             user,
         });
 
