@@ -1,6 +1,6 @@
 {
     "name": "@relewise/create-relewise-learning-example",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "description": "CLI tool to scaffold new Relewise learning projects with TypeScript, examples, and AI instructions",
     "author": "Relewise",
     "license": "MIT",
