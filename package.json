@@ -36,6 +36,7 @@
         "bin/",
         "template/",
         "template/tsconfig.json",
+        "template/.env.local",
         "README.md",
         "LICENSE"
     ],

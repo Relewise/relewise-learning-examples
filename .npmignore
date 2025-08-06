@@ -11,5 +11,6 @@ coverage/
 .vscode/
 .idea/
 
-# But include template/.vscode since it's part of the scaffold
+# But include template files that are part of the scaffold
 !template/.vscode/
+!template/.env.local
