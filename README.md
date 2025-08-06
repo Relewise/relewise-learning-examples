@@ -2,8 +2,6 @@
 
 A **CLI tool** for quick scaffolding of Relewise learning projects with a preconfigured Node.js + TypeScript setup.  
 
-📖 **[View the Complete Quickstart Guide →](./template/QUICKSTART.md)**  
-
 ## ✨ Features
 
 - TypeScript (with strict settings)
