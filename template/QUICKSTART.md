@@ -543,7 +543,7 @@ _Following [Relewise Implementation Step 4](https://docs.relewise.com/docs/devel
 
 Your product catalog changes - here's how to keep Relewise in sync.
 
-### 6.1 Delta Updates (Recommended)
+### 8.1 Delta Updates (Recommended)
 
 For ongoing updates, track what changed since last sync:
 
@@ -557,7 +557,7 @@ for (const product of changedProducts) {
 }
 ```
 
-### 6.2 Full Updates with Timestamp Strategy
+### 8.2 Full Updates with Timestamp Strategy
 
 For complete catalog refresh:
 
@@ -587,7 +587,7 @@ await integrator.batchUpdateProducts({
 });
 ```
 
-### 6.3 Update Strategies
+### 8.3 Update Strategies
 
 - **UpdateAndAppend** - Adds new fields, keeps existing
 - **ReplaceProvidedProperties** - Updates provided fields only
