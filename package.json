@@ -4,11 +4,6 @@
     "description": "CLI tool to scaffold new Relewise learning projects with TypeScript, examples, and AI instructions",
     "author": "Relewise",
     "license": "MIT",
-    "homepage": "https://github.com/Relewise/adhoc-relewise-examples#readme",
-    "repository": {
-        "type": "git",
-        "url": "git+https://github.com/Relewise/adhoc-relewise-examples.git"
-    },
     "bugs": {
         "url": "https://github.com/Relewise/adhoc-relewise-examples/issues"
     },

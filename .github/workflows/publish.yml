@@ -3,17 +3,23 @@ name: Publish to NPM
 on:
   workflow_dispatch
 
+permissions:
+  id-token: write  # Required for OIDC
+  contents: read
+
 jobs:
   publish:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
 
-      - uses: actions/setup-node@v3
+      - uses: actions/setup-node@v4
         with:
           node-version: 22
           registry-url: https://registry.npmjs.com/
-          scope: '@relewise'
+
+      - name: Update npm
+        run: npm install -g npm@latest
 
       - run: npm ci
 
@@ -34,5 +40,3 @@ jobs:
 
       - name: Publish to NPM
         run: npm publish --access public --tag $NPM_TAG
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
