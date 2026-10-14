@@ -1,16 +1,12 @@
 import { ProductSearchBuilder, UserFactory } from '@relewise/client';
 import { searcher, createSettings, LANGUAGE, DEMO_USER_ID } from '../../config/relewiseConfig.js';
 
-// An example of a profile supplied by a CDP. The brand ID matches our imported catalog.
-const profile = { preferredBrandId: 'bose', brandWeight: 1.5 };
-
-export async function searchWithCDPPersonalization({
-    userId,
-    term,
-}: {
-    userId: string;
-    term: string;
-}) {
+export default async function runCDPPersonalizedSearchExample(
+    userId = DEMO_USER_ID,
+    term = 'headphones',
+) {
+    // A fixed sample profile, not a real CDP lookup. The brand matches our catalog.
+    const profile = { preferredBrandId: 'bose', brandWeight: 1.5 };
     const settings = createSettings('CDP Search Page', UserFactory.byTemporaryId(userId));
     const request = new ProductSearchBuilder(settings)
         .setTerm(term)
@@ -28,15 +24,7 @@ export async function searchWithCDPPersonalization({
         .build();
 
     console.log('Brand relevance modifier:', request.relevanceModifiers);
-    return searcher.searchProducts(request);
-}
-
-export default async function runCDPPersonalizedSearchExample(
-    userId = DEMO_USER_ID,
-    term = 'headphones',
-) {
-    // The fixed profile demonstrates request construction, not a real CDP lookup.
     // A boost can affect ranking, but does not guarantee a different result order.
-    const response = await searchWithCDPPersonalization({ userId, term });
+    const response = await searcher.searchProducts(request);
     console.log('Products:', response?.results);
 }

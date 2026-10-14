@@ -42,7 +42,7 @@ Wait until you have imported products and checked the search index below before 
 npm run dev -- productImportExample
 ```
 
-Read [productImportExample.ts](src/examples/import/productImportExample.ts) alongside [product_data_example.json](product_data/product_data_example.json). The catalog contains 274 products. The importer maps stable product IDs, multilingual names, brands, category paths, prices, and custom data to product updates, then sends batches through the SDK.
+Read [productImportExample.ts](src/examples/import/productImportExample.ts) alongside [product_data_example.json](product_data/product_data_example.json). The catalog contains 274 products. The importer maps stable product IDs, multilingual names, brands, category paths, prices, and stock to product updates, then sends batches through the SDK. Other source fields are not needed for this first lesson.
 
 The core examples operate on products. This catalog does not import variants. If your integration uses variants, import their IDs and properties before using them in tracking, filters, or facets.
 
@@ -64,7 +64,7 @@ Verify a product name that exists in your catalog, such as `headphones`, through
 npm run dev -- basicTrackingExample
 ```
 
-Read [basicTrackingExample.ts](src/examples/tracking/basicTrackingExample.ts). It sends example product views, a category view, a cart, and an order using IDs from the imported catalog. These are real tracking events in your learning dataset; rerunning the lesson sends more events.
+Read [basicTrackingExample.ts](src/examples/tracking/basicTrackingExample.ts). It sends a product view, a category view, a cart, and an order using IDs from the imported catalog. The explicit sample cart contains two headphones at EUR 379.99 each, for a total of EUR 759.98. This cart stays in EUR regardless of the search currency in `.env`; in your application, use the cart's actual amounts and currency together. These are real tracking events in your learning dataset; rerunning the lesson sends more events.
 
 Shared configuration supplies the temporary user `learning-user` to tracking, search, and recommendations. This makes the connection between an identified user's behavior and later requests visible. Use this fixed ID only for the lesson; assigning every visitor the same ID would merge their behavior.
 
@@ -115,6 +115,16 @@ For an application, distinguish two jobs:
 Choose the update kind deliberately. `ReplaceProvidedProperties` replaces properties supplied by the update; `UpdateAndAppend` can retain existing collection values. Neither means that products missing from the feed are removed. Read the [entity integration guide](https://docs.relewise.com/docs/developer/sdks/ts/integrations/entity-integration.html) before adapting this to your catalog lifecycle. Automatic disabling and deletion are outside this starter import.
 
 ## Optional lessons
+
+### Custom product data
+
+After the core catalog import, run:
+
+```sh
+npm run dev -- customDataImportExample
+```
+
+Read [customDataImportExample.ts](src/examples/import/customDataImportExample.ts) to see two custom data types: multilingual descriptions and string image URLs. It updates those fields on the same products without replacing their names, prices, categories, or stock. In My Relewise, inspect the product's `Description` and `Image` data values. To search descriptions, also configure `Description` in the search index; importing a field alone does not make it searchable.
 
 ### Historical orders
 

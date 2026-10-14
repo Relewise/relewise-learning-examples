@@ -1,18 +1,9 @@
-import { readFile } from 'node:fs/promises';
 import { UserFactory } from '@relewise/client';
-import { tracker, CURRENCY, DEMO_USER_ID } from '../../config/relewiseConfig.js';
-import { ProductData } from '../../types/interfaces.js';
+import { tracker, DEMO_USER_ID } from '../../config/relewiseConfig.js';
 
 export default async function basicTrackingExample() {
     const user = UserFactory.byTemporaryId(DEMO_USER_ID);
     const productId = '0bc52835-3346-4b53-9b82-1ae6355eb3f1'; // Bose Noise Cancelling Headphones 700
-    const file = new URL('../../../product_data/product_data_example.json', import.meta.url);
-    const products: ProductData[] = JSON.parse(await readFile(file, 'utf8'));
-    const product = products.find((item) => item.unique_id === productId);
-    const price = product?.sales_price.find((item) => item.currency === CURRENCY);
-    if (!price) {
-        throw new Error(`The sample product has no price in ${CURRENCY}.`);
-    }
 
     await tracker.trackProductCategoryView({
         idPath: ['5', '5_1'], // Hi-Fi > Headphones, as imported from the catalog.
@@ -21,8 +12,9 @@ export default async function basicTrackingExample() {
     await tracker.trackProductView({ productId, user });
 
     // Send the full cart whenever it changes, rather than just the added item.
-    const lineItems = [{ productId, quantity: 2, lineTotal: price.amount * 2 }];
-    const subtotal = { amount: price.amount * 2, currency: CURRENCY };
+    // Two headphones at EUR 379.99 each. Keep the amount and currency together.
+    const lineItems = [{ productId, quantity: 2, lineTotal: 759.98 }];
+    const subtotal = { amount: 759.98, currency: 'EUR' };
     await tracker.trackCart({ user, lineItems, subtotal, cartName: 'default' });
 
     // Real orders use the shop's stable order number. Each demo run creates a new purchase.

@@ -13,15 +13,19 @@ process.env.CURRENCY = 'EUR';
 const config = await import('../template/dist/config/relewiseConfig.js');
 const { buildProductUpdate, default: importProducts } =
     await import('../template/dist/examples/import/productImportExample.js');
+const { default: importCustomData } =
+    await import('../template/dist/examples/import/customDataImportExample.js');
 const { buildHistoricalOrder, default: importOrders } =
     await import('../template/dist/examples/import/historicalDataImportExample.js');
 const { default: trackJourney } =
     await import('../template/dist/examples/tracking/basicTrackingExample.js');
-const { searchProducts } =
+const { default: searchProducts } =
     await import('../template/dist/examples/search/termBasedSearchExample.js');
-const { searchProductsByCategory } =
+const { default: searchProductsByCategory } =
     await import('../template/dist/examples/search/categoryBasedSearchExample.js');
-const { searchWithCDPPersonalization } =
+const { default: searchCategories } =
+    await import('../template/dist/examples/search/searchCategoryExample.js');
+const { default: searchWithCDPPersonalization } =
     await import('../template/dist/examples/search/cdpPersonalizedSearchExample.js');
 const { default: popularProducts } =
     await import('../template/dist/examples/recommendations/popularProductsExample.js');
@@ -46,10 +50,34 @@ test('catalog mapping keeps prices unique and stock consistent with the sample m
         for (const prices of [product.sales_price, product.list_price]) {
             assert.equal(new Set(prices.map((price) => price.currency)).size, prices.length);
         }
-        const update = buildProductUpdate(product, 123);
+        const update = buildProductUpdate(product);
         const availability = product.availability.find((item) => item.language === 'en-gb');
         assert.equal(update.product.data['en-gb_StockLevel'].value, availability.number);
-        assert.equal(update.product.data.ImportedAt.value, 123);
+    }
+});
+
+test('optional custom data updates the same products without resending core fields', async (t) => {
+    let updates;
+    t.mock.method(config.integrator, 'batch', async (requests) => {
+        updates = requests;
+    });
+    await importCustomData();
+    assert.equal(updates.length, products.length);
+    for (const [index, update] of updates.entries()) {
+        const product = products[index];
+        assert.equal(update.product.id, product.unique_id);
+        assert.equal(update.productUpdateKind, 'ReplaceProvidedProperties');
+        assert.deepEqual(Object.keys(update.product.data).sort(), ['Description', 'Image']);
+        assert.equal(update.product.data.Image.value, product.image);
+        assert.deepEqual(
+            update.product.data.Description.value.values,
+            product.description.map(({ language, text }) => ({
+                language: { value: language },
+                text,
+            })),
+        );
+        assert.ok(update.product.salesPrice == null);
+        assert.ok(update.product.displayName == null);
     }
 });
 
@@ -73,7 +101,8 @@ test('imports stop on SDK failure instead of retrying or reporting success', asy
     });
     await assert.rejects(importProducts(), /Batch rejected/);
     await assert.rejects(importOrders(), /Batch rejected/);
-    assert.equal(send.mock.callCount(), 2);
+    await assert.rejects(importCustomData(), /Batch rejected/);
+    assert.equal(send.mock.callCount(), 3);
 });
 
 test('tracking uses the imported product, category and shared identity with matching totals', async (t) => {
@@ -102,6 +131,7 @@ test('tracking uses the imported product, category and shared identity with matc
     for (const event of events.slice(2)) {
         assert.equal(event.lineItems[0].productId, product.unique_id);
         assert.equal(event.lineItems[0].variantId, undefined);
+        assert.equal(event.subtotal.currency, 'EUR');
         assert.equal(event.subtotal.amount, price * event.lineItems[0].quantity);
         assert.equal(event.lineItems[0].lineTotal, event.subtotal.amount);
     }
@@ -109,14 +139,22 @@ test('tracking uses the imported product, category and shared identity with matc
 
 test('search requests select in-stock products, preserve paging and apply a real optional brand boost', async (t) => {
     const requests = [];
+    let categoryRequest;
+    t.mock.method(config.searcher, 'searchProductCategories', async (request) => {
+        categoryRequest = request;
+        return { results: [] };
+    });
     t.mock.method(config.searcher, 'searchProducts', async (request) => {
         requests.push(request);
         return { results: [] };
     });
-    await searchProducts({ term: 'headphones', page: 2 });
-    await searchProductsByCategory({ categoryId: '5' });
-    await searchWithCDPPersonalization({ userId: config.DEMO_USER_ID, term: 'headphones' });
-    assert.equal(requests[0].skip, 10);
+    await searchProducts('headphones');
+    await searchProductsByCategory('5');
+    await searchWithCDPPersonalization(config.DEMO_USER_ID, 'headphones');
+    await searchCategories('Hi-Fi');
+    assert.equal(categoryRequest.term, 'Hi-Fi');
+    assert.equal(categoryRequest.user.temporaryId, config.DEMO_USER_ID);
+    assert.equal(requests[0].skip, 0);
     for (const request of requests) {
         assert.equal(request.user.temporaryId, config.DEMO_USER_ID);
         const stock = request.filters.items.find((filter) => filter.key === 'en-gb_StockLevel');

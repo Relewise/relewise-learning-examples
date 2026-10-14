@@ -24,12 +24,4 @@ export interface ProductData {
     availability: { language: string; number: number }[];
     mainCategory: Category;
     image: string;
-    markets: string[];
-    channels: string[];
-    margin: string;
-    daysAvailable: number | null;
-    salesStatus: string | null;
-    OnSale: { language: string; value: boolean }[];
-    promoted: { language: string; value: boolean }[];
-    campaignIds: string[] | null;
 }

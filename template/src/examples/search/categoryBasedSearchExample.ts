@@ -2,18 +2,10 @@ import { ProductSearchBuilder } from '@relewise/client';
 import { searcher, createSettings, LANGUAGE } from '../../config/relewiseConfig.js';
 
 // A product listing page searches products in a category, without a search term.
-export async function searchProductsByCategory({
-    categoryId,
-    page = 1,
-    pageSize = 12,
-}: {
-    categoryId: string;
-    page?: number;
-    pageSize?: number;
-}) {
+export default async function runCategoryBasedSearchExample(categoryId = '5') {
     const request = new ProductSearchBuilder(createSettings('Category Page'))
         .setSelectedProductProperties({ displayName: true, pricing: true, brand: true })
-        .pagination((pagination) => pagination.setPage(page).setPageSize(pageSize))
+        .pagination((pagination) => pagination.setPage(1).setPageSize(12))
         .facets((facets) => facets.addBrandFacet().addSalesPriceRangeFacet('Product'))
         .filters((filters) =>
             filters
@@ -31,11 +23,7 @@ export async function searchProductsByCategory({
         )
         .build();
 
-    return searcher.searchProducts(request);
-}
-
-export default async function runCategoryBasedSearchExample(categoryId = '5') {
-    const response = await searchProductsByCategory({ categoryId });
+    const response = await searcher.searchProducts(request);
     console.log('Products in category:', response?.results);
     console.log('Facets:', response?.facets);
 }
