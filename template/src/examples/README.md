@@ -16,3 +16,5 @@ Follow [QUICKSTART.md](../../QUICKSTART.md) for setup and the order to run these
 | `cdpPersonalizedSearchExample` | [External preference](search/cdpPersonalizedSearchExample.ts)    | Optional: apply a sample profile's brand preference             |
 
 Shared configuration lives in `src/config/relewiseConfig.ts`. Keep the SDK request in the example so readers can understand it without following a chain of wrappers.
+
+The optional [favorites lesson](tracking/favoritesExample.ts) connects engagement tracking with a favorites search. Run `favoritesExample add`, `favoritesExample list`, or `favoritesExample remove` after the core tracking and search lessons.

@@ -19,6 +19,8 @@ const { buildHistoricalOrder, default: importOrders } =
     await import('../template/dist/examples/import/historicalDataImportExample.js');
 const { default: trackJourney } =
     await import('../template/dist/examples/tracking/basicTrackingExample.js');
+const { default: favorites } =
+    await import('../template/dist/examples/tracking/favoritesExample.js');
 const { default: searchProducts } =
     await import('../template/dist/examples/search/termBasedSearchExample.js');
 const { default: searchProductsByCategory } =
@@ -197,6 +199,50 @@ test('recommendations use the same identified user and a catalog product', async
     }
 });
 
+test('favorites add and remove engagement for the same user while list only searches', async (t) => {
+    const events = [];
+    const requests = [];
+    t.mock.method(config.tracker, 'trackProductEngagement', async (event) => {
+        events.push(event);
+    });
+    t.mock.method(config.searcher, 'searchProducts', async (request) => {
+        requests.push(request);
+        return { results: [] };
+    });
+    await favorites();
+    await favorites('list');
+    await favorites('remove');
+    assert.equal(events.length, 2);
+    assert.deepEqual(
+        events.map((event) => event.engagement.isFavorite),
+        [true, false],
+    );
+    assert.ok(products.some((product) => product.unique_id === events[0].product.productId));
+    assert.equal(events[1].product.productId, events[0].product.productId);
+    assert.ok(events.every((event) => event.user.temporaryId === config.DEMO_USER_ID));
+    assert.equal(requests.length, 3);
+    for (const request of requests) {
+        assert.equal(request.user.temporaryId, config.DEMO_USER_ID);
+        assert.equal(request.settings.selectedProductProperties.userEngagement, true);
+        assert.equal(request.filters.items.length, 1);
+        assert.match(request.filters.items[0].$type, /ProductEngagementFilter/);
+        assert.equal(request.filters.items[0].isFavorite, true);
+        assert.equal(request.filters.items[0].negated, false);
+    }
+    await assert.rejects(favorites('invalid'), /add, remove or list/);
+    assert.equal(events.length, 2);
+    assert.equal(requests.length, 3);
+});
+
+test('favorites stops before searching if engagement tracking fails', async (t) => {
+    t.mock.method(config.tracker, 'trackProductEngagement', async () => {
+        throw new Error('Engagement rejected');
+    });
+    const search = t.mock.method(config.searcher, 'searchProducts', async () => ({ results: [] }));
+    await assert.rejects(favorites('add'), /Engagement rejected/);
+    assert.equal(search.mock.callCount(), 0);
+});
+
 test('source and built runners load examples and fail clearly when configuration is missing', () => {
     const directory = fileURLToPath(new URL('../template/', import.meta.url));
     const env = {
@@ -213,6 +259,7 @@ test('source and built runners load examples and fail clearly when configuration
         });
         assert.equal(help.status, 0, help.stderr);
         assert.match(help.stdout, /productImportExample/);
+        assert.match(help.stdout, /favoritesExample/);
         const failed = spawnSync(process.execPath, [...entry, 'termBasedSearchExample'], {
             cwd: directory,
             env,

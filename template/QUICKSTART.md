@@ -72,6 +72,8 @@ In your application, use an anonymous user when the visitor is not identified fo
 
 A Relewise search already records its search term. Product-search click attribution relies on the identified user's search and a subsequent view of a returned product. Track a product view when the user visits the product, rather than recording a separate invented click event. Explicit search-term tracking is for searches performed outside Relewise. See [search analytics](https://docs.relewise.com/docs/myrelewise/search-analytics.html).
 
+For browser implementations, the SDK's tracking methods accept `keepalive: true` in their request options so a request can continue when the page unloads. It does not guarantee delivery and is unnecessary for these Node.js commands. See [client-side tracking](https://docs.relewise.com/docs/developer/sdks/ts/tracking/client-side-tracking.html) and the [SDK keepalive change](https://github.com/Relewise/relewise-sdk-javascript/pull/203). Use browser-appropriate credentials, not the integration key used by the import lessons.
+
 ## 5. Search products and categories
 
 ```sh
@@ -115,6 +117,22 @@ For an application, distinguish two jobs:
 Choose the update kind deliberately. `ReplaceProvidedProperties` replaces properties supplied by the update; `UpdateAndAppend` can retain existing collection values. Neither means that products missing from the feed are removed. Read the [entity integration guide](https://docs.relewise.com/docs/developer/sdks/ts/integrations/entity-integration.html) before adapting this to your catalog lifecycle. Automatic disabling and deletion are outside this starter import.
 
 ## Optional lessons
+
+### Favorites
+
+After importing the catalog and completing basic tracking and search, run:
+
+```sh
+npm run dev -- favoritesExample add
+npm run dev -- favoritesExample list
+npm run dev -- favoritesExample remove
+```
+
+Read [favoritesExample.ts](src/examples/tracking/favoritesExample.ts). `add` marks the sample Bose headphones as a favorite for `learning-user`; `remove` sets `isFavorite` to `false`. Both then search the same user's favorites. `list` only searches, and running without an argument defaults to `add`. These commands change engagement state in your learning dataset. If a change is not visible immediately, run `list` again after processing has caught up.
+
+The request uses an engagement filter and selects `userEngagement` so each result includes its favorite state. It shows the first ten favorites without a stock filter: saving an item is separate from whether it is currently in stock. This lesson does not implement a storefront or change recommendation ranking.
+
+Favorites require a temporary or authenticated user ID. Anonymous users have no saved favorites; the API can fall back to popular products. In an application, check `userIsAnonymous(user)` and show an empty favorites state instead of issuing this request for an anonymous visitor. See [user engagement](https://docs.relewise.com/docs/tracking/user-engagement.html).
 
 ### Custom product data
 
