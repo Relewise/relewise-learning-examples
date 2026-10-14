@@ -42,7 +42,7 @@ Wait until you have imported products and checked the search index below before 
 npm run dev -- productImportExample
 ```
 
-Read [productImportExample.ts](src/examples/import/productImportExample.ts) alongside [product_data_example.json](product_data/product_data_example.json). The catalog contains 274 products. The importer maps stable product IDs, multilingual names, brands, category paths, prices, and stock to product updates, then sends batches through the SDK. Other source fields are not needed for this first lesson.
+Read [productImportExample.ts](src/examples/import/productImportExample.ts) alongside [product_data_example.json](product_data/product_data_example.json). The catalog contains 274 products. The importer maps stable product IDs, multilingual names, brands, category paths, prices, and stock to product updates, then sends batches through the SDK. The remaining description and image fields are used in the optional custom-data lesson.
 
 The core examples operate on products. This catalog does not import variants. If your integration uses variants, import their IDs and properties before using them in tracking, filters, or facets.
 
@@ -66,7 +66,7 @@ npm run dev -- basicTrackingExample
 
 Read [basicTrackingExample.ts](src/examples/tracking/basicTrackingExample.ts). It sends a product view, a category view, a cart, and an order using IDs from the imported catalog. The explicit sample cart contains two headphones at EUR 379.99 each, for a total of EUR 759.98. This cart stays in EUR regardless of the search currency in `.env`; in your application, use the cart's actual amounts and currency together. These are real tracking events in your learning dataset; rerunning the lesson sends more events.
 
-Shared configuration supplies the temporary user `learning-user` to tracking, search, and recommendations. This makes the connection between an identified user's behavior and later requests visible. Use this fixed ID only for the lesson; assigning every visitor the same ID would merge their behavior.
+Tracking, search, and recommendations explicitly use the shared `DEMO_USER_ID` constant to identify the temporary user `learning-user`. This makes the connection between an identified user's behavior and later requests visible. Use this fixed ID only for the lesson; assigning every visitor the same ID would merge their behavior.
 
 In your application, use an anonymous user when the visitor is not identified for tracking. Use a stable temporary ID for a consenting visitor who is not logged in, and a stable authenticated ID for a logged-in customer where tracking is permitted. A temporary ID should persist across visits and orders, not be regenerated for each request. When the visitor logs in, link the temporary and authenticated identities as described in the [user documentation](https://docs.relewise.com/docs/tracking/user.html). Logging in does not replace your application's consent decisions.
 

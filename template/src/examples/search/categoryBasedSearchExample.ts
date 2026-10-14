@@ -1,9 +1,14 @@
-import { ProductSearchBuilder } from '@relewise/client';
-import { searcher, createSettings, LANGUAGE } from '../../config/relewiseConfig.js';
+import { ProductSearchBuilder, UserFactory } from '@relewise/client';
+import { searcher, LANGUAGE, CURRENCY, DEMO_USER_ID } from '../../config/relewiseConfig.js';
 
 // A product listing page searches products in a category, without a search term.
 export default async function runCategoryBasedSearchExample(categoryId = '5') {
-    const request = new ProductSearchBuilder(createSettings('Category Page'))
+    const request = new ProductSearchBuilder({
+        language: LANGUAGE,
+        currency: CURRENCY,
+        displayedAtLocation: 'Category Page',
+        user: UserFactory.byTemporaryId(DEMO_USER_ID),
+    })
         .setSelectedProductProperties({ displayName: true, pricing: true, brand: true })
         .pagination((pagination) => pagination.setPage(1).setPageSize(12))
         .facets((facets) => facets.addBrandFacet().addSalesPriceRangeFacet('Product'))

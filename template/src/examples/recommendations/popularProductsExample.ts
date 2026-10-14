@@ -1,8 +1,13 @@
-import { PopularProductsBuilder } from '@relewise/client';
-import { recommender, createSettings, LANGUAGE } from '../../config/relewiseConfig.js';
+import { PopularProductsBuilder, UserFactory } from '@relewise/client';
+import { recommender, LANGUAGE, CURRENCY, DEMO_USER_ID } from '../../config/relewiseConfig.js';
 
 export default async function runPopularProductsExample() {
-    const request = new PopularProductsBuilder(createSettings('Front Page'))
+    const request = new PopularProductsBuilder({
+        language: LANGUAGE,
+        currency: CURRENCY,
+        displayedAtLocation: 'Front Page',
+        user: UserFactory.byTemporaryId(DEMO_USER_ID),
+    })
         .setNumberOfRecommendations(8)
         .setSelectedProductProperties({ displayName: true, pricing: true })
         .basedOn('MostPurchased')

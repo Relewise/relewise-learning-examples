@@ -1,8 +1,13 @@
-import { ProductSearchBuilder } from '@relewise/client';
-import { searcher, createSettings, LANGUAGE } from '../../config/relewiseConfig.js';
+import { ProductSearchBuilder, UserFactory } from '@relewise/client';
+import { searcher, LANGUAGE, CURRENCY, DEMO_USER_ID } from '../../config/relewiseConfig.js';
 
 export default async function runTermBasedSearchExample(term = 'headphones') {
-    const request = new ProductSearchBuilder(createSettings('Search Page'))
+    const request = new ProductSearchBuilder({
+        language: LANGUAGE,
+        currency: CURRENCY,
+        displayedAtLocation: 'Search Page',
+        user: UserFactory.byTemporaryId(DEMO_USER_ID),
+    })
         .setTerm(term)
         .setSelectedProductProperties({ displayName: true, pricing: true, brand: true })
         .pagination((pagination) => pagination.setPage(1).setPageSize(10))

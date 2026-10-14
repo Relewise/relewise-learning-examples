@@ -7,6 +7,13 @@ import { integrator } from '../../config/relewiseConfig.js';
 // This maps our supplied catalog, rather than trying to accept arbitrary product feeds.
 export function buildProductUpdate(product: ProductData) {
     const category = product.mainCategory;
+    // The sample uses language as market. Availability is the stock source of truth.
+    const stockData = Object.fromEntries(
+        product.availability.map(({ language, number }) => [
+            `${language}_StockLevel`,
+            DataValueFactory.number(number),
+        ]),
+    );
 
     return new ProductUpdateBuilder({
         id: product.unique_id,
@@ -36,15 +43,7 @@ export function buildProductUpdate(product: ProductData) {
                 }
             }),
         )
-        .data({
-            // The sample uses language as market. Availability is the stock source of truth.
-            ...Object.fromEntries(
-                product.availability.map(({ language, number }) => [
-                    `${language}_StockLevel`,
-                    DataValueFactory.number(number),
-                ]),
-            ),
-        })
+        .data(stockData)
         .build();
 }
 
