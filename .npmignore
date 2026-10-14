@@ -1,16 +1,9 @@
-# Exclude development and build files
 node_modules/
 dist/
 coverage/
-.cache/
 *.log
+*.tgz
 .DS_Store
 .env*
-
-# Exclude editor files
-.vscode/
-.idea/
-
-# But include template files that are part of the scaffold
-!template/.vscode/
 !template/.env.local
+template/package-lock.json

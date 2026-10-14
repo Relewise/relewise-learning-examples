@@ -1,247 +1,102 @@
-/**
- * Example: Product Import to Relewise MCP
- *
- * This file demonstrates how to import product data into Relewise using the TypeScript SDK and Integrator.
- *
- * Key Features:
- * - Loads product data from a local JSON file.
- * - Maps product fields to Relewise's data model using builder and factory patterns.
- * - Handles multilingual, assortment, campaign, and custom fields.
- * - Uses DataValueFactory to ensure correct data types for all product properties.
- * - Batches product updates for efficient import.
- * - Provides robust error handling and logging.
- *
- * Usage:
- * 1. Ensure your `.env` file contains RELEWISE_DATASET_ID, RELEWISE_API_KEY, and RELEWISE_SERVER_URL.
- * 2. Place your product data JSON in `product_data/product_data_example.json`.
- * 3. Build with `npx tsc` and run with `node dist/productImportExample.js` or import/run from `index.ts`.
- * 4. Use this as a template for other Relewise-powered import scenarios.
- *
- * For more, see:
- * - https://github.com/Relewise/relewise-sdk-javascript
- * - Project's .github/copilot-instructions.md
- */
-
-import 'dotenv/config';
-import { Trackable, DataValueFactory } from '@relewise/client';
+import { readFile } from 'node:fs/promises';
+import { DataValueFactory } from '@relewise/client';
 import { ProductUpdateBuilder } from '@relewise/integrations';
-import {
-    Brand,
-    Category,
-    CategoryName,
-    Price,
-    Availability,
-    ProductData,
-    Promoted,
-    OnSale,
-} from '../../types/interfaces.js';
-import fs from 'fs/promises';
-import path from 'path';
-import { fileURLToPath } from 'url';
-import { integrator, LANGUAGE, CURRENCY } from '../../config/relewiseConfig.js';
+import { ProductData } from '../../types/interfaces.js';
+import { integrator } from '../../config/relewiseConfig.js';
 
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
+// This maps our supplied catalog, rather than trying to accept arbitrary product feeds.
+export function buildProductUpdate(product: ProductData, importedAt: number) {
+    const category = product.mainCategory;
 
-/**
- * Imports products from a local JSON file into Relewise MCP.
- *
- * - Loads product data and maps to Relewise's product update format.
- * - Handles multilingual, assortment, campaign, and custom fields.
- * - Uses DataValueFactory for all data values to ensure correct typing.
- * - Batches updates and logs results/errors.
- */
-async function importProductsExample() {
-    // Load product data from local JSON file
-    const dataPath = path.resolve(__dirname, '../../../product_data/product_data_example.json');
-    let allProductsToSync: ProductData[];
-
-    try {
-        const fileContents = await fs.readFile(dataPath, 'utf-8');
-        allProductsToSync = JSON.parse(fileContents) as ProductData[];
-    } catch (err) {
-        console.error(`❌ Failed to load product data from ${dataPath}:`, err);
-        return;
-    }
-
-    const date: number = Date.now();
-    const productUpdates: Trackable[] = [];
-
-    for (const product of allProductsToSync) {
-        try {
-            const productTyped: ProductData = product;
-
-            // Build the product update using the builder pattern
-            const content = new ProductUpdateBuilder({
-                id: productTyped.unique_id.toString(),
-                productUpdateKind: 'UpdateAndAppend',
-            })
-                .brand(
-                    ((): Brand => ({
-                        id: productTyped.brand.id,
-                        displayName: productTyped.brand.displayName,
-                    }))(),
-                )
-                .categoryPaths((cat) =>
-                    cat.path((catPath) => {
-                        const mainCategory: Category = productTyped.mainCategory;
-
-                        // Main category
-                        catPath.category({
-                            id: mainCategory.id,
-                            displayName: mainCategory.name.map((element: CategoryName) => ({
-                                value: element.displayName,
-                                language: element.language,
-                            })),
-                        });
-
-                        // Subcategory (if any)
-                        if (mainCategory.subCategory) {
-                            catPath.category({
-                                id: mainCategory.subCategory.id,
-                                displayName: mainCategory.subCategory.name.map(
-                                    (element: CategoryName) => ({
-                                        value: element.displayName,
-                                        language: element.language,
-                                    }),
-                                ),
-                            });
-                        }
-
-                        return catPath;
-                    }),
-                )
-                .displayName(
-                    productTyped.name.map((element) => ({
-                        language: element.language,
-                        value: element.name,
+    return new ProductUpdateBuilder({
+        id: product.unique_id,
+        productUpdateKind: 'ReplaceProvidedProperties',
+    })
+        .brand(product.brand)
+        .displayName(product.name.map(({ language, name }) => ({ language, value: name })))
+        .listPrice(product.list_price)
+        .salesPrice(product.sales_price)
+        .categoryPaths((paths) =>
+            paths.path((path) => {
+                path.category({
+                    id: category.id,
+                    displayName: category.name.map(({ language, displayName }) => ({
+                        language,
+                        value: displayName,
                     })),
-                )
-                .listPrice(
-                    productTyped.list_price.map((element: Price) => ({
-                        amount: element.amount,
-                        currency: element.currency,
-                    })),
-                )
-                .salesPrice(
-                    productTyped.sales_price.map((element: Price) => ({
-                        amount: element.amount,
-                        currency: element.currency,
-                    })),
-                )
-                .data({
-                    // Map all product data fields using DataValueFactory
-                    Description: DataValueFactory.multilingual(
-                        productTyped.description.map((element) => ({
-                            language: element.language,
-                            value: element.text,
-                        })),
-                    ),
-                    Image: DataValueFactory.string(
-                        productTyped.image.replace(
-                            'upload/',
-                            'upload/c_scale,h_0.5,w_0.5/q_auto:low/',
-                        ),
-                    ),
-                    ...productTyped.availability.reduce(
-                        (acc: Record<string, any>, element: Availability) => {
-                            acc[`${element.language}_StockLevel`] = DataValueFactory.number(element.number);
-
-                            // Initialize multilingual SoldOut and LowStock if missing
-                            if (!acc.SoldOut) {
-                                acc.SoldOut = DataValueFactory.multilingual([]);
-                            }
-                            if (!acc.LowStock) {
-                                acc.LowStock = DataValueFactory.multilingual([]);
-                            }
-
-                            // If availability is 0 - set SoldOut to true for this language
-                            acc.SoldOut.value.values.push({
-                                language: {
-                                    value: element.language,
-                                },
-                                text: String(element.number === 0),
-                            });
-                            acc.LowStock.value.values.push({
-                                language: { value: element.language },
-                                text: String(element.number <= 3),
-                            });
-
-                            return acc;
-                        },
-                        {},
-                    ),
-                    ...(productTyped.promoted
-                        ? {
-                              Promoted: DataValueFactory.multilingual(
-                                  productTyped.promoted.map((element: Promoted) => ({
-                                      language: element.language,
-                                      value: element.value ? 'true' : 'false',
-                                  })),
-                              ),
-                          }
-                        : {}),
-                    ...(productTyped.campaignIds
-                        ? {
-                              campaignIds: DataValueFactory.stringCollection(
-                                  productTyped.campaignIds,
-                              ),
-                          }
-                        : {}),
-                    ...(productTyped.margin
-                        ? { Margin: DataValueFactory.string(productTyped.margin) }
-                        : {}),
-                    ...(productTyped.markets
-                        ? {
-                              AvailableInMarkets: DataValueFactory.stringCollection(
-                                  productTyped.markets,
-                              ),
-                          }
-                        : {}),
-                    ...(productTyped.channels
-                        ? {
-                              AvailableInChannels: DataValueFactory.stringCollection(
-                                  productTyped.channels,
-                              ),
-                          }
-                        : {}),
-                    ...(productTyped.daysAvailable
-                        ? { DaysAvailable: DataValueFactory.number(productTyped.daysAvailable) }
-                        : {}),
-                    ...(productTyped.salesStatus
-                        ? { SalesStatus: DataValueFactory.string(productTyped.salesStatus) }
-                        : {}),
-                    ...(productTyped.OnSale
-                        ? {
-                              OnSale: DataValueFactory.multilingual(
-                                  productTyped.OnSale.map((element: OnSale) => ({
-                                      language: element.language,
-                                      value: String(element.value),
-                                  })),
-                              ),
-                          }
-                        : {}),
-                    ImportedAt: DataValueFactory.number(date),
                 });
-
-            productUpdates.push(content.build());
-        } catch (error) {
-            console.error('❌ Error building product update:', error);
-        }
-    }
-
-    // Batch import all product updates to Relewise
-    if (productUpdates.length > 0) {
-        const batchResponse = await integrator.batch(productUpdates);
-        if (batchResponse) {
-            // Log the full batch response; further type guards can be added if needed
-            console.log('Batch import responses:', batchResponse);
-        }
-        console.log(`✅ Imported ${productUpdates.length} products to Relewise.`);
-    } else {
-        console.log('⚠️ No products to import.');
-    }
+                if (category.subCategory) {
+                    path.category({
+                        id: category.subCategory.id,
+                        displayName: category.subCategory.name.map(({ language, displayName }) => ({
+                            language,
+                            value: displayName,
+                        })),
+                    });
+                }
+            }),
+        )
+        .data({
+            Description: DataValueFactory.multilingual(
+                product.description.map(({ language, text }) => ({ language, value: text })),
+            ),
+            Image: DataValueFactory.string(product.image),
+            // The sample uses language as market. Availability is the stock source of truth.
+            ...Object.fromEntries(
+                product.availability.map(({ language, number }) => [
+                    `${language}_StockLevel`,
+                    DataValueFactory.number(number),
+                ]),
+            ),
+            SoldOut: DataValueFactory.multilingual(
+                product.availability.map(({ language, number }) => ({
+                    language,
+                    value: String(number === 0),
+                })),
+            ),
+            LowStock: DataValueFactory.multilingual(
+                product.availability.map(({ language, number }) => ({
+                    language,
+                    value: String(number > 0 && number <= 3),
+                })),
+            ),
+            // An empty promotion list means unspecified, rather than false in every market.
+            Promoted: product.promoted.length
+                ? DataValueFactory.multilingual(
+                      product.promoted.map(({ language, value }) => ({
+                          language,
+                          value: String(value),
+                      })),
+                  )
+                : null,
+            OnSale: DataValueFactory.multilingual(
+                product.OnSale.map(({ language, value }) => ({ language, value: String(value) })),
+            ),
+            campaignIds:
+                product.campaignIds === null
+                    ? null
+                    : DataValueFactory.stringCollection(product.campaignIds),
+            Margin: DataValueFactory.string(product.margin),
+            AvailableInMarkets: DataValueFactory.stringCollection(product.markets),
+            AvailableInChannels: DataValueFactory.stringCollection(product.channels),
+            DaysAvailable:
+                product.daysAvailable === null
+                    ? null
+                    : DataValueFactory.number(product.daysAvailable),
+            SalesStatus:
+                product.salesStatus === null ? null : DataValueFactory.string(product.salesStatus),
+            ImportedAt: DataValueFactory.number(importedAt),
+        })
+        .build();
 }
 
-/** Default export: runnable from index.ts */
-export default importProductsExample;
+export default async function importProductsExample() {
+    const file = new URL('../../../product_data/product_data_example.json', import.meta.url);
+    const products: ProductData[] = JSON.parse(await readFile(file, 'utf8'));
+    const importedAt = Date.now();
+    const updates = products.map((product) => buildProductUpdate(product, importedAt));
+
+    // The SDK splits large imports into batches. Other products in the dataset are left alone.
+    await integrator.batch(updates);
+    console.log(`Imported ${updates.length} products.`);
+}

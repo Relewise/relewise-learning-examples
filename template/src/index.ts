@@ -1,114 +1,40 @@
-import 'dotenv/config';
-import path from 'path';
-import fs from 'fs';
-import { fileURLToPath } from 'url';
+import { readdirSync } from 'node:fs';
+import path from 'node:path';
+import { fileURLToPath, pathToFileURL } from 'node:url';
 
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
+const directory = path.dirname(fileURLToPath(import.meta.url));
+const extension = path.extname(fileURLToPath(import.meta.url));
+const groups = ['import', 'tracking', 'search', 'recommendations'];
+const examples = groups.flatMap((group) =>
+    readdirSync(path.join(directory, 'examples', group))
+        .filter((file) => file.endsWith('Example' + extension))
+        .map((file) => ({ name: path.basename(file, extension), group, file })),
+);
+const [name, ...args] = process.argv.slice(2);
 
-const [sampleName, ...sampleArgs] = process.argv.slice(2);
+async function main() {
+    if (!name || name === '--help') {
+        console.log('Source: npm run dev -- <example> [arguments]');
+        console.log('Built:  npm start -- <example> [arguments]\n');
+        for (const example of examples) {
+            console.log(example.group + ': ' + example.name);
+        }
+        console.log(
+            '\nStart with QUICKSTART.md. Import and tracking examples write to your dataset.',
+        );
+        return;
+    }
 
-if (!sampleName) {
-    console.error('❌ Please specify a sample to run.');
-    console.log('Example: npm run dev termBasedSearchExample');
-    listAvailableSamples();
-    process.exit(1);
+    const example = examples.find((item) => item.name === name);
+    if (!example) {
+        throw new Error('Unknown example: ' + name + '. Run with --help to list examples.');
+    }
+    const filename = path.join(directory, 'examples', example.group, example.file);
+    const sample = await import(pathToFileURL(filename).href);
+    await sample.default(...args);
 }
 
-async function runSample() {
-    try {
-        // Try to find the sample in subdirectories first
-        const possiblePaths = [
-            path.resolve(__dirname, `examples/search/${sampleName}.ts`),
-            path.resolve(__dirname, `examples/search/${sampleName}.js`),
-            path.resolve(__dirname, `examples/recommendations/${sampleName}.ts`),
-            path.resolve(__dirname, `examples/recommendations/${sampleName}.js`),
-            path.resolve(__dirname, `examples/import/${sampleName}.ts`),
-            path.resolve(__dirname, `examples/import/${sampleName}.js`),
-            path.resolve(__dirname, `examples/tracking/${sampleName}.ts`),
-            path.resolve(__dirname, `examples/tracking/${sampleName}.js`),
-            path.resolve(__dirname, `${sampleName}.ts`),
-            path.resolve(__dirname, `${sampleName}.js`),
-        ];
-
-        let samplePath = null;
-        for (const p of possiblePaths) {
-            if (fs.existsSync(p)) {
-                samplePath = p;
-                break;
-            }
-        }
-
-        if (!samplePath) {
-            console.error(`❌ Sample "${sampleName}" not found`);
-            listAvailableSamples();
-            process.exit(1);
-        }
-
-        console.log(`🚀 Running sample: ${sampleName}`);
-        const sampleModule = await import(samplePath);
-
-        // If the sample exports a default function, execute it with CLI args
-        if (typeof sampleModule.default === 'function') {
-            await sampleModule.default(...sampleArgs);
-        }
-    } catch (err) {
-        console.error(`❌ Error running sample "${sampleName}":`, err);
-    }
-}
-
-function listAvailableSamples() {
-    console.log('\nAvailable samples:');
-
-    const searchDir = path.resolve(__dirname, 'examples/search');
-    const recsDir = path.resolve(__dirname, 'examples/recommendations');
-    const importDir = path.resolve(__dirname, 'examples/import');
-    const trackingDir = path.resolve(__dirname, 'examples/tracking');
-
-    // Search examples
-    if (fs.existsSync(searchDir)) {
-        console.log('\n📍 Search Examples:');
-        const searchFiles = fs
-            .readdirSync(searchDir)
-            .filter((f) => f.endsWith('Example.ts') || f.endsWith('Example.js'));
-        searchFiles.forEach((file) => console.log(' - ' + file.replace(/\.(ts|js)$/, '')));
-    }
-
-    // Recommendation examples
-    if (fs.existsSync(recsDir)) {
-        console.log('\n🎯 Recommendation Examples:');
-        const recFiles = fs
-            .readdirSync(recsDir)
-            .filter((f) => f.endsWith('Example.ts') || f.endsWith('Example.js'));
-        recFiles.forEach((file) => console.log(' - ' + file.replace(/\.(ts|js)$/, '')));
-    }
-
-    // Import examples
-    if (fs.existsSync(importDir)) {
-        console.log('\n📥 Import Examples:');
-        const importFiles = fs
-            .readdirSync(importDir)
-            .filter((f) => f.endsWith('Example.ts') || f.endsWith('Example.js'));
-        importFiles.forEach((file) => console.log(' - ' + file.replace(/\.(ts|js)$/, '')));
-    }
-
-    // Tracking examples
-    if (fs.existsSync(trackingDir)) {
-        console.log('\n📊 Tracking Examples:');
-        const trackingFiles = fs
-            .readdirSync(trackingDir)
-            .filter((f) => f.endsWith('Example.ts') || f.endsWith('Example.js'));
-        trackingFiles.forEach((file) => console.log(' - ' + file.replace(/\.(ts|js)$/, '')));
-    }
-
-    // Root level examples (legacy)
-    const rootFiles = fs
-        .readdirSync(__dirname)
-        .filter((f) => f.endsWith('Example.ts') || f.endsWith('Example.js'));
-    if (rootFiles.length > 0) {
-        console.log('\n📁 Other Examples:');
-        rootFiles.forEach((file) => console.log(' - ' + file.replace(/\.(ts|js)$/, '')));
-    }
-}
-
-runSample();
+main().catch((error) => {
+    console.error(error instanceof Error ? error.message : error);
+    process.exitCode = 1;
+});

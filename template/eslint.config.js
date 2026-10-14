@@ -18,6 +18,7 @@ export default [
             },
             globals: {
                 console: 'readonly',
+                setTimeout: 'readonly',
                 process: 'readonly',
                 __dirname: 'readonly',
                 __filename: 'readonly',
@@ -28,6 +29,9 @@ export default [
             prettier: prettierPlugin,
         },
         rules: {
+            // TypeScript checks variables and names using its own rules.
+            'no-undef': 'off',
+            'no-unused-vars': 'off',
             // TypeScript rules
             '@typescript-eslint/no-unused-vars': ['error', { args: 'none' }],
             '@typescript-eslint/no-explicit-any': 'off',
