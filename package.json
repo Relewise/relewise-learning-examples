@@ -1,6 +1,6 @@
 {
     "name": "@relewise/create-relewise-learning-example",
-    "version": "1.0.1",
+    "version": "2.0.0",
     "description": "Create a TypeScript project for learning Relewise",
     "author": "Relewise",
     "license": "MIT",
