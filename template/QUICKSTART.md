@@ -105,6 +105,8 @@ The [popular products example](src/examples/recommendations/popularProductsExamp
 
 A newly imported catalog has little behavioral history. Results may be empty, and running one sample journey does not guarantee a visible ranking change or a purchased-together relationship. Inspect the request, eligible products, and available behavior before expecting useful recommendations. See the [recommendation examples](https://docs.relewise.com/docs/developer/sdks/ts/recommendations/product-recommendations.html).
 
+For a sample co-purchase involving the default Bose headphones, the optional [historical orders lesson](#historical-orders) includes order `ORD-EUR-001` with those headphones and an Apple iPad Air. Both products are in stock for `en-gb`. Importing this order supplies relevant behavior, but does not guarantee recommendations from a single order.
+
 ## 7. Keep products up to date
 
 The initial import also shows the shape of subsequent product updates. For a simple experiment, change a supplied product's price in the JSON, rerun the import, and inspect that product in My Relewise.

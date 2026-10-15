@@ -27,8 +27,10 @@ export default async function runCDPPersonalizedSearchExample(
         )
         .build();
 
-    console.log('Brand relevance modifier:', request.relevanceModifiers);
+    console.log('Brand relevance modifier:');
+    console.dir(request.relevanceModifiers, { depth: null });
     // A boost can affect ranking, but does not guarantee a different result order.
     const response = await searcher.searchProducts(request);
-    console.log('Products:', response?.results);
+    console.log('Products:');
+    console.dir(response?.results, { depth: null });
 }

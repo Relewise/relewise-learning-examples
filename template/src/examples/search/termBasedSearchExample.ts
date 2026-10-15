@@ -22,6 +22,8 @@ export default async function runTermBasedSearchExample(term = 'headphones') {
         .build();
 
     const response = await searcher.searchProducts(request);
-    console.log('Products:', response?.results);
-    console.log('Facets:', response?.facets);
+    console.log('Products:');
+    console.dir(response?.results, { depth: null });
+    console.log('Facets:');
+    console.dir(response?.facets, { depth: null });
 }

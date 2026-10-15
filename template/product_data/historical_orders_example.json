@@ -1,5 +1,28 @@
 [
     {
+        "orderNumber": "ORD-EUR-001",
+        "customerId": "customer_eur_001",
+        "orderDate": "2024-08-06T10:00:00Z",
+        "currency": "EUR",
+        "userClassifications": {
+            "channel": "B2C"
+        },
+        "lineItems": [
+            {
+                "productId": "0bc52835-3346-4b53-9b82-1ae6355eb3f1",
+                "productName": "Bose Noise Cancelling Headphones 700",
+                "quantity": 1,
+                "lineTotal": 379.99
+            },
+            {
+                "productId": "f8b1274d-f43a-41ed-be01-b2d64be1f848",
+                "productName": "Apple iPad Air",
+                "quantity": 1,
+                "lineTotal": 579
+            }
+        ]
+    },
+    {
         "orderNumber": "ORD-DK-001",
         "customerId": "customer_dk_001",
         "orderDate": "2024-06-15T14:30:00Z",

@@ -37,5 +37,6 @@ export default async function favoritesExample(action = 'add') {
         .build();
 
     const response = await searcher.searchProducts(request);
-    console.log('Favorites (first page):', response?.results);
+    console.log('Favorites (first page):');
+    console.dir(response?.results, { depth: null });
 }

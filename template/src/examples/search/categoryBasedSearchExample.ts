@@ -29,6 +29,8 @@ export default async function runCategoryBasedSearchExample(categoryId = '5') {
         .build();
 
     const response = await searcher.searchProducts(request);
-    console.log('Products in category:', response?.results);
-    console.log('Facets:', response?.facets);
+    console.log('Products in category:');
+    console.dir(response?.results, { depth: null });
+    console.log('Facets:');
+    console.dir(response?.facets, { depth: null });
 }

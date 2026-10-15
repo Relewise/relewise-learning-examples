@@ -22,5 +22,6 @@ export default async function runPurchasedWithProductExample(
 
     const response = await recommender.recommendPurchasedWithProduct(request);
     // This catalog ID is in stock. Co-purchase results also need order history.
-    console.log('Products purchased together:', response?.recommendations);
+    console.log('Products purchased together:');
+    console.dir(response?.recommendations, { depth: null });
 }

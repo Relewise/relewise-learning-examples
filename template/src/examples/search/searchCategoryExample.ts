@@ -16,5 +16,6 @@ export default async function runCategorySearchExample(term = 'Hi-Fi') {
         .build();
 
     const response = await searcher.searchProductCategories(request);
-    console.log('Categories:', response?.results);
+    console.log('Categories:');
+    console.dir(response?.results, { depth: null });
 }

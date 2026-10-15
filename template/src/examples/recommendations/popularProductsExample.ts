@@ -21,6 +21,7 @@ export default async function runPopularProductsExample() {
 
     const response = await recommender.recommendPopularProducts(request);
     // A new dataset may have no recommendations until it has enough purchase activity.
-    console.log('Popular products:', response?.recommendations);
+    console.log('Popular products:');
+    console.dir(response?.recommendations, { depth: null });
     return response?.recommendations;
 }
