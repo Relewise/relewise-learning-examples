@@ -23,6 +23,8 @@ jobs:
       - run: npm test
         env:
           VERIFY_PACKED_PROJECT: 'true'
-      - run: npm install --prefix template --ignore-scripts
+      - run: npm install --ignore-scripts
+        working-directory: template
+      - run: git diff --exit-code -- template/package.json
       - run: npm run test:examples
       - run: npm run lint --prefix template

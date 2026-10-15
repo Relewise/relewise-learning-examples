@@ -43,6 +43,7 @@ test('packed CLI creates a usable project without overwriting existing files', a
     const packageJson = JSON.parse(await readFile(path.join(project, 'package.json'), 'utf8'));
     assert.equal(packageJson.name, 'example-shop');
     assert.equal(packageJson.description, 'Learning Relewise');
+    assert.equal(packageJson.dependencies['@relewise/create-relewise-learning-example'], undefined);
     assert.equal(
         await readFile(path.join(project, 'LICENSE'), 'utf8'),
         await readFile(path.join(repository, 'LICENSE'), 'utf8'),

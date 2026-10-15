@@ -21,7 +21,9 @@ The root project is the scaffolding CLI. `template/` is the project it generates
 ```sh
 npm ci
 npm test
-npm install --prefix template --ignore-scripts
+cd template
+npm install --ignore-scripts
+cd ..
 npm run test:examples
 cd template
 npm run build
