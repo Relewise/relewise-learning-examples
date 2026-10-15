@@ -34,6 +34,8 @@ test('packed CLI creates a usable project without overwriting existing files', a
     assert.ok(!names.includes('template/package-lock.json'));
     assert.ok(!names.some((name) => name.includes('/node_modules/') || name.includes('/dist/')));
     execFileSync('tar', ['-xf', path.join(directory, filename), '-C', directory]);
+    const packedPackage = JSON.parse(await readFile(path.join(directory, 'package/package.json'), 'utf8'));
+    assert.equal(packedPackage.bin['create-relewise-learning-example'], 'bin/index.js');
     const { createProject } = await import(
         pathToFileURL(path.join(directory, 'package/bin/create-project.js')).href
     );
