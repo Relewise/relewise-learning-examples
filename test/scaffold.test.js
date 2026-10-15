@@ -18,7 +18,7 @@ test('packed CLI creates a usable project without overwriting existing files', a
     });
 
     const packed = execFileSync(
-        'npm pack --json --ignore-scripts --pack-destination "' + directory + '"',
+        'npm pack --json --ignore-scripts --dry-run=false --pack-destination "' + directory + '"',
         {
             cwd: repository,
             shell: true,
