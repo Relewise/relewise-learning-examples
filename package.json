@@ -25,7 +25,7 @@
         "create"
     ],
     "bin": {
-        "create-relewise-learning-example": "./bin/index.js"
+        "create-relewise-learning-example": "bin/index.js"
     },
     "type": "module",
     "engines": {
