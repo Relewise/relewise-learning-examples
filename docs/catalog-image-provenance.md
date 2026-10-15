@@ -1,27 +1,27 @@
 # Catalog image provenance
 
-Status: image reuse permissions remain unverified as of October 15, 2026.
+All 274 sample products now reference one generated placeholder:
+[`template/assets/product-placeholder.png`](../template/assets/product-placeholder.png).
+It is included in the repository and the npm template. The catalog uses its raw
+GitHub URL on `main`, which requires the asset to be merged and the repository
+to be public before it can be loaded externally.
 
-The sample catalog contains 274 image URLs, all hosted under
-`res.cloudinary.com/relewisedemodata/image/upload/`. The repository stores URLs,
-not copies of these image files. The optional custom-data import sends the URLs
-to Relewise; it does not download the images.
+The placeholder was generated on October 15, 2026 with OpenAI's built-in image
+generation tool, without reference images. It depicts an unbranded gray box and
+is supplied under the repository's MIT license.
 
-The catalog was introduced in commit `1f10ea9` on July 31, 2025 ("added products").
-That commit does not identify the original image sources or their licenses.
-The repository's MIT license does not establish the provenance or permissions
-for the externally hosted images. Searches of the repository history, internal
-knowledgebase, and indexed Slack messages found no documentation confirming
-those permissions.
+Generation prompt:
 
-Before making the repository public, confirm with the owner of the demo catalog
-or Cloudinary account where the images came from and what permissions cover
-their use in an externally shared learning resource. Record the source and
-permission evidence here. Cloudinary hosting alone is not evidence of an image
-license; its [terms of use](https://cloudinary.com/tou) distinguish uploaded
-content from the hosting service.
+> Generate one square product catalog placeholder: a single plain unbranded light-gray cardboard box, centered on a white background with a soft studio shadow. Clean, understated 3D illustration with generous whitespace. No text, logos, trademarks, recognizable products, or decorative elements. Intended as the same neutral placeholder for every product in a programming tutorial.
 
-If suitable permission cannot be established, replace the image URLs with
-Relewise-owned or explicitly licensed sample assets, or remove the image field
-from the lesson. Existing URLs also remain in Git history; changing the current
-catalog alone does not remove those historical references.
+## Previous catalog images
+
+Earlier versions referenced 274 externally hosted product images from the
+`relewisedemodata` Cloudinary account. The catalog was introduced in commit
+`1f10ea9` on July 31, 2025 without image source or permission records. Searches
+of repository history, the internal knowledgebase, and indexed Slack messages
+did not establish reuse permissions.
+
+The current catalog no longer references those images. Their URLs remain in
+older Git commits; this change does not rewrite history or remove the original
+Cloudinary uploads. No permission claim is made for those older images.

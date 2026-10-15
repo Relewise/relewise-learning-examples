@@ -56,7 +56,7 @@
         "text": "Langattomat kuulokkeet, joissa on huippuluokan melunvaimennus."
       }
     ],
-    "image": "https://res.cloudinary.com/relewisedemodata/image/upload/v1724946068/electronics/00198c54-6c62-4e08-be40-a539963985d0.png",
+    "image": "https://raw.githubusercontent.com/Relewise/adhoc-relewise-examples/main/template/assets/product-placeholder.png",
     "list_price": [
       {
         "amount": 349.99,
@@ -244,7 +244,7 @@
         "text": "Korkean suorituskyvyn NVMe SSD nopeampia latausaikoja ja luotettavaa tallennusta varten."
       }
     ],
-    "image": "https://res.cloudinary.com/relewisedemodata/image/upload/v1724946145/electronics/01563025-4bc4-4dfd-971a-308017905f80.png",
+    "image": "https://raw.githubusercontent.com/Relewise/adhoc-relewise-examples/main/template/assets/product-placeholder.png",
     "list_price": [
       {
         "amount": 129.99,
@@ -432,7 +432,7 @@
         "text": "Nopea ja eläväinen pelipaneeli edistyksellisillä ominaisuuksilla vakaville pelaajille."
       }
     ],
-    "image": "https://res.cloudinary.com/relewisedemodata/image/upload/v1724945969/electronics/072489c7-9f66-4d14-89d0-408830099c9c.png",
+    "image": "https://raw.githubusercontent.com/Relewise/adhoc-relewise-examples/main/template/assets/product-placeholder.png",
     "list_price": [
       {
         "amount": 599.99,
@@ -620,7 +620,7 @@
         "text": "Korkean nopeuden tallennustila, joka parantaa järjestelmän suorituskykyä sujuvampaa kokemusta varten."
       }
     ],
-    "image": "https://res.cloudinary.com/relewisedemodata/image/upload/v1724943851/electronics/09b201eb-eb4d-46d5-bb40-da2d443b8406.png",
+    "image": "https://raw.githubusercontent.com/Relewise/adhoc-relewise-examples/main/template/assets/product-placeholder.png",
     "list_price": [
       {
         "amount": 99.99,
@@ -808,7 +808,7 @@
         "text": "Vallankumoukselliset kuulokkeet, joissa on mukautuva melunvaimennus ja erinomainen äänenlaatu."
       }
     ],
-    "image": "https://res.cloudinary.com/relewisedemodata/image/upload/v1724943929/electronics/0bc52835-3346-4b53-9b82-1ae6355eb3f1.png",
+    "image": "https://raw.githubusercontent.com/Relewise/adhoc-relewise-examples/main/template/assets/product-placeholder.png",
     "list_price": [
       {
         "amount": 379.99,
@@ -996,7 +996,7 @@
         "text": "Kompakti langaton kaiutin, jossa on uskomaton äänenlaatu."
       }
     ],
-    "image": "https://res.cloudinary.com/relewisedemodata/image/upload/v1724939336/electronics/0ff5928e-abe4-407f-85ff-e7981909538e.png",
+    "image": "https://raw.githubusercontent.com/Relewise/adhoc-relewise-examples/main/template/assets/product-placeholder.png",
     "list_price": [
       {
         "amount": 179.95,
@@ -1184,7 +1184,7 @@
         "text": "Tyylikäs jääkaappi, jossa on monipuolinen jäähdytysjärjestelmä tuoreudelle."
       }
     ],
-    "image": "https://res.cloudinary.com/relewisedemodata/image/upload/v1724939272/electronics/12ddc362-1e87-43b4-88a2-17b587b2ea44.png",
+    "image": "https://raw.githubusercontent.com/Relewise/adhoc-relewise-examples/main/template/assets/product-placeholder.png",
     "list_price": [
       {
         "amount": 799,
@@ -1372,7 +1372,7 @@
         "text": "Laajenna mobiilityötilasi useilla liitännöillä."
       }
     ],
-    "image": "https://res.cloudinary.com/relewisedemodata/image/upload/v1724946148/electronics/13512619-2e2d-447f-9a9f-c744fd7f791d.png",
+    "image": "https://raw.githubusercontent.com/Relewise/adhoc-relewise-examples/main/template/assets/product-placeholder.png",
     "list_price": [
       {
         "amount": 89.99,
@@ -1560,7 +1560,7 @@
         "text": "Pelikäyttöön suunniteltu kuuloke, jossa on 7.1 virtuaali-äänentoisto ja ergonominen muotoilu."
       }
     ],
-    "image": "https://res.cloudinary.com/relewisedemodata/image/upload/v1724945788/electronics/14ee05c1-2988-4ee5-9679-b8f90e1fbe66.png",
+    "image": "https://raw.githubusercontent.com/Relewise/adhoc-relewise-examples/main/template/assets/product-placeholder.png",
     "list_price": [
       {
         "amount": 129.99,
@@ -1748,7 +1748,7 @@
         "text": "Tyylikäs kannettava tietokone, joka yhdistää kauneuden ja voiman ammatilliseen käyttöön."
       }
     ],
-    "image": "https://res.cloudinary.com/relewisedemodata/image/upload/v1724943792/electronics/1b686bba-df0e-4692-9d6f-cee402c56eff.png",
+    "image": "https://raw.githubusercontent.com/Relewise/adhoc-relewise-examples/main/template/assets/product-placeholder.png",
     "list_price": [
       {
         "amount": 899.99,
@@ -1936,7 +1936,7 @@
         "text": "Ammattimainen mekaaninen pelinäppäimistö, jossa on mukautettavat RGB-valot."
       }
     ],
-    "image": "https://res.cloudinary.com/relewisedemodata/image/upload/v1724945790/electronics/1bfa5a93-2838-42c2-aa3d-b8262f20494d.png",
+    "image": "https://raw.githubusercontent.com/Relewise/adhoc-relewise-examples/main/template/assets/product-placeholder.png",
     "list_price": [
       {
         "amount": 199.99,
@@ -2124,7 +2124,7 @@
         "text": "Koe upea 4K-resoluutio kirkkailla väreillä."
       }
     ],
-    "image": "https://res.cloudinary.com/relewisedemodata/image/upload/v1724944323/electronics/1db4cdbe-6f8b-40bb-bd73-b1a26c7e4748.png",
+    "image": "https://raw.githubusercontent.com/Relewise/adhoc-relewise-examples/main/template/assets/product-placeholder.png",
     "list_price": [
       {
         "amount": 899.99,
@@ -2312,7 +2312,7 @@
         "text": "Edistyksellinen astianpesukone, joka tarjoaa erinomaisen puhdistustehon."
       }
     ],
-    "image": "https://res.cloudinary.com/relewisedemodata/image/upload/v1724940012/electronics/1f0e56a5-5cb9-4f92-bb01-440e1e093654.png",
+    "image": "https://raw.githubusercontent.com/Relewise/adhoc-relewise-examples/main/template/assets/product-placeholder.png",
     "list_price": [
       {
         "amount": 699,
@@ -2500,7 +2500,7 @@
         "text": "Paras universaali kauko-ohjain kaikkien laitteidesi ohjaamiseen."
       }
     ],
-    "image": "https://res.cloudinary.com/relewisedemodata/image/upload/v1724939226/electronics/1f589349-e2d3-4667-ab25-af0bd583f019.png",
+    "image": "https://raw.githubusercontent.com/Relewise/adhoc-relewise-examples/main/template/assets/product-placeholder.png",
     "list_price": [
       {
         "amount": 349.99,
@@ -2688,7 +2688,7 @@
         "text": "Luotettava signaalinvahvistin Wi-Fi-signaalin parantamiseen."
       }
     ],
-    "image": "https://res.cloudinary.com/relewisedemodata/image/upload/v1724945631/electronics/23cdeaf0-d406-4c83-bc36-065d12aedd46.png",
+    "image": "https://raw.githubusercontent.com/Relewise/adhoc-relewise-examples/main/template/assets/product-placeholder.png",
     "list_price": [
       {
         "amount": 59.99,
@@ -2876,7 +2876,7 @@
         "text": "Langattomat kuulokkeet, joissa on lisäbassoa ja melua vaimentavaa teknologiaa."
       }
     ],
-    "image": "https://res.cloudinary.com/relewisedemodata/image/upload/v1724946206/electronics/2486528c-05ca-44ff-bbc0-58d2d49edc3b.png",
+    "image": "https://raw.githubusercontent.com/Relewise/adhoc-relewise-examples/main/template/assets/product-placeholder.png",
     "list_price": [
       {
         "amount": 249.99,
@@ -3064,7 +3064,7 @@
         "text": "Paranna tuottavuutta laajalla näytöllä."
       }
     ],
-    "image": "https://res.cloudinary.com/relewisedemodata/image/upload/v1724946126/electronics/249d2369-18d2-4504-b15a-01a1c5ffd9a4.png",
+    "image": "https://raw.githubusercontent.com/Relewise/adhoc-relewise-examples/main/template/assets/product-placeholder.png",
     "list_price": [
       {
         "amount": 499.99,
@@ -3252,7 +3252,7 @@
         "text": "Vakuuttava puhdistustehokkuus joustavilla kuormitusvaihtoehdoilla."
       }
     ],
-    "image": "https://res.cloudinary.com/relewisedemodata/image/upload/v1724939278/electronics/24c7d36b-b53b-4a72-94d4-2befdabc100c.png",
+    "image": "https://raw.githubusercontent.com/Relewise/adhoc-relewise-examples/main/template/assets/product-placeholder.png",
     "list_price": [
       {
         "amount": 849.99,
@@ -3440,7 +3440,7 @@
         "text": "Aidot langattomat nappikuulokkeet, joissa on immersiivinen ääni ja melunvaimennus."
       }
     ],
-    "image": "https://res.cloudinary.com/relewisedemodata/image/upload/v1724945846/electronics/24cdb5f0-f349-420f-b40f-cafc4cfcd774.png",
+    "image": "https://raw.githubusercontent.com/Relewise/adhoc-relewise-examples/main/template/assets/product-placeholder.png",
     "list_price": [
       {
         "amount": 229.99,
@@ -3628,7 +3628,7 @@
         "text": "Upea 27-tuuman 4K näyttö, joka sopii erinomaisesti ammattikäyttöön ja sisällöntuotantoon."
       }
     ],
-    "image": "https://res.cloudinary.com/relewisedemodata/image/upload/v1724943950/electronics/26054f09-4219-47b7-9723-ed103f75ace1.png",
+    "image": "https://raw.githubusercontent.com/Relewise/adhoc-relewise-examples/main/template/assets/product-placeholder.png",
     "list_price": [
       {
         "amount": 649.99,
@@ -3816,7 +3816,7 @@
         "text": "Kannettava kaiutin syvällä bassolla, vedenkestävä ja kestävä muotoilu."
       }
     ],
-    "image": "https://res.cloudinary.com/relewisedemodata/image/upload/v1724943868/electronics/2725e70e-c134-4ac9-9779-e3849d871877.png",
+    "image": "https://raw.githubusercontent.com/Relewise/adhoc-relewise-examples/main/template/assets/product-placeholder.png",
     "list_price": [
       {
         "amount": 179.95,
@@ -4004,7 +4004,7 @@
         "text": "Älykäs valaistusjärjestelmä, joka parantaa kotiasi 50 000 lämpimän valkoisen valon ja viileän päivänvalon sävyllä sekä välittömällä langattomalla himmennyksellä"
       }
     ],
-    "image": "https://res.cloudinary.com/relewisedemodata/image/upload/v1724943929/electronics/2787f310-640b-4d95-83ef-614de345d5c4.png",
+    "image": "https://raw.githubusercontent.com/Relewise/adhoc-relewise-examples/main/template/assets/product-placeholder.png",
     "list_price": [
       {
         "amount": 199.99,
@@ -4192,7 +4192,7 @@
         "text": "Täydellinen yhdistelmä OLED-teknologiaa, joka tarjoaa upeita kuvastoja ja syvää mustaa."
       }
     ],
-    "image": "https://res.cloudinary.com/relewisedemodata/image/upload/v1724939118/electronics/288c08f4-1e86-4587-bde1-f376769e25c7.png",
+    "image": "https://raw.githubusercontent.com/Relewise/adhoc-relewise-examples/main/template/assets/product-placeholder.png",
     "list_price": [
       {
         "amount": 1899.99,
@@ -4380,7 +4380,7 @@
         "text": "Pelinäyttö, jossa on erittäin nopeat vasteajat ja sujuva grafiikka."
       }
     ],
-    "image": "https://res.cloudinary.com/relewisedemodata/image/upload/v1724943763/electronics/2942942e-48aa-4f6e-a54b-dcc6591600f7.png",
+    "image": "https://raw.githubusercontent.com/Relewise/adhoc-relewise-examples/main/template/assets/product-placeholder.png",
     "list_price": [
       {
         "amount": 499.99,
@@ -4568,7 +4568,7 @@
         "text": "Tehokas mesh WiFi-järjestelmä, joka tarjoaa saumattoman kattavuuden ja nopeat yhteydet."
       }
     ],
-    "image": "https://res.cloudinary.com/relewisedemodata/image/upload/v1724945628/electronics/298bc2c9-433e-4f5a-b359-95b9f5ee49b7.png",
+    "image": "https://raw.githubusercontent.com/Relewise/adhoc-relewise-examples/main/template/assets/product-placeholder.png",
     "list_price": [
       {
         "amount": 199.99,
@@ -4756,7 +4756,7 @@
         "text": "1080p verkkokamera, joka on suunniteltu ammattilaislähetyksiin ja videopuheluihin."
       }
     ],
-    "image": "https://res.cloudinary.com/relewisedemodata/image/upload/v1724945847/electronics/29b14581-88c6-4af2-84b6-0b1cb3473f06.png",
+    "image": "https://raw.githubusercontent.com/Relewise/adhoc-relewise-examples/main/template/assets/product-placeholder.png",
     "list_price": [
       {
         "amount": 169.99,
@@ -4944,7 +4944,7 @@
         "text": "Huuhtelemisaine tahrattomille ja kiiltäville astioille."
       }
     ],
-    "image": "https://res.cloudinary.com/relewisedemodata/image/upload/v1724946245/electronics/2b488db7-b8d7-4266-a69b-44b7ed27b7c3.png",
+    "image": "https://raw.githubusercontent.com/Relewise/adhoc-relewise-examples/main/template/assets/product-placeholder.png",
     "list_price": [
       {
         "amount": 9.99,
@@ -5132,7 +5132,7 @@
         "text": "Kompakti kaiutin, jossa on voimakas bassotoisto ja vedenkestävä ominaisuus."
       }
     ],
-    "image": "https://res.cloudinary.com/relewisedemodata/image/upload/v1724945847/electronics/2c63c59d-17c4-4740-80c2-80f9ce75c84e.png",
+    "image": "https://raw.githubusercontent.com/Relewise/adhoc-relewise-examples/main/template/assets/product-placeholder.png",
     "list_price": [
       {
         "amount": 149.99,
@@ -5320,7 +5320,7 @@
         "text": "Kevyt kannettava tietokone, jossa on poikkeuksellinen suorituskyky jokapäiväisiin tehtäviin."
       }
     ],
-    "image": "https://res.cloudinary.com/relewisedemodata/image/upload/v1724944009/electronics/2da7339d-565b-4e57-bbc8-6941f4120a66.png",
+    "image": "https://raw.githubusercontent.com/Relewise/adhoc-relewise-examples/main/template/assets/product-placeholder.png",
     "list_price": [
       {
         "amount": 749.99,
@@ -5508,7 +5508,7 @@
         "text": "Kannettava vedenkestävä kaiutin, joka tarjoaa voimakasta ääntä."
       }
     ],
-    "image": "https://res.cloudinary.com/relewisedemodata/image/upload/v1724946085/electronics/2ef4005a-c12c-4da0-972b-d7528caac358.png",
+    "image": "https://raw.githubusercontent.com/Relewise/adhoc-relewise-examples/main/template/assets/product-placeholder.png",
     "list_price": [
       {
         "amount": 179.95,
@@ -5696,7 +5696,7 @@
         "text": "Nopea ja luotettava pyykinpesukone kiireisille kotitalouksille."
       }
     ],
-    "image": "https://res.cloudinary.com/relewisedemodata/image/upload/v1724939478/electronics/2fc8c427-1ee3-4b16-a279-db13acb6fcb0.png",
+    "image": "https://raw.githubusercontent.com/Relewise/adhoc-relewise-examples/main/template/assets/product-placeholder.png",
     "list_price": [
       {
         "amount": 599,
@@ -5884,7 +5884,7 @@
         "text": "Älykäs LED-valo, joka parantaa mielialaa säädettävällä tunnelmalla."
       }
     ],
-    "image": "https://res.cloudinary.com/relewisedemodata/image/upload/v1742312211/electronics/307fc510-e22e-469b-a33f-eb57a3f29614.png",
+    "image": "https://raw.githubusercontent.com/Relewise/adhoc-relewise-examples/main/template/assets/product-placeholder.png",
     "list_price": [
       {
         "amount": 49.99,
@@ -6072,7 +6072,7 @@
         "text": "Langattomat melunvaimentavat kuulokkeet, joissa on pitkä akunkesto."
       }
     ],
-    "image": "https://res.cloudinary.com/relewisedemodata/image/upload/v1724945867/electronics/30ca6be3-7384-49b9-8f2d-4de2cc6e29c3.png",
+    "image": "https://raw.githubusercontent.com/Relewise/adhoc-relewise-examples/main/template/assets/product-placeholder.png",
     "list_price": [
       {
         "amount": 199.99,
@@ -6260,7 +6260,7 @@
         "text": "Tehokas kannettava tietokone, joka on suunniteltu tuottavuuteen ja viihteeseen, varustettu uusimmalla Intel i5 prosessorilla."
       }
     ],
-    "image": "https://res.cloudinary.com/relewisedemodata/image/upload/v1724939074/electronics/34ed2573-b22b-4e2b-8c15-e9c465d145e0.png",
+    "image": "https://raw.githubusercontent.com/Relewise/adhoc-relewise-examples/main/template/assets/product-placeholder.png",
     "list_price": [
       {
         "amount": 999.99,
@@ -6448,7 +6448,7 @@
         "text": "A great insurance for anyone buying a laptop"
       }
     ],
-    "image": "https://res.cloudinary.com/relewisedemodata/image/upload/v1724939074/electronics/34ed2993-b22b-4e2b-8c05-e9c465d146e0.webp",
+    "image": "https://raw.githubusercontent.com/Relewise/adhoc-relewise-examples/main/template/assets/product-placeholder.png",
     "list_price": [
       {
         "amount": 9.99,
@@ -6612,7 +6612,7 @@
         "text": "Innovatiivinen jakautuvan näppäimistön muotoilu, joka tarjoaa luonnollisemman kirjoitusasennon ja lisää mukavuutta."
       }
     ],
-    "image": "https://res.cloudinary.com/relewisedemodata/image/upload/v1724939643/electronics/34f9b2a1-f85a-4b85-bc12-e1dabe11aeb1.png",
+    "image": "https://raw.githubusercontent.com/Relewise/adhoc-relewise-examples/main/template/assets/product-placeholder.png",
     "list_price": [
       {
         "amount": 129.99,
@@ -6800,7 +6800,7 @@
         "text": "Korkean suorituskyvyn dock, joka yhdistää useita oheislaitteita Thunderboltilla."
       }
     ],
-    "image": "https://res.cloudinary.com/relewisedemodata/image/upload/v1724945888/electronics/35e63dd1-b704-4ff4-ae69-7e40a31e4de6.png",
+    "image": "https://raw.githubusercontent.com/Relewise/adhoc-relewise-examples/main/template/assets/product-placeholder.png",
     "list_price": [
       {
         "amount": 329.99,
@@ -6988,7 +6988,7 @@
         "text": "Tyylikäs 2-in-1 kannettava, joka tunnetaan keveydestään ja erinomaisesta suorituskyvystään."
       }
     ],
-    "image": "https://res.cloudinary.com/relewisedemodata/image/upload/v1724940134/electronics/36b7f3a8-8fbb-4a3c-b23d-5a1f63be34ed.png",
+    "image": "https://raw.githubusercontent.com/Relewise/adhoc-relewise-examples/main/template/assets/product-placeholder.png",
     "list_price": [
       {
         "amount": 1299,
@@ -7176,7 +7176,7 @@
         "text": "Kaikki yhdessä -tulostin langattomilla ja mobiilitulostusmahdollisuuksilla."
       }
     ],
-    "image": "https://res.cloudinary.com/relewisedemodata/image/upload/v1724944026/electronics/3771701a-ef82-4a05-bc15-d83e25a7378b.png",
+    "image": "https://raw.githubusercontent.com/Relewise/adhoc-relewise-examples/main/template/assets/product-placeholder.png",
     "list_price": [
       {
         "amount": 179.99,
@@ -7364,7 +7364,7 @@
         "text": "Älykäs valaistusratkaisu, joka antaa sinun luoda tunnelmaa väreillä."
       }
     ],
-    "image": "https://res.cloudinary.com/relewisedemodata/image/upload/v1724944065/electronics/399aa119-af3e-4e16-9ecd-b88def7ebf8f.png",
+    "image": "https://raw.githubusercontent.com/Relewise/adhoc-relewise-examples/main/template/assets/product-placeholder.png",
     "list_price": [
       {
         "amount": 199.99,
@@ -7552,7 +7552,7 @@
         "text": "Hiljainen toiminta älyteknologialla tehokkaaseen puhdistamiseen."
       }
     ],
-    "image": "https://res.cloudinary.com/relewisedemodata/image/upload/v1724940069/electronics/3c8d5183-f8d6-4c22-a953-993a9ce952be.png",
+    "image": "https://raw.githubusercontent.com/Relewise/adhoc-relewise-examples/main/template/assets/product-placeholder.png",
     "list_price": [
       {
         "amount": 849.99,
@@ -7740,7 +7740,7 @@
         "text": "Tyylikäs ja tehokas astianpesukone, joka on suunniteltu päivittäisiin puhtaus tarpeisiin."
       }
     ],
-    "image": "https://res.cloudinary.com/relewisedemodata/image/upload/v1724940012/electronics/3d0b7fd1-e38b-4ca9-9c75-799793bb4c6f.png",
+    "image": "https://raw.githubusercontent.com/Relewise/adhoc-relewise-examples/main/template/assets/product-placeholder.png",
     "list_price": [
       {
         "amount": 679,
@@ -7928,7 +7928,7 @@
         "text": "Löydä upea yksityiskohtaisuus ja värit Sonyn kehittyneen OLED-teknologian avulla tyylikkäässä muotoilussa."
       }
     ],
-    "image": "https://res.cloudinary.com/relewisedemodata/image/upload/v1724940044/electronics/3eb4ab0a-1dd4-4b4e-b178-1403e010d979.png",
+    "image": "https://raw.githubusercontent.com/Relewise/adhoc-relewise-examples/main/template/assets/product-placeholder.png",
     "list_price": [
       {
         "amount": 1899.99,
@@ -8116,7 +8116,7 @@
         "text": "Budjettiystävällinen pelikannettava, jossa voimakas grafiikkakortti."
       }
     ],
-    "image": "https://res.cloudinary.com/relewisedemodata/image/upload/v1724944026/electronics/3f1e1d5b-8a02-498d-8da5-026468b641f1.png",
+    "image": "https://raw.githubusercontent.com/Relewise/adhoc-relewise-examples/main/template/assets/product-placeholder.png",
     "list_price": [
       {
         "amount": 999.99,
@@ -8304,7 +8304,7 @@
         "text": "Monipuolinen näyttö, jossa on HDR 10 ja USB-C -liitettävyys luoville ammattilaisille."
       }
     ],
-    "image": "https://res.cloudinary.com/relewisedemodata/image/upload/v1724946186/electronics/40be824a-a83b-43fc-84c6-a7c9c5d1a9a2.png",
+    "image": "https://raw.githubusercontent.com/Relewise/adhoc-relewise-examples/main/template/assets/product-placeholder.png",
     "list_price": [
       {
         "amount": 699.99,
@@ -8492,7 +8492,7 @@
         "text": "Ympäröivä kuulokemalli, jossa on maailmanluokan melunvaimennus ja huippuluokan äänenlaatu."
       }
     ],
-    "image": "https://res.cloudinary.com/relewisedemodata/image/upload/v1724946165/electronics/4469c828-0fb4-454c-9ff8-88dc4ed64164.png",
+    "image": "https://raw.githubusercontent.com/Relewise/adhoc-relewise-examples/main/template/assets/product-placeholder.png",
     "list_price": [
       {
         "amount": 299.95,
@@ -8680,7 +8680,7 @@
         "text": "Korkean suorituskyvyn pelimonitori, jossa on 144Hz virkistystaajuus."
       }
     ],
-    "image": "https://res.cloudinary.com/relewisedemodata/image/upload/v1724944344/electronics/44ca73f4-3c77-4fdd-8402-454fa9dc9fd6.png",
+    "image": "https://raw.githubusercontent.com/Relewise/adhoc-relewise-examples/main/template/assets/product-placeholder.png",
     "list_price": [
       {
         "amount": 399.99,
@@ -8868,7 +8868,7 @@
         "text": "4K NanoCell TV, joka tarjoaa elinvoimaisia värejä ja teräviä yksityiskohtia."
       }
     ],
-    "image": "https://res.cloudinary.com/relewisedemodata/image/upload/v1724944223/electronics/45238d65-f771-4eee-b9b2-5d59262e68f8.png",
+    "image": "https://raw.githubusercontent.com/Relewise/adhoc-relewise-examples/main/template/assets/product-placeholder.png",
     "list_price": [
       {
         "amount": 1099.99,
@@ -9056,7 +9056,7 @@
         "text": "Langattomat kuulokkeet, joissa on alan johtava häiriönpoistoteknologia."
       }
     ],
-    "image": "https://res.cloudinary.com/relewisedemodata/image/upload/v1724943987/electronics/46c5e9d9-e8e3-4f66-af35-b8b8ca9bbfbb.png",
+    "image": "https://raw.githubusercontent.com/Relewise/adhoc-relewise-examples/main/template/assets/product-placeholder.png",
     "list_price": [
       {
         "amount": 349.95,
@@ -9244,7 +9244,7 @@
         "text": "Kannettava kaiutin, jossa on voimakas ääni ja sisäänrakennettu power bank laitteiden lataamiseen."
       }
     ],
-    "image": "https://res.cloudinary.com/relewisedemodata/image/upload/v1724944163/electronics/4749a58f-b144-4fd9-8fe0-c39c5abcff24.png",
+    "image": "https://raw.githubusercontent.com/Relewise/adhoc-relewise-examples/main/template/assets/product-placeholder.png",
     "list_price": [
       {
         "amount": 179.95,
@@ -9432,7 +9432,7 @@
         "text": "Monipuolinen 2-in-1 kannettava tietokone, joka yhdistää ensiluokkaisen muotoilun ja suorituskyvyn."
       }
     ],
-    "image": "https://res.cloudinary.com/relewisedemodata/image/upload/v1724939071/electronics/47fd87a3-afbe-494c-85b6-a6903ad6236f.png",
+    "image": "https://raw.githubusercontent.com/Relewise/adhoc-relewise-examples/main/template/assets/product-placeholder.png",
     "list_price": [
       {
         "amount": 1299,
@@ -9620,7 +9620,7 @@
         "text": "Kevyt kannettava tietokone, jossa on tyylikäs muotoilu, täydellinen työskentelyyn ja peliin."
       }
     ],
-    "image": "https://res.cloudinary.com/relewisedemodata/image/upload/v1724943870/electronics/4a241999-1881-4318-98e5-0ccae0bb7b63.png",
+    "image": "https://raw.githubusercontent.com/Relewise/adhoc-relewise-examples/main/template/assets/product-placeholder.png",
     "list_price": [
       {
         "amount": 849.99,
@@ -9808,7 +9808,7 @@
         "text": "Kompakti näppäimistö, jota voidaan käyttää useiden laitteiden kanssa, helposti vaihdettava niiden välillä."
       }
     ],
-    "image": "https://res.cloudinary.com/relewisedemodata/image/upload/v1724946085/electronics/4bab9e1d-55d7-4856-b334-528b64a099db.png",
+    "image": "https://raw.githubusercontent.com/Relewise/adhoc-relewise-examples/main/template/assets/product-placeholder.png",
     "list_price": [
       {
         "amount": 49.99,
@@ -9996,7 +9996,7 @@
         "text": "Kevyt kannettava tietokone, jota ohjaa Applen M1-prosessori uskomattomaan suorituskykyyn."
       }
     ],
-    "image": "https://res.cloudinary.com/relewisedemodata/image/upload/v1724943949/electronics/4cf3a569-729d-4b65-a2f5-cb92cb812e06.png",
+    "image": "https://raw.githubusercontent.com/Relewise/adhoc-relewise-examples/main/template/assets/product-placeholder.png",
     "list_price": [
       {
         "amount": 999.99,
@@ -10184,7 +10184,7 @@
         "text": "Monipuolinen streaming-kamera, joka tuottaa kirkasta kuvankvaliteettia videopuheluissa ja sisällön luomisessa."
       }
     ],
-    "image": "https://res.cloudinary.com/relewisedemodata/image/upload/v1724946226/electronics/50aadf06-64ec-483b-bf4b-34a9b1e36cfa.png",
+    "image": "https://raw.githubusercontent.com/Relewise/adhoc-relewise-examples/main/template/assets/product-placeholder.png",
     "list_price": [
       {
         "amount": 169.99,
@@ -10372,7 +10372,7 @@
         "text": "Ergonominen näytönjalusta, joka auttaa vähentämään niskaongelmia."
       }
     ],
-    "image": "https://res.cloudinary.com/relewisedemodata/image/upload/v1724945651/electronics/535621ea-8dd1-4fc8-a640-5d3f564891f5.png",
+    "image": "https://raw.githubusercontent.com/Relewise/adhoc-relewise-examples/main/template/assets/product-placeholder.png",
     "list_price": [
       {
         "amount": 39.99,
@@ -10560,7 +10560,7 @@
         "text": "Maailmanluokan melunsuojaus ja äänenlaatu."
       }
     ],
-    "image": "https://res.cloudinary.com/relewisedemodata/image/upload/v1724944284/electronics/53d46dcc-7987-4e2d-93ca-b57266361f76.png",
+    "image": "https://raw.githubusercontent.com/Relewise/adhoc-relewise-examples/main/template/assets/product-placeholder.png",
     "list_price": [
       {
         "amount": 349.95,
@@ -10748,7 +10748,7 @@
         "text": "Tehokas kannettava kaiutin, jossa on sisäänrakennettu powerbank ja vedenkestävä muotoilu."
       }
     ],
-    "image": "https://res.cloudinary.com/relewisedemodata/image/upload/v1724939557/electronics/54ccae79-1b29-4f7e-bf08-8bbafc5b9614.png",
+    "image": "https://raw.githubusercontent.com/Relewise/adhoc-relewise-examples/main/template/assets/product-placeholder.png",
     "list_price": [
       {
         "amount": 179.95,
@@ -10936,7 +10936,7 @@
         "text": "Älykäs valonauha, jota voidaan ohjata etänä tunnelman parantamiseksi."
       }
     ],
-    "image": "https://res.cloudinary.com/relewisedemodata/image/upload/v1724945652/electronics/56e901b1-e052-4997-86b0-5f338fe5a836.png",
+    "image": "https://raw.githubusercontent.com/Relewise/adhoc-relewise-examples/main/template/assets/product-placeholder.png",
     "list_price": [
       {
         "amount": 89.99,
@@ -11124,7 +11124,7 @@
         "text": "Kannettava näyttö täyden HD-resoluution kanssa, täydellinen liikkuvaan tuottavuuteen."
       }
     ],
-    "image": "https://res.cloudinary.com/relewisedemodata/image/upload/v1724945726/electronics/579aa967-1a81-4340-bfbb-ede369c70739.png",
+    "image": "https://raw.githubusercontent.com/Relewise/adhoc-relewise-examples/main/template/assets/product-placeholder.png",
     "list_price": [
       {
         "amount": 249.99,
@@ -11312,7 +11312,7 @@
         "text": "Voimakas kannettava kaiutin, jossa on voimakas ääni ja pitkä akunkesto."
       }
     ],
-    "image": "https://res.cloudinary.com/relewisedemodata/image/upload/v1724945651/electronics/57cad891-bf1b-4d48-8bd3-0cc9c7cfd7e4.png",
+    "image": "https://raw.githubusercontent.com/Relewise/adhoc-relewise-examples/main/template/assets/product-placeholder.png",
     "list_price": [
       {
         "amount": 179.95,
@@ -11500,7 +11500,7 @@
         "text": "Luotettava langallinen hiiri, jossa on ergonominen muotoilu lisäämään mukavuutta."
       }
     ],
-    "image": "https://res.cloudinary.com/relewisedemodata/image/upload/v1724946202/electronics/57fba924-79b0-4575-9e65-72b9d4bb8aced.png",
+    "image": "https://raw.githubusercontent.com/Relewise/adhoc-relewise-examples/main/template/assets/product-placeholder.png",
     "list_price": [
       {
         "amount": 29.99,
@@ -11688,7 +11688,7 @@
         "text": "Upea 2-in-1 kannettava, joka yhdistää elegantin muotoilun ja suorituskyvyn kompaktissa koossa."
       }
     ],
-    "image": "https://res.cloudinary.com/relewisedemodata/image/upload/v1724940167/electronics/5bbc4c26-7f67-40c5-8b82-3c4031c3c8f4.png",
+    "image": "https://raw.githubusercontent.com/Relewise/adhoc-relewise-examples/main/template/assets/product-placeholder.png",
     "list_price": [
       {
         "amount": 1299,
@@ -11876,7 +11876,7 @@
         "text": "Välineitä kalkkikertymien estämiseksi astianpesukoneissa."
       }
     ],
-    "image": "https://res.cloudinary.com/relewisedemodata/image/upload/v1724946263/electronics/5c69d9b6-0f3a-487e-a4e4-2de4a21a7dcd.png",
+    "image": "https://raw.githubusercontent.com/Relewise/adhoc-relewise-examples/main/template/assets/product-placeholder.png",
     "list_price": [
       {
         "amount": 8.99,
@@ -12064,7 +12064,7 @@
         "text": "Lataa laitteesi nopeasti langattomasti tällä kompaktilla latausalustalla."
       }
     ],
-    "image": "https://res.cloudinary.com/relewisedemodata/image/upload/v1724946144/electronics/5d116db3-ece0-4302-b5e2-f300164ec2e2.png",
+    "image": "https://raw.githubusercontent.com/Relewise/adhoc-relewise-examples/main/template/assets/product-placeholder.png",
     "list_price": [
       {
         "amount": 19.99,
@@ -12252,7 +12252,7 @@
         "text": "Langattomat melunvaimennuskuulokkeet immersiiviseen äänen kokemukseen."
       }
     ],
-    "image": "https://res.cloudinary.com/relewisedemodata/image/upload/v1724945670/electronics/5da9428a-dacb-43aa-8c53-6eeb5bb9b66d.png",
+    "image": "https://raw.githubusercontent.com/Relewise/adhoc-relewise-examples/main/template/assets/product-placeholder.png",
     "list_price": [
       {
         "amount": 199.99,
@@ -12440,7 +12440,7 @@
         "text": "Premium-tablettikokemus, jossa on korkea suorituskyky ja hyviä tuottavuusominaisuuksia."
       }
     ],
-    "image": "https://res.cloudinary.com/relewisedemodata/image/upload/v1724944048/electronics/5dbac52d-db1d-43bb-a12e-23ec728c4e80.png",
+    "image": "https://raw.githubusercontent.com/Relewise/adhoc-relewise-examples/main/template/assets/product-placeholder.png",
     "list_price": [
       {
         "amount": 649.99,
@@ -12628,7 +12628,7 @@
         "text": "Ekologinen pyykinpesukone, joka on suunniteltu maksimaalista tehokkuutta varten."
       }
     ],
-    "image": "https://res.cloudinary.com/relewisedemodata/image/upload/v1724939479/electronics/5ddebbcb-69df-4a7a-bbc5-4bfaad084d47.png",
+    "image": "https://raw.githubusercontent.com/Relewise/adhoc-relewise-examples/main/template/assets/product-placeholder.png",
     "list_price": [
       {
         "amount": 679,
@@ -12816,7 +12816,7 @@
         "text": "Kymmenen näppäimen mekaaninen pelinäppäimistö, jossa on mukautettava RGB-valaistus."
       }
     ],
-    "image": "https://res.cloudinary.com/relewisedemodata/image/upload/v1724943795/electronics/5e0dcd2f-bf05-4746-ae7a-8c48719c3d7e.png",
+    "image": "https://raw.githubusercontent.com/Relewise/adhoc-relewise-examples/main/template/assets/product-placeholder.png",
     "list_price": [
       {
         "amount": 249.99,
@@ -13004,7 +13004,7 @@
         "text": "Älykäs näyttö langattomalla yhteydellä ja sisäänrakennetuilla sovelluksilla."
       }
     ],
-    "image": "https://res.cloudinary.com/relewisedemodata/image/upload/v1724943967/electronics/61de8894-adad-434d-91b6-d290aa2d687a.png",
+    "image": "https://raw.githubusercontent.com/Relewise/adhoc-relewise-examples/main/template/assets/product-placeholder.png",
     "list_price": [
       {
         "amount": 799,
@@ -13192,7 +13192,7 @@
         "text": "Ultra-korkean tarkkuuden näyttö sisällöntuottajille ja ammattilaisille."
       }
     ],
-    "image": "https://res.cloudinary.com/relewisedemodata/image/upload/v1724946030/electronics/62fd287a-2761-41d9-bc55-e9a5ee5cbac4.png",
+    "image": "https://raw.githubusercontent.com/Relewise/adhoc-relewise-examples/main/template/assets/product-placeholder.png",
     "list_price": [
       {
         "amount": 1099.99,
@@ -13380,7 +13380,7 @@
         "text": "Koe upea valokuvaaminen ja vertaansa vailla oleva suorituskyky Galaxy S23 Pro:lla."
       }
     ],
-    "image": "https://res.cloudinary.com/relewisedemodata/image/upload/v1724939412/electronics/64a5f9b3-07c5-4af1-8a2f-0c64f1b3a588.png",
+    "image": "https://raw.githubusercontent.com/Relewise/adhoc-relewise-examples/main/template/assets/product-placeholder.png",
     "list_price": [
       {
         "amount": 1099,
@@ -13568,7 +13568,7 @@
         "text": "Tehokas soundbar, jossa on Dolby Atmos ja DTS:X -tuki."
       }
     ],
-    "image": "https://res.cloudinary.com/relewisedemodata/image/upload/v1724944227/electronics/65d4a00e-606c-45c4-908f-a4bada7c6f47.png",
+    "image": "https://raw.githubusercontent.com/Relewise/adhoc-relewise-examples/main/template/assets/product-placeholder.png",
     "list_price": [
       {
         "amount": 899.99,
@@ -13756,7 +13756,7 @@
         "text": "Korkean suorituskyvyn liiketietokone, jossa on tyylikäs muotoilu ja kestävä rakenne."
       }
     ],
-    "image": "https://res.cloudinary.com/relewisedemodata/image/upload/v1724944104/electronics/67306c73-eb75-4b3b-bb27-b8f5123f1047.png",
+    "image": "https://raw.githubusercontent.com/Relewise/adhoc-relewise-examples/main/template/assets/product-placeholder.png",
     "list_price": [
       {
         "amount": 1799,
@@ -13944,7 +13944,7 @@
         "text": "Tenkeyless mekaaninen pelinäppäimistö, jossa on mukautettava RGB-valaistus."
       }
     ],
-    "image": "https://res.cloudinary.com/relewisedemodata/image/upload/v1724945925/electronics/6880d7b1-bca1-44a7-85d5-cb48c22da0f5.png",
+    "image": "https://raw.githubusercontent.com/Relewise/adhoc-relewise-examples/main/template/assets/product-placeholder.png",
     "list_price": [
       {
         "amount": 119.99,
@@ -14132,7 +14132,7 @@
         "text": "Upean 23.8 tuuman näyttö, jossa on ultra-ohuet reunat ja elävät värit."
       }
     ],
-    "image": "https://res.cloudinary.com/relewisedemodata/image/upload/v1724944204/electronics/68f6873c-45e4-41f4-9213-79871be1eeec.png",
+    "image": "https://raw.githubusercontent.com/Relewise/adhoc-relewise-examples/main/template/assets/product-placeholder.png",
     "list_price": [
       {
         "amount": 249.99,
@@ -14320,7 +14320,7 @@
         "text": "Tyylikäs älykello, jossa on edistyneet kuntoilun seurantaominaisuudet."
       }
     ],
-    "image": "https://res.cloudinary.com/relewisedemodata/image/upload/v1724939307/electronics/69435098-8b55-4064-bb7c-6c24205299cf.png",
+    "image": "https://raw.githubusercontent.com/Relewise/adhoc-relewise-examples/main/template/assets/product-placeholder.png",
     "list_price": [
       {
         "amount": 299,
@@ -14508,7 +14508,7 @@
         "text": "Mekaaninen pelinäppäimistö, jossa on mukautettavat RGB-valot."
       }
     ],
-    "image": "https://res.cloudinary.com/relewisedemodata/image/upload/v1724944101/electronics/69e92292-4be7-4667-9edf-24e5e63dd231.png",
+    "image": "https://raw.githubusercontent.com/Relewise/adhoc-relewise-examples/main/template/assets/product-placeholder.png",
     "list_price": [
       {
         "amount": 169.99,
@@ -14696,7 +14696,7 @@
         "text": "Älykkäät LED-lamput, joita voidaan ohjata etäältä mukautettavaa valaistusta varten."
       }
     ],
-    "image": "https://res.cloudinary.com/relewisedemodata/image/upload/v1724943794/electronics/6b245db5-f960-4b00-87cb-d0eaecc8e03c.png",
+    "image": "https://raw.githubusercontent.com/Relewise/adhoc-relewise-examples/main/template/assets/product-placeholder.png",
     "list_price": [
       {
         "amount": 89.99,
@@ -14884,7 +14884,7 @@
         "text": "360 asteen ääni ja voimakas bassotoisto kannettavassa, vedenkestävässä muotoilussa."
       }
     ],
-    "image": "https://res.cloudinary.com/relewisedemodata/image/upload/v1724945908/electronics/6b4923c0-5a9e-4c0f-b793-5ef2b4ec4e2e.png",
+    "image": "https://raw.githubusercontent.com/Relewise/adhoc-relewise-examples/main/template/assets/product-placeholder.png",
     "list_price": [
       {
         "amount": 199.95,
@@ -15072,7 +15072,7 @@
         "text": "Koe vakuuttavin katselukokemus tällä premium 4K OLED -televisolla."
       }
     ],
-    "image": "https://res.cloudinary.com/relewisedemodata/image/upload/v1724939117/electronics/6c560b41-92f5-45cf-bb61-5bd79790dfc0.png",
+    "image": "https://raw.githubusercontent.com/Relewise/adhoc-relewise-examples/main/template/assets/product-placeholder.png",
     "list_price": [
       {
         "amount": 1499.99,
@@ -15260,7 +15260,7 @@
         "text": "Korkean suorituskyvyn hiiri, jossa on mukautettavat painikkeet ja ergonominen muotoilu."
       }
     ],
-    "image": "https://res.cloudinary.com/relewisedemodata/image/upload/v1724939072/electronics/6c6b70f4-1868-4e7d-be41-91dc63ced9c5.png",
+    "image": "https://raw.githubusercontent.com/Relewise/adhoc-relewise-examples/main/template/assets/product-placeholder.png",
     "list_price": [
       {
         "amount": 99.99,
@@ -15448,7 +15448,7 @@
         "text": "Huippuluokan langattomat kuulokkeet, joissa on jopa 40 tuntia akkukestoa."
       }
     ],
-    "image": "https://res.cloudinary.com/relewisedemodata/image/upload/v1724939305/electronics/6c75bc88-3136-4936-83ba-141ea3ee431f.png",
+    "image": "https://raw.githubusercontent.com/Relewise/adhoc-relewise-examples/main/template/assets/product-placeholder.png",
     "list_price": [
       {
         "amount": 299.95,
@@ -15636,7 +15636,7 @@
         "text": "Korkealaatuinen pyykinpesukone energiatehokkaalla puhdistusteknologialla."
       }
     ],
-    "image": "https://res.cloudinary.com/relewisedemodata/image/upload/v1724939143/electronics/705c51bb-0dd3-49c7-bc99-bb05441ae78f.png",
+    "image": "https://raw.githubusercontent.com/Relewise/adhoc-relewise-examples/main/template/assets/product-placeholder.png",
     "list_price": [
       {
         "amount": 599,
@@ -15824,7 +15824,7 @@
         "text": "Moderni etukuormallinen pyykinpesukone, jossa on EcoBubble-tekniikka tehokasta puhdistusta varten."
       }
     ],
-    "image": "https://res.cloudinary.com/relewisedemodata/image/upload/v1724939479/electronics/714a1f5c-412f-4e78-94af-7d29fc821481.png",
+    "image": "https://raw.githubusercontent.com/Relewise/adhoc-relewise-examples/main/template/assets/product-placeholder.png",
     "list_price": [
       {
         "amount": 589.99,
@@ -16012,7 +16012,7 @@
         "text": "Älykäs valaistusratkaisu, joka mahdollistaa valojen ohjaamisen älypuhelimella."
       }
     ],
-    "image": "https://res.cloudinary.com/relewisedemodata/image/upload/v1724945790/electronics/7207a46a-d282-4aba-b298-58962d30cb2f.png",
+    "image": "https://raw.githubusercontent.com/Relewise/adhoc-relewise-examples/main/template/assets/product-placeholder.png",
     "list_price": [
       {
         "amount": 199.99,
@@ -16200,7 +16200,7 @@
         "text": "Nosta valokuvauksen taitosi uudelle tasolle Huawei P60 Pron edistyksellisten ominaisuuksien ja tyylikkään muotoilun avulla."
       }
     ],
-    "image": "https://res.cloudinary.com/relewisedemodata/image/upload/v1724939434/electronics/72c3eb58-2906-44a6-ade3-f42e97ad7ad5.png",
+    "image": "https://raw.githubusercontent.com/Relewise/adhoc-relewise-examples/main/template/assets/product-placeholder.png",
     "list_price": [
       {
         "amount": 1099,
@@ -16388,7 +16388,7 @@
         "text": "Siirrä helposti valokuvia ja videoita iPadiisi tai iPhoneesi."
       }
     ],
-    "image": "https://res.cloudinary.com/relewisedemodata/image/upload/v1724945909/electronics/734feec9-e9c1-4ccf-8423-e9d83e24cec2.png",
+    "image": "https://raw.githubusercontent.com/Relewise/adhoc-relewise-examples/main/template/assets/product-placeholder.png",
     "list_price": [
       {
         "amount": 39.99,
@@ -16576,7 +16576,7 @@
         "text": "Korkealaatuiset astianpesukoneen tabletit erinomaiselle puhdistusteholle."
       }
     ],
-    "image": "https://res.cloudinary.com/relewisedemodata/image/upload/v1724946226/electronics/73b3b05f-6f91-4c4a-8e0b-bca6a76f6e6d.png",
+    "image": "https://raw.githubusercontent.com/Relewise/adhoc-relewise-examples/main/template/assets/product-placeholder.png",
     "list_price": [
       {
         "amount": 15.99,
@@ -16764,7 +16764,7 @@
         "text": "Älykäs valaistuskeskus Philips Hue -valojen ohjaamiseen älypuhelimellasi."
       }
     ],
-    "image": "https://res.cloudinary.com/relewisedemodata/image/upload/v1724945725/electronics/73c57d61-d3e2-457b-b44b-0379a4a3a5c4.png",
+    "image": "https://raw.githubusercontent.com/Relewise/adhoc-relewise-examples/main/template/assets/product-placeholder.png",
     "list_price": [
       {
         "amount": 59.99,
@@ -16952,7 +16952,7 @@
         "text": "Langattomat kuulokkeet erinomaisella äänenvaimennuksella mukaansatempaavaan äänielämykseen."
       }
     ],
-    "image": "https://res.cloudinary.com/relewisedemodata/image/upload/v1724943791/electronics/75aa7b70-d1a4-48dc-8f82-e3c3f40b5823.png",
+    "image": "https://raw.githubusercontent.com/Relewise/adhoc-relewise-examples/main/template/assets/product-placeholder.png",
     "list_price": [
       {
         "amount": 349.95,
@@ -17140,7 +17140,7 @@
         "text": "Korkealaatuinen levysoitin, jossa on melu eristysohjeita."
       }
     ],
-    "image": "https://res.cloudinary.com/relewisedemodata/image/upload/v1724939417/electronics/77c3654e-ce63-4a68-9dd1-e150f3186236.png",
+    "image": "https://raw.githubusercontent.com/Relewise/adhoc-relewise-examples/main/template/assets/product-placeholder.png",
     "list_price": [
       {
         "amount": 299,
@@ -17328,7 +17328,7 @@
         "text": "Klassinen muotoilun levysoitin, jossa on monipuoliset toistovaihtoehdot."
       }
     ],
-    "image": "https://res.cloudinary.com/relewisedemodata/image/upload/v1724939414/electronics/7870b8c9-f009-4d1e-8514-8e9ca8274dac.png",
+    "image": "https://raw.githubusercontent.com/Relewise/adhoc-relewise-examples/main/template/assets/product-placeholder.png",
     "list_price": [
       {
         "amount": 299,
@@ -17516,7 +17516,7 @@
         "text": "Tehokas näytönohjain mukaansatempaavaan pelielämykseen."
       }
     ],
-    "image": "https://res.cloudinary.com/relewisedemodata/image/upload/v1724944220/electronics/79349cd6-6a68-44af-a46c-dc4547af93c5.png",
+    "image": "https://raw.githubusercontent.com/Relewise/adhoc-relewise-examples/main/template/assets/product-placeholder.png",
     "list_price": [
       {
         "amount": 699.99,
@@ -17704,7 +17704,7 @@
         "text": "Premium-luokan astianpesukone innovatiivisella teknologialla poikkeukselliseen puhdistukseen."
       }
     ],
-    "image": "https://res.cloudinary.com/relewisedemodata/image/upload/v1724940012/electronics/7a758d1c-97d2-4b8c-ae3e-a7f48b58dbd2.png",
+    "image": "https://raw.githubusercontent.com/Relewise/adhoc-relewise-examples/main/template/assets/product-placeholder.png",
     "list_price": [
       {
         "amount": 749,
@@ -17892,7 +17892,7 @@
         "text": "Innovatiivinen 2-in-1 kannettava, joka tarjoaa voimakasta suorituskykyä ja monipuolisuutta työhön ja vapaa-aikaan."
       }
     ],
-    "image": "https://res.cloudinary.com/relewisedemodata/image/upload/v1724940143/electronics/7a9c5a2a-a3e4-4353-b17e-9fc9c8372e38.png",
+    "image": "https://raw.githubusercontent.com/Relewise/adhoc-relewise-examples/main/template/assets/product-placeholder.png",
     "list_price": [
       {
         "amount": 1349,
@@ -18080,7 +18080,7 @@
         "text": "Tyylikäs älykello, jossa on pitkä akkukesto ja terveysmonitorointiominaisuudet."
       }
     ],
-    "image": "https://res.cloudinary.com/relewisedemodata/image/upload/v1724939559/electronics/7c344c5e-5881-4ffa-b5ab-77f00c705729.png",
+    "image": "https://raw.githubusercontent.com/Relewise/adhoc-relewise-examples/main/template/assets/product-placeholder.png",
     "list_price": [
       {
         "amount": 199,
@@ -18268,7 +18268,7 @@
         "text": "Korkean laadun äänikokemus aktiivisella melunvaimennuksella."
       }
     ],
-    "image": "https://res.cloudinary.com/relewisedemodata/image/upload/v1724944284/electronics/7f8cb9bc-e7ff-4c62-b057-b72c0bde3538.png",
+    "image": "https://raw.githubusercontent.com/Relewise/adhoc-relewise-examples/main/template/assets/product-placeholder.png",
     "list_price": [
       {
         "amount": 629,
@@ -18456,7 +18456,7 @@
         "text": "Älykäs kaiutin rikasta ääntä ja Siri-integraatiota varten."
       }
     ],
-    "image": "https://res.cloudinary.com/relewisedemodata/image/upload/v1724943987/electronics/82084a3a-7a7f-47d3-a7fc-e716c83c78d4.png",
+    "image": "https://raw.githubusercontent.com/Relewise/adhoc-relewise-examples/main/template/assets/product-placeholder.png",
     "list_price": [
       {
         "amount": 99.99,
@@ -18644,7 +18644,7 @@
         "text": "Maailmanluokan melunvaimennus ja äänenlaatu mukavassa paketissa."
       }
     ],
-    "image": "https://res.cloudinary.com/relewisedemodata/image/upload/v1724945888/electronics/82cf1110-2663-48e6-b473-9a993ae84e00.png",
+    "image": "https://raw.githubusercontent.com/Relewise/adhoc-relewise-examples/main/template/assets/product-placeholder.png",
     "list_price": [
       {
         "amount": 299.95,
@@ -18832,7 +18832,7 @@
         "text": "Yli korvan kuulokkeet, joissa on korkean tarkkuuden ääni, syvä basso ja aktiivinen äänenvaimennus."
       }
     ],
-    "image": "https://res.cloudinary.com/relewisedemodata/image/upload/v1724944164/electronics/836b1aa9-aca3-4a70-b87e-1961129c121e.png",
+    "image": "https://raw.githubusercontent.com/Relewise/adhoc-relewise-examples/main/template/assets/product-placeholder.png",
     "list_price": [
       {
         "amount": 629.99,
@@ -19020,7 +19020,7 @@
         "text": "Kompakti astianpesukone älykästä toimintoa tehokasta puhdistusta varten."
       }
     ],
-    "image": "https://res.cloudinary.com/relewisedemodata/image/upload/v1724946029/electronics/85098087-de5e-4879-9cd6-d8c71bcfc800.png",
+    "image": "https://raw.githubusercontent.com/Relewise/adhoc-relewise-examples/main/template/assets/product-placeholder.png",
     "list_price": [
       {
         "amount": 499.99,
@@ -19208,7 +19208,7 @@
         "text": "4K UHD -näyttö, jossa on upea kuvanlaatu ja ergonominen jalusta."
       }
     ],
-    "image": "https://res.cloudinary.com/relewisedemodata/image/upload/v1724944025/electronics/862ed6cf-6025-4fa4-9fc3-896177040e93.png",
+    "image": "https://raw.githubusercontent.com/Relewise/adhoc-relewise-examples/main/template/assets/product-placeholder.png",
     "list_price": [
       {
         "amount": 899.99,
@@ -19396,7 +19396,7 @@
         "text": "Tyylikkäät, langattomat nappikuulokkeet aktiivisella melunvaimennusteknologialla."
       }
     ],
-    "image": "https://res.cloudinary.com/relewisedemodata/image/upload/v1724946244/electronics/874c9ce3-a65c-4464-a41d-ab0f34b2ee09.png",
+    "image": "https://raw.githubusercontent.com/Relewise/adhoc-relewise-examples/main/template/assets/product-placeholder.png",
     "list_price": [
       {
         "amount": 169.99,
@@ -19584,7 +19584,7 @@
         "text": "Maailmanluokan melunvaimennus ja erinomainen mukavuus, ihanteellinen matkustamiseen."
       }
     ],
-    "image": "https://res.cloudinary.com/relewisedemodata/image/upload/v1724943810/electronics/893cf6fb-e766-48c6-8121-da622abc32e7.png",
+    "image": "https://raw.githubusercontent.com/Relewise/adhoc-relewise-examples/main/template/assets/product-placeholder.png",
     "list_price": [
       {
         "amount": 299.99,
@@ -19772,7 +19772,7 @@
         "text": "Lataa nopeasti ja synkronoi laitteesi tällä kestävällä kaapelilla."
       }
     ],
-    "image": "https://res.cloudinary.com/relewisedemodata/image/upload/v1724946143/electronics/89f02b41-694d-4b3f-8c63-0076070fa6ee.png",
+    "image": "https://raw.githubusercontent.com/Relewise/adhoc-relewise-examples/main/template/assets/product-placeholder.png",
     "list_price": [
       {
         "amount": 25.99,
@@ -19960,7 +19960,7 @@
         "text": "Ergonominen pystysuuntainen hiiri, joka takaa mukavan käytön koko päivän."
       }
     ],
-    "image": "https://res.cloudinary.com/relewisedemodata/image/upload/v1724943968/electronics/8a8c2233-4e4f-4171-9178-92ab5a66116a.png",
+    "image": "https://raw.githubusercontent.com/Relewise/adhoc-relewise-examples/main/template/assets/product-placeholder.png",
     "list_price": [
       {
         "amount": 129.99,
@@ -20148,7 +20148,7 @@
         "text": "Nopea ja luotettava kannettava SSD kaikille tiedontarpeillesi."
       }
     ],
-    "image": "https://res.cloudinary.com/relewisedemodata/image/upload/v1724945970/electronics/8c0c983e-0e49-4ed3-a0a8-b3f8efc39369.png",
+    "image": "https://raw.githubusercontent.com/Relewise/adhoc-relewise-examples/main/template/assets/product-placeholder.png",
     "list_price": [
       {
         "amount": 129.99,
@@ -20336,7 +20336,7 @@
         "text": "Kannettava vesitiivis kaiutin, joka tuottaa yllättävän voimakasta ääntä."
       }
     ],
-    "image": "https://res.cloudinary.com/relewisedemodata/image/upload/v1724939303/electronics/8c292774-56dc-4b29-8af6-d1ca6fe0625c.png",
+    "image": "https://raw.githubusercontent.com/Relewise/adhoc-relewise-examples/main/template/assets/product-placeholder.png",
     "list_price": [
       {
         "amount": 129.95,
@@ -20524,7 +20524,7 @@
         "text": "Kompakti ja mukava näppäimistö, joka voi yhdistää useisiin laitteisiin."
       }
     ],
-    "image": "https://res.cloudinary.com/relewisedemodata/image/upload/v1724945847/electronics/8c6cfa6c-a430-4820-87e1-bfe98faad82c.png",
+    "image": "https://raw.githubusercontent.com/Relewise/adhoc-relewise-examples/main/template/assets/product-placeholder.png",
     "list_price": [
       {
         "amount": 49.99,
@@ -20712,7 +20712,7 @@
         "text": "Aidot langattomat nappikuulokkeet, joissa on edistyksellinen melunvaimennusteknologia."
       }
     ],
-    "image": "https://res.cloudinary.com/relewisedemodata/image/upload/v1724944047/electronics/8dd9926b-5a87-4875-bbd3-bca4f532e69e.png",
+    "image": "https://raw.githubusercontent.com/Relewise/adhoc-relewise-examples/main/template/assets/product-placeholder.png",
     "list_price": [
       {
         "amount": 279.95,
@@ -20900,7 +20900,7 @@
         "text": "Korkean suorituskyvyn pelinäyttö, jossa on hämmästyttävä kaarevuus ja nopea virkistystaajuus."
       }
     ],
-    "image": "https://res.cloudinary.com/relewisedemodata/image/upload/v1724939078/electronics/8e803446-ddb8-4c34-94a1-cc1ac79344cd.png",
+    "image": "https://raw.githubusercontent.com/Relewise/adhoc-relewise-examples/main/template/assets/product-placeholder.png",
     "list_price": [
       {
         "amount": 699,
@@ -21088,7 +21088,7 @@
         "text": "Varustettu melunvaimennuksella ja erinomaisella äänenlaadulla, täydellinen mukaansatempaavaan kuunteluun."
       }
     ],
-    "image": "https://res.cloudinary.com/relewisedemodata/image/upload/v1724943852/electronics/92a9f9e2-4707-4628-9c89-17f3ac08c98e.png",
+    "image": "https://raw.githubusercontent.com/Relewise/adhoc-relewise-examples/main/template/assets/product-placeholder.png",
     "list_price": [
       {
         "amount": 249.99,
@@ -21276,7 +21276,7 @@
         "text": "Premium-äänentoisto mukautettavalla istuvuudella ja melunvaimennuksella."
       }
     ],
-    "image": "https://res.cloudinary.com/relewisedemodata/image/upload/v1724943929/electronics/978d0127-9bc8-4e27-be81-3b4536824b4c.png",
+    "image": "https://raw.githubusercontent.com/Relewise/adhoc-relewise-examples/main/template/assets/product-placeholder.png",
     "list_price": [
       {
         "amount": 219.99,
@@ -21464,7 +21464,7 @@
         "text": "Tehokas pelitietokone, jossa on AMD Ryzen -prosessori ja NVIDIA GeForce -näytönohjain."
       }
     ],
-    "image": "https://res.cloudinary.com/relewisedemodata/image/upload/v1724943872/electronics/989ca2ec-8760-4c59-913e-f8b114b46153.png",
+    "image": "https://raw.githubusercontent.com/Relewise/adhoc-relewise-examples/main/template/assets/product-placeholder.png",
     "list_price": [
       {
         "amount": 1299.99,
@@ -21652,7 +21652,7 @@
         "text": "Avaa ammattitasoisen valokuvaamisen ja mukaansatempaavan multimediaelämyksen voima Xperia 1 IV:llä."
       }
     ],
-    "image": "https://res.cloudinary.com/relewisedemodata/image/upload/v1724939410/electronics/9c87c428-98f4-4c92-9747-aa429f8f84b9.png",
+    "image": "https://raw.githubusercontent.com/Relewise/adhoc-relewise-examples/main/template/assets/product-placeholder.png",
     "list_price": [
       {
         "amount": 1099,
@@ -21840,7 +21840,7 @@
         "text": "Kevyt kannettava tietokone, jossa on tehokas suorituskyky ja tyylikäs muotoilu."
       }
     ],
-    "image": "https://res.cloudinary.com/relewisedemodata/image/upload/v1724945731/electronics/9cfc8471-3b7e-4f56-a85e-3731012abac9.png",
+    "image": "https://raw.githubusercontent.com/Relewise/adhoc-relewise-examples/main/template/assets/product-placeholder.png",
     "list_price": [
       {
         "amount": 849.99,
@@ -22028,7 +22028,7 @@
         "text": "Älykäs valaistus säädettävillä valkoisilla sävyillä täydellisen tunnelman luomiseksi."
       }
     ],
-    "image": "https://res.cloudinary.com/relewisedemodata/image/upload/v1724943988/electronics/9d2ca9b6-1802-4e45-908f-8b3f88923fd9.png",
+    "image": "https://raw.githubusercontent.com/Relewise/adhoc-relewise-examples/main/template/assets/product-placeholder.png",
     "list_price": [
       {
         "amount": 59.99,
@@ -22216,7 +22216,7 @@
         "text": "Budjettihintainen kannettava tietokone, jossa on tyylikäs muotoilu ja riittävä teho päivittäisiin tehtäviin."
       }
     ],
-    "image": "https://res.cloudinary.com/relewisedemodata/image/upload/v1724944103/electronics/9d4e1c1f-7fa6-455f-a02b-0c349050c65b.png",
+    "image": "https://raw.githubusercontent.com/Relewise/adhoc-relewise-examples/main/template/assets/product-placeholder.png",
     "list_price": [
       {
         "amount": 749.99,
@@ -22404,7 +22404,7 @@
         "text": "Premium 27-tuumainen 4K-näyttö uskomattomalla väritarkkuudella."
       }
     ],
-    "image": "https://res.cloudinary.com/relewisedemodata/image/upload/v1724944266/electronics/9eae351a-fa93-4533-aa29-1ef1ce12101e.png",
+    "image": "https://raw.githubusercontent.com/Relewise/adhoc-relewise-examples/main/template/assets/product-placeholder.png",
     "list_price": [
       {
         "amount": 769.99,
@@ -22592,7 +22592,7 @@
         "text": "Langaton laturi nopeasti lataaville laitteille."
       }
     ],
-    "image": "https://res.cloudinary.com/relewisedemodata/image/upload/v1724946086/electronics/9ec89295-14c0-48b6-8ed7-aa4da61e4f44.png",
+    "image": "https://raw.githubusercontent.com/Relewise/adhoc-relewise-examples/main/template/assets/product-placeholder.png",
     "list_price": [
       {
         "amount": 29.99,
@@ -22780,7 +22780,7 @@
         "text": "Koe uskomaton kuvanlaatu tässä upeassa 4K OLED -näytössä."
       }
     ],
-    "image": "https://res.cloudinary.com/relewisedemodata/image/upload/v1724940044/electronics/9ef7a130-b070-4c87-9cc8-8cdc6d8c6045.png",
+    "image": "https://raw.githubusercontent.com/Relewise/adhoc-relewise-examples/main/template/assets/product-placeholder.png",
     "list_price": [
       {
         "amount": 1499.99,
@@ -22968,7 +22968,7 @@
         "text": "Koe elokuvateatterin tunnelma voimakkaalla ympäristöäänellä."
       }
     ],
-    "image": "https://res.cloudinary.com/relewisedemodata/image/upload/v1724940429/electronics/a117f1e4-6b9a-48a0-b382-acde80c6c27b.png",
+    "image": "https://raw.githubusercontent.com/Relewise/adhoc-relewise-examples/main/template/assets/product-placeholder.png",
     "list_price": [
       {
         "amount": 999.99,
@@ -23156,7 +23156,7 @@
         "text": "Monipisteliitinin, joka helpottaa kaikkien oheislaitteidesi liittämistä."
       }
     ],
-    "image": "https://res.cloudinary.com/relewisedemodata/image/upload/v1724946031/electronics/a13f1231-ec95-4b8d-93ab-b62e0910d5d5.png",
+    "image": "https://raw.githubusercontent.com/Relewise/adhoc-relewise-examples/main/template/assets/product-placeholder.png",
     "list_price": [
       {
         "amount": 129.99,
@@ -23344,7 +23344,7 @@
         "text": "Koe elokuvien loistokkuus 4K-resoluutiolla."
       }
     ],
-    "image": "https://res.cloudinary.com/relewisedemodata/image/upload/v1724940288/electronics/a1c0d0b9-bf5d-4ad9-a7e1-7e592ecf619d.png",
+    "image": "https://raw.githubusercontent.com/Relewise/adhoc-relewise-examples/main/template/assets/product-placeholder.png",
     "list_price": [
       {
         "amount": 259.99,
@@ -23532,7 +23532,7 @@
         "text": "Koe upea kuva laajakuva näytöllä, joka on ihanteellinen luoville ammattilaisille."
       }
     ],
-    "image": "https://res.cloudinary.com/relewisedemodata/image/upload/v1724939991/electronics/a1f3b100-1e93-4cff-8b2e-ebb522264531.png",
+    "image": "https://raw.githubusercontent.com/Relewise/adhoc-relewise-examples/main/template/assets/product-placeholder.png",
     "list_price": [
       {
         "amount": 1399.99,
@@ -23720,7 +23720,7 @@
         "text": "Langaton kaiutin Extra Bass -toiminnolla, täydellinen juhliin ja ulkotapahtumiin."
       }
     ],
-    "image": "https://res.cloudinary.com/relewisedemodata/image/upload/v1724944163/electronics/a28aad67-f245-4788-92aa-cbd8b463d6ca.png",
+    "image": "https://raw.githubusercontent.com/Relewise/adhoc-relewise-examples/main/template/assets/product-placeholder.png",
     "list_price": [
       {
         "amount": 249.99,
@@ -23908,7 +23908,7 @@
         "text": "Tyylikäs ja kompakti kaiutin voimakkaalla bassolla."
       }
     ],
-    "image": "https://res.cloudinary.com/relewisedemodata/image/upload/v1724939993/electronics/a2d164a9-2e8d-408c-88de-1586b7973486.png",
+    "image": "https://raw.githubusercontent.com/Relewise/adhoc-relewise-examples/main/template/assets/product-placeholder.png",
     "list_price": [
       {
         "amount": 169.95,
@@ -24096,7 +24096,7 @@
         "text": "Kevyet langattomat korvakuulokkeet upealla äänellä ja pitkällä akunkestolla."
       }
     ],
-    "image": "https://res.cloudinary.com/relewisedemodata/image/upload/v1724945629/electronics/a45b2c58-8b4e-4726-b615-9d09dbadd436.png",
+    "image": "https://raw.githubusercontent.com/Relewise/adhoc-relewise-examples/main/template/assets/product-placeholder.png",
     "list_price": [
       {
         "amount": 49.99,
@@ -24284,7 +24284,7 @@
         "text": "Energiatehokas jääkaappi pakastin, jossa tyylikäs muotoilu ja minimaalinen melu."
       }
     ],
-    "image": "https://res.cloudinary.com/relewisedemodata/image/upload/v1724939558/electronics/a53c571c-dbdd-4a02-bbf3-d28bc3d6f8d6.png",
+    "image": "https://raw.githubusercontent.com/Relewise/adhoc-relewise-examples/main/template/assets/product-placeholder.png",
     "list_price": [
       {
         "amount": 749,
@@ -24472,7 +24472,7 @@
         "text": "Korkean suorituskyvyn GPS-älykello, joka on suunniteltu ulkoiluseikkailuja varten."
       }
     ],
-    "image": "https://res.cloudinary.com/relewisedemodata/image/upload/v1724944127/electronics/a5d0c346-40a3-4c9c-b23e-41dab02a3f87.png",
+    "image": "https://raw.githubusercontent.com/Relewise/adhoc-relewise-examples/main/template/assets/product-placeholder.png",
     "list_price": [
       {
         "amount": 799.99,
@@ -24660,7 +24660,7 @@
         "text": "Ääniraudat, joissa on ympäristöääni ja helppokäyttöisiä liitettävyysvaihtoehtoja."
       }
     ],
-    "image": "https://res.cloudinary.com/relewisedemodata/image/upload/v1724944027/electronics/a5db6e1e-2341-4d93-89e1-bb87ac9eab79.png",
+    "image": "https://raw.githubusercontent.com/Relewise/adhoc-relewise-examples/main/template/assets/product-placeholder.png",
     "list_price": [
       {
         "amount": 249.99,
@@ -24848,7 +24848,7 @@
         "text": "Korkean suorituskyvyn pelihiiri, jossa on mukautettavat RGB-valot ja tarkka seuranta."
       }
     ],
-    "image": "https://res.cloudinary.com/relewisedemodata/image/upload/v1724945631/electronics/a67d0846-ab6d-4a07-bc8f-2905e0aba44b.png",
+    "image": "https://raw.githubusercontent.com/Relewise/adhoc-relewise-examples/main/template/assets/product-placeholder.png",
     "list_price": [
       {
         "amount": 79.99,
@@ -25036,7 +25036,7 @@
         "text": "Bose Smartband 1 tarjoaa korkealaatuista ääntä samalla, kun se seuraa kuntotoimintojasi saumattomasti."
       }
     ],
-    "image": "https://res.cloudinary.com/relewisedemodata/image/upload/v1724940193/electronics/a6d2f764-90b5-4cfc-a030-9e5fa0dcb6e4.png",
+    "image": "https://raw.githubusercontent.com/Relewise/adhoc-relewise-examples/main/template/assets/product-placeholder.png",
     "list_price": [
       {
         "amount": 349,
@@ -25224,7 +25224,7 @@
         "text": "Tallenna upeita valokuvia ja videoita tällä korkealaatuisella peilittömällä kameralla."
       }
     ],
-    "image": "https://res.cloudinary.com/relewisedemodata/image/upload/v1724946011/electronics/ab30db73-b70f-4e31-b0d9-62a5fe22c087.png",
+    "image": "https://raw.githubusercontent.com/Relewise/adhoc-relewise-examples/main/template/assets/product-placeholder.png",
     "list_price": [
       {
         "amount": 649.99,
@@ -25412,7 +25412,7 @@
         "text": "Tutustu eläviin väreihin ja syviin kontrasteihin tässä elegantissa 4K OLED -televisiossa."
       }
     ],
-    "image": "https://res.cloudinary.com/relewisedemodata/image/upload/v1724940053/electronics/ab3c1521-11f0-4b78-bb2f-da3202761e5b.png",
+    "image": "https://raw.githubusercontent.com/Relewise/adhoc-relewise-examples/main/template/assets/product-placeholder.png",
     "list_price": [
       {
         "amount": 1499.99,
@@ -25600,7 +25600,7 @@
         "text": "Ammattimainen suora käyttövoimakytkin, jossa on USB-yhteys."
       }
     ],
-    "image": "https://res.cloudinary.com/relewisedemodata/image/upload/v1724939331/electronics/ac017152-9d40-4c7f-84b7-417c21c99d49.png",
+    "image": "https://raw.githubusercontent.com/Relewise/adhoc-relewise-examples/main/template/assets/product-placeholder.png",
     "list_price": [
       {
         "amount": 299,
@@ -25788,7 +25788,7 @@
         "text": "Vapauta 8K-resoluution voima ja upea Quantum HDR -kuvanlaatu."
       }
     ],
-    "image": "https://res.cloudinary.com/relewisedemodata/image/upload/v1724939116/electronics/ac6f8cb5-7338-49ec-97ba-60d62dbf20f6.png",
+    "image": "https://raw.githubusercontent.com/Relewise/adhoc-relewise-examples/main/template/assets/product-placeholder.png",
     "list_price": [
       {
         "amount": 2999.99,
@@ -25976,7 +25976,7 @@
         "text": "Meluvaimennettavat langattomat kuulokkeet, joissa on erinomainen äänenlaatu."
       }
     ],
-    "image": "https://res.cloudinary.com/relewisedemodata/image/upload/v1724945827/electronics/ae14b0be-5ab8-45e5-b704-d3cbb743236d.png",
+    "image": "https://raw.githubusercontent.com/Relewise/adhoc-relewise-examples/main/template/assets/product-placeholder.png",
     "list_price": [
       {
         "amount": 349.95,
@@ -26164,7 +26164,7 @@
         "text": "Innovatiivinen älypuhelin, joka keskittyy valokuvaukseen ja multimediaan."
       }
     ],
-    "image": "https://res.cloudinary.com/relewisedemodata/image/upload/v1724940278/electronics/ae567f81-42f1-4a37-8c39-ede31b65e3da.png",
+    "image": "https://raw.githubusercontent.com/Relewise/adhoc-relewise-examples/main/template/assets/product-placeholder.png",
     "list_price": [
       {
         "amount": 1299,
@@ -26352,7 +26352,7 @@
         "text": "Premium-tason langattomat nappikuulokkeet, joissa on aktiivinen melunvaimennus."
       }
     ],
-    "image": "https://res.cloudinary.com/relewisedemodata/image/upload/v1724945866/electronics/b17f643e-1359-4add-b58f-dbd7e0819d7b.png",
+    "image": "https://raw.githubusercontent.com/Relewise/adhoc-relewise-examples/main/template/assets/product-placeholder.png",
     "list_price": [
       {
         "amount": 229.99,
@@ -26540,7 +26540,7 @@
         "text": "LG Smartwatch 2 tarjoaa tyylikkään muotoilun ja edistykselliset toiminnot kuntosi seuraamiseen."
       }
     ],
-    "image": "https://res.cloudinary.com/relewisedemodata/image/upload/v1724940193/electronics/b19f5bb2-3c31-42db-9a1f-5e4b748a0e26.png",
+    "image": "https://raw.githubusercontent.com/Relewise/adhoc-relewise-examples/main/template/assets/product-placeholder.png",
     "list_price": [
       {
         "amount": 429,
@@ -26728,7 +26728,7 @@
         "text": "Edistyksellinen pyykinpesukone älykkäillä sensoreilla optimaalista puhdistusta varten."
       }
     ],
-    "image": "https://res.cloudinary.com/relewisedemodata/image/upload/v1724939476/electronics/b1e0f03b-e50d-4a5d-933b-209f2eeb6814.png",
+    "image": "https://raw.githubusercontent.com/Relewise/adhoc-relewise-examples/main/template/assets/product-placeholder.png",
     "list_price": [
       {
         "amount": 599,
@@ -26916,7 +26916,7 @@
         "text": "Tyylikäs ja nopea kannettava SSD, jossa on 1TB tallennuskapasiteetti."
       }
     ],
-    "image": "https://res.cloudinary.com/relewisedemodata/image/upload/v1724945791/electronics/b1e62596-cbd2-4311-a125-561c64a70957.png",
+    "image": "https://raw.githubusercontent.com/Relewise/adhoc-relewise-examples/main/template/assets/product-placeholder.png",
     "list_price": [
       {
         "amount": 129.99,
@@ -27104,7 +27104,7 @@
         "text": "Ammattikäyttäjille suunniteltu näyttö, joka tarjoaa uskomatonta yksityiskohtaisuutta ja eläviä värejä."
       }
     ],
-    "image": "https://res.cloudinary.com/relewisedemodata/image/upload/v1724939992/electronics/b2f4d740-2d93-4b5b-afb1-209e4c74a1e0.png",
+    "image": "https://raw.githubusercontent.com/Relewise/adhoc-relewise-examples/main/template/assets/product-placeholder.png",
     "list_price": [
       {
         "amount": 1299.99,
@@ -27292,7 +27292,7 @@
         "text": "Premium-älypuhelin, jolla on erinomainen suorituskyky ja valokuvaus."
       }
     ],
-    "image": "https://res.cloudinary.com/relewisedemodata/image/upload/v1724940283/electronics/b3a6c4c3-5f27-4f27-afe9-d33e64bb2f0b.png",
+    "image": "https://raw.githubusercontent.com/Relewise/adhoc-relewise-examples/main/template/assets/product-placeholder.png",
     "list_price": [
       {
         "amount": 999,
@@ -27480,7 +27480,7 @@
         "text": "Kompakti monilaitteinen Bluetooth-näppäimistö tietokoneille, tableteille ja älypuhelimille."
       }
     ],
-    "image": "https://res.cloudinary.com/relewisedemodata/image/upload/v1724945670/electronics/b3c9d08e-5f36-44f3-b7e6-7034f0f241d1.png",
+    "image": "https://raw.githubusercontent.com/Relewise/adhoc-relewise-examples/main/template/assets/product-placeholder.png",
     "list_price": [
       {
         "amount": 49.99,
@@ -27668,7 +27668,7 @@
         "text": "Ergonominen pelihiiri, joka on suunniteltu tarkkuutta ja nopeutta varten."
       }
     ],
-    "image": "https://res.cloudinary.com/relewisedemodata/image/upload/v1724943873/electronics/b49d8c92-4fa2-479a-f0f9-e0478923de34.png",
+    "image": "https://raw.githubusercontent.com/Relewise/adhoc-relewise-examples/main/template/assets/product-placeholder.png",
     "list_price": [
       {
         "amount": 99.99,
@@ -27856,7 +27856,7 @@
         "text": "Korkealaatuinen äänilevysoitin, jossa on hiilikuituinen äänipää."
       }
     ],
-    "image": "https://res.cloudinary.com/relewisedemodata/image/upload/v1724939351/electronics/b53f97f6-25bc-4894-849e-9b95344fc218.png",
+    "image": "https://raw.githubusercontent.com/Relewise/adhoc-relewise-examples/main/template/assets/product-placeholder.png",
     "list_price": [
       {
         "amount": 399,
@@ -28044,7 +28044,7 @@
         "text": "Langattomat kuulokkeet, joissa on alan paras melunvaimennus ja pitkäkestoinen akku."
       }
     ],
-    "image": "https://res.cloudinary.com/relewisedemodata/image/upload/v1724946146/electronics/b5636c9a-b00e-45a9-80ae-1f7cfb0f2116.png",
+    "image": "https://raw.githubusercontent.com/Relewise/adhoc-relewise-examples/main/template/assets/product-placeholder.png",
     "list_price": [
       {
         "amount": 199.99,
@@ -28232,7 +28232,7 @@
         "text": "Viehättävä pelinäyttö, jossa on parannettu visuaalisuus ja ultra-nopea vasteaika."
       }
     ],
-    "image": "https://res.cloudinary.com/relewisedemodata/image/upload/v1724940239/electronics/b57e32c2-760b-4f6d-b0d7-5a3a1f8c4e4c.png",
+    "image": "https://raw.githubusercontent.com/Relewise/adhoc-relewise-examples/main/template/assets/product-placeholder.png",
     "list_price": [
       {
         "amount": 699,
@@ -28420,7 +28420,7 @@
         "text": "Päivitetty versio klassisesta Inspiron 15:stä, varustettuna parannellulla suorituskyvyllä ja eloisalla näytöllä."
       }
     ],
-    "image": "https://res.cloudinary.com/relewisedemodata/image/upload/v1724940384/electronics/b6f2eece-2a7d-4f44-95e6-8cb9b2d7627b.png",
+    "image": "https://raw.githubusercontent.com/Relewise/adhoc-relewise-examples/main/template/assets/product-placeholder.png",
     "list_price": [
       {
         "amount": 999.99,
@@ -28608,7 +28608,7 @@
         "text": "Premium langattomat nappikuulokkeet, joissa on melua vaimentava toiminto."
       }
     ],
-    "image": "https://res.cloudinary.com/relewisedemodata/image/upload/v1724946048/electronics/b74d1616-b83c-4aa2-9ab3-97f6d568e0e9.png",
+    "image": "https://raw.githubusercontent.com/Relewise/adhoc-relewise-examples/main/template/assets/product-placeholder.png",
     "list_price": [
       {
         "amount": 279,
@@ -28796,7 +28796,7 @@
         "text": "Koe henkeäsalpaavat 8K-visualoinnit Quantum HDR -tekniikalla."
       }
     ],
-    "image": "https://res.cloudinary.com/relewisedemodata/image/upload/v1724940259/electronics/b7d3b1c7-089f-4e5e-bf2d-4c4f891f59db.png",
+    "image": "https://raw.githubusercontent.com/Relewise/adhoc-relewise-examples/main/template/assets/product-placeholder.png",
     "list_price": [
       {
         "amount": 2999.99,
@@ -28984,7 +28984,7 @@
         "text": "Älykäs LED-lamppu, jota voidaan ohjata älypuhelimen ja ääniavustajien kautta."
       }
     ],
-    "image": "https://res.cloudinary.com/relewisedemodata/image/upload/v1724946204/electronics/b7de8547-2059-4b91-8457-d539fa72efe3.png",
+    "image": "https://raw.githubusercontent.com/Relewise/adhoc-relewise-examples/main/template/assets/product-placeholder.png",
     "list_price": [
       {
         "amount": 29.99,
@@ -29172,7 +29172,7 @@
         "text": "Ammattikäyttöön suunniteltu 32-tuumainen 4K HDR-näyttö, joka on suunniteltu luoville ammattilaisille, jotka etsivät vertaansa vailla olevaa tarkkuutta."
       }
     ],
-    "image": "https://res.cloudinary.com/relewisedemodata/image/upload/v1724944102/electronics/b8a28ba7-d456-4333-9937-d224d7f8c800.png",
+    "image": "https://raw.githubusercontent.com/Relewise/adhoc-relewise-examples/main/template/assets/product-placeholder.png",
     "list_price": [
       {
         "amount": 2499.99,
@@ -29360,7 +29360,7 @@
         "text": "Tyylikäs langaton hiiri, jossa on mukava ote ja pitkä akkukesto."
       }
     ],
-    "image": "https://res.cloudinary.com/relewisedemodata/image/upload/v1724940415/electronics/b8a91f55-2bcd-4d78-bdee-0e426dbb778d.png",
+    "image": "https://raw.githubusercontent.com/Relewise/adhoc-relewise-examples/main/template/assets/product-placeholder.png",
     "list_price": [
       {
         "amount": 39.99,
@@ -29548,7 +29548,7 @@
         "text": "Moderni jääkaappi pakastin, jossa tehokas jäähdytys ja lisäsäilytystila."
       }
     ],
-    "image": "https://res.cloudinary.com/relewisedemodata/image/upload/v1724939554/electronics/bac2a64e-de29-45c8-a73a-bf06033b585f.png",
+    "image": "https://raw.githubusercontent.com/Relewise/adhoc-relewise-examples/main/template/assets/product-placeholder.png",
     "list_price": [
       {
         "amount": 789,
@@ -29736,7 +29736,7 @@
         "text": "Nauti 7.1.2-kanavasta kotiteatteriäänijärjestelmästä, joka tarjoaa mukaansatempaavan äänen."
       }
     ],
-    "image": "https://res.cloudinary.com/relewisedemodata/image/upload/v1724940407/electronics/bc1234ef-9c7d-4a2e-b0a3-75f1b6fafb7f.png",
+    "image": "https://raw.githubusercontent.com/Relewise/adhoc-relewise-examples/main/template/assets/product-placeholder.png",
     "list_price": [
       {
         "amount": 699.99,
@@ -29924,7 +29924,7 @@
         "text": "Luotettava etukuormattava pyykinpesukone, jossa on useita pesuohjelmia."
       }
     ],
-    "image": "https://res.cloudinary.com/relewisedemodata/image/upload/v1724939205/electronics/bc9b4873-b4ec-4333-9c68-db81f355684d.png",
+    "image": "https://raw.githubusercontent.com/Relewise/adhoc-relewise-examples/main/template/assets/product-placeholder.png",
     "list_price": [
       {
         "amount": 499.99,
@@ -30112,7 +30112,7 @@
         "text": "Tehokas kannettava kaiutin, jossa on pitkä akunkesto ja vedenpitävä rakenne."
       }
     ],
-    "image": "https://res.cloudinary.com/relewisedemodata/image/upload/v1724946028/electronics/bd022d93-769d-4c4b-8a8a-1b3d5a9c95bb.png",
+    "image": "https://raw.githubusercontent.com/Relewise/adhoc-relewise-examples/main/template/assets/product-placeholder.png",
     "list_price": [
       {
         "amount": 149.95,
@@ -30300,7 +30300,7 @@
         "text": "27 tuuman USB-C näyttö, jossa on upea resoluutio ja väri kirkkaus."
       }
     ],
-    "image": "https://res.cloudinary.com/relewisedemodata/image/upload/v1724945846/electronics/bd698a84-5281-46ef-8c92-278807e1c0e0.png",
+    "image": "https://raw.githubusercontent.com/Relewise/adhoc-relewise-examples/main/template/assets/product-placeholder.png",
     "list_price": [
       {
         "amount": 329.99,
@@ -30488,7 +30488,7 @@
         "text": "Monikäyttöinen langaton kaiutin, jossa immersiivinen äänikokemus."
       }
     ],
-    "image": "https://res.cloudinary.com/relewisedemodata/image/upload/v1724940012/electronics/bd7bbc98-f3cf-4205-8d24-2ae4c3fdf40a.png",
+    "image": "https://raw.githubusercontent.com/Relewise/adhoc-relewise-examples/main/template/assets/product-placeholder.png",
     "list_price": [
       {
         "amount": 179.95,
@@ -30676,7 +30676,7 @@
         "text": "Mukava istuvuus premium-äänellä ja melun vähentämisellä."
       }
     ],
-    "image": "https://res.cloudinary.com/relewisedemodata/image/upload/v1724939434/electronics/bfa4f2d0-56dc-4b80-8f71-4e95e18d8e32.png",
+    "image": "https://raw.githubusercontent.com/Relewise/adhoc-relewise-examples/main/template/assets/product-placeholder.png",
     "list_price": [
       {
         "amount": 349.95,
@@ -30864,7 +30864,7 @@
         "text": "Langattomat kuulokkeet, joissa on alan huipputason melunvaimennus."
       }
     ],
-    "image": "https://res.cloudinary.com/relewisedemodata/image/upload/v1724946047/electronics/c219c192-2d47-4ece-b8f0-22aa067abc8b.png",
+    "image": "https://raw.githubusercontent.com/Relewise/adhoc-relewise-examples/main/template/assets/product-placeholder.png",
     "list_price": [
       {
         "amount": 199.99,
@@ -31052,7 +31052,7 @@
         "text": "Tyylikäs jääkaappi, jossa on älykäs inverterikompressori energiatehokkuutta varten."
       }
     ],
-    "image": "https://res.cloudinary.com/relewisedemodata/image/upload/v1724940086/electronics/c3ab2c97-3df6-4ed7-9560-f0b2d5d83807.png",
+    "image": "https://raw.githubusercontent.com/Relewise/adhoc-relewise-examples/main/template/assets/product-placeholder.png",
     "list_price": [
       {
         "amount": 799,
@@ -31240,7 +31240,7 @@
         "text": "Monikäyttöinen älykaukosäädin, joka yhdistää kaikki laitteesi vaivattomasti."
       }
     ],
-    "image": "https://res.cloudinary.com/relewisedemodata/image/upload/v1724940309/electronics/c3e246b5-2f04-4c58-9aeb-453ee094e364.png",
+    "image": "https://raw.githubusercontent.com/Relewise/adhoc-relewise-examples/main/template/assets/product-placeholder.png",
     "list_price": [
       {
         "amount": 299.99,
@@ -31428,7 +31428,7 @@
         "text": "Puhdistusaine astianpesukoneen suorituskyvyn ja hygienian ylläpitämiseen."
       }
     ],
-    "image": "https://res.cloudinary.com/relewisedemodata/image/upload/v1724946262/electronics/c5ab6c8a-44a1-4039-978b-6e1f3a25b953.png",
+    "image": "https://raw.githubusercontent.com/Relewise/adhoc-relewise-examples/main/template/assets/product-placeholder.png",
     "list_price": [
       {
         "amount": 12.99,
@@ -31616,7 +31616,7 @@
         "text": "Monipuolinen kynä, joka on suunniteltu tarkkaan syöttöön Surface-laitteilla."
       }
     ],
-    "image": "https://res.cloudinary.com/relewisedemodata/image/upload/v1724946030/electronics/c623482e-9c0a-4da8-9b69-78a2fbb5a568.png",
+    "image": "https://raw.githubusercontent.com/Relewise/adhoc-relewise-examples/main/template/assets/product-placeholder.png",
     "list_price": [
       {
         "amount": 99.99,
@@ -31804,7 +31804,7 @@
         "text": "Nopeaa tallennustilaa tyylikkäässä muotoilussa, ihanteellinen suurten tiedostojen tallentamiseen ja siirtämiseen."
       }
     ],
-    "image": "https://res.cloudinary.com/relewisedemodata/image/upload/v1724946187/electronics/c63c5687-7245-4d44-8ab2-b7c2a3687dc3.png",
+    "image": "https://raw.githubusercontent.com/Relewise/adhoc-relewise-examples/main/template/assets/product-placeholder.png",
     "list_price": [
       {
         "amount": 129.99,
@@ -31992,7 +31992,7 @@
         "text": "Aidosti langattomat kuulokkeet älykkäällä aktiivisella melunvaimennuksella."
       }
     ],
-    "image": "https://res.cloudinary.com/relewisedemodata/image/upload/v1724939437/electronics/c643ab44-10a9-4f3f-a323-4e284e5c9654.png",
+    "image": "https://raw.githubusercontent.com/Relewise/adhoc-relewise-examples/main/template/assets/product-placeholder.png",
     "list_price": [
       {
         "amount": 229.95,
@@ -32180,7 +32180,7 @@
         "text": "Nautiskele kirkkaista väreistä ja eläväisistä yksityiskohdista LG:n 4K Blu-ray-soittimella."
       }
     ],
-    "image": "https://res.cloudinary.com/relewisedemodata/image/upload/v1724940308/electronics/c67d392c-fe6e-4b04-afbc-e3701d865d94.png",
+    "image": "https://raw.githubusercontent.com/Relewise/adhoc-relewise-examples/main/template/assets/product-placeholder.png",
     "list_price": [
       {
         "amount": 249.99,
@@ -32368,7 +32368,7 @@
         "text": "Joustava kuormitus ja tehokas puhdistus kaikille keittiöille."
       }
     ],
-    "image": "https://res.cloudinary.com/relewisedemodata/image/upload/v1724940160/electronics/c6bc2a35-9ec8-4c1c-8600-569abc3e3efc.png",
+    "image": "https://raw.githubusercontent.com/Relewise/adhoc-relewise-examples/main/template/assets/product-placeholder.png",
     "list_price": [
       {
         "amount": 749.99,
@@ -32556,7 +32556,7 @@
         "text": "Poikkeuksellinen näyttö, joka tarjoaa upeaa väritarkkuutta ja selkeyttä kaikkiin projekteihisi."
       }
     ],
-    "image": "https://res.cloudinary.com/relewisedemodata/image/upload/v1724939991/electronics/c6e4c400-0d98-45c9-bdb1-90f4a7c06e9d.png",
+    "image": "https://raw.githubusercontent.com/Relewise/adhoc-relewise-examples/main/template/assets/product-placeholder.png",
     "list_price": [
       {
         "amount": 1599.99,
@@ -32744,7 +32744,7 @@
         "text": "Premium-tason pelinäyttö, jossa on vertaansa vailla oleva grafiikkasuorituskyky ja muotoilu."
       }
     ],
-    "image": "https://res.cloudinary.com/relewisedemodata/image/upload/v1724940239/electronics/c72c56bc-ad58-42e2-9446-7dd88cd5e52b.png",
+    "image": "https://raw.githubusercontent.com/Relewise/adhoc-relewise-examples/main/template/assets/product-placeholder.png",
     "list_price": [
       {
         "amount": 899,
@@ -32932,7 +32932,7 @@
         "text": "Monipuolinen USB-C hub, jossa on useita portteja kaikkien laitteidesi liittämiseen."
       }
     ],
-    "image": "https://res.cloudinary.com/relewisedemodata/image/upload/v1724945670/electronics/c7d791f5-a963-4726-9784-4ffd26cf168a.png",
+    "image": "https://raw.githubusercontent.com/Relewise/adhoc-relewise-examples/main/template/assets/product-placeholder.png",
     "list_price": [
       {
         "amount": 89.99,
@@ -33120,7 +33120,7 @@
         "text": "Tyylikäs langaton näppäimistö, jossa on parannettu mukavuus ja toiminnallisuus päivittäisiin tehtäviin."
       }
     ],
-    "image": "https://res.cloudinary.com/relewisedemodata/image/upload/v1724939650/electronics/c8599a10-3f93-4abc-a7bc-f7a57909dc61.png",
+    "image": "https://raw.githubusercontent.com/Relewise/adhoc-relewise-examples/main/template/assets/product-placeholder.png",
     "list_price": [
       {
         "amount": 99.99,
@@ -33308,7 +33308,7 @@
         "text": "Uusin Apple Watch tuo mukanaan edistyksellisiä terveydenseurantaominaisuuksia tyylikkäässä muotoilussa."
       }
     ],
-    "image": "https://res.cloudinary.com/relewisedemodata/image/upload/v1724939304/electronics/c8b05523-64e7-4f5b-98c6-9635b87a2be3.png",
+    "image": "https://raw.githubusercontent.com/Relewise/adhoc-relewise-examples/main/template/assets/product-placeholder.png",
     "list_price": [
       {
         "amount": 429,
@@ -33496,7 +33496,7 @@
         "text": "Edistyksellinen kamera erinomaisella kuvalaadulla ja monipuolisuudella."
       }
     ],
-    "image": "https://res.cloudinary.com/relewisedemodata/image/upload/v1724944283/electronics/c9ade65f-fc79-43cc-80a0-bb746cf6c7af.png",
+    "image": "https://raw.githubusercontent.com/Relewise/adhoc-relewise-examples/main/template/assets/product-placeholder.png",
     "list_price": [
       {
         "amount": 1399.99,
@@ -33684,7 +33684,7 @@
         "text": "Korkealaatuiset kuulokkeet aktiivisella melunvaimennuksella ja tilavalla äänellä."
       }
     ],
-    "image": "https://res.cloudinary.com/relewisedemodata/image/upload/v1724945771/electronics/cad0b330-c1f3-49ea-ac6f-391c8cf13562.png",
+    "image": "https://raw.githubusercontent.com/Relewise/adhoc-relewise-examples/main/template/assets/product-placeholder.png",
     "list_price": [
       {
         "amount": 629.99,
@@ -33872,7 +33872,7 @@
         "text": "Melua vaimentavat kuulokkeet, joiden akunkesto on jopa 35 tuntia."
       }
     ],
-    "image": "https://res.cloudinary.com/relewisedemodata/image/upload/v1724944084/electronics/cba8745a-8120-4747-bd2b-19476ff40f94.png",
+    "image": "https://raw.githubusercontent.com/Relewise/adhoc-relewise-examples/main/template/assets/product-placeholder.png",
     "list_price": [
       {
         "amount": 199.99,
@@ -34060,7 +34060,7 @@
         "text": "Premium-kannettava kaiutin, jossa on laadukas ääni ja kestävä vedenkestävä muotoilu."
       }
     ],
-    "image": "https://res.cloudinary.com/relewisedemodata/image/upload/v1724939657/electronics/ccd03da3-b167-4383-b8d8-e3f0dbe891c4.png",
+    "image": "https://raw.githubusercontent.com/Relewise/adhoc-relewise-examples/main/template/assets/product-placeholder.png",
     "list_price": [
       {
         "amount": 149.95,
@@ -34248,7 +34248,7 @@
         "text": "Kannettava näyttö USB-C-yhteydellä ja sisäänrakennetulla akulla."
       }
     ],
-    "image": "https://res.cloudinary.com/relewisedemodata/image/upload/v1724944264/electronics/cd7c7aa7-7ea2-4ead-bdf8-db1d95376770.png",
+    "image": "https://raw.githubusercontent.com/Relewise/adhoc-relewise-examples/main/template/assets/product-placeholder.png",
     "list_price": [
       {
         "amount": 249.99,
@@ -34436,7 +34436,7 @@
         "text": "Älykäs valaistuspaketti, joka mahdollistaa tunnelman helpon hallinnan."
       }
     ],
-    "image": "https://res.cloudinary.com/relewisedemodata/image/upload/v1724946087/electronics/cdd5c774-7f1e-4c11-b8de-973ffa0ea121.png",
+    "image": "https://raw.githubusercontent.com/Relewise/adhoc-relewise-examples/main/template/assets/product-placeholder.png",
     "list_price": [
       {
         "amount": 199.99,
@@ -34624,7 +34624,7 @@
         "text": "Nosta katselukokemustasi 8K-tarkkuudella ja laajamittaisilla väreillä."
       }
     ],
-    "image": "https://res.cloudinary.com/relewisedemodata/image/upload/v1724940280/electronics/cdff342e-d441-42ba-93b9-0b8b50c6091f.png",
+    "image": "https://raw.githubusercontent.com/Relewise/adhoc-relewise-examples/main/template/assets/product-placeholder.png",
     "list_price": [
       {
         "amount": 2999.99,
@@ -34812,7 +34812,7 @@
         "text": "Älykäs LED-lamppu, jossa on mukautettavat valot mobiilisovelluksen kautta."
       }
     ],
-    "image": "https://res.cloudinary.com/relewisedemodata/image/upload/v1724944344/electronics/ce8c88e5-3be1-4d58-b4b2-dbb67ae00965.png",
+    "image": "https://raw.githubusercontent.com/Relewise/adhoc-relewise-examples/main/template/assets/product-placeholder.png",
     "list_price": [
       {
         "amount": 19.99,
@@ -35000,7 +35000,7 @@
         "text": "Koe erinomainen äänenlaatu aktiivisella taustamelun poistolla ja jopa 30 tunnin akkukestolla."
       }
     ],
-    "image": "https://res.cloudinary.com/relewisedemodata/image/upload/v1724940151/electronics/d1a79c30-389c-4ece-9c71-eaedcc1a3068.png",
+    "image": "https://raw.githubusercontent.com/Relewise/adhoc-relewise-examples/main/template/assets/product-placeholder.png",
     "list_price": [
       {
         "amount": 299.95,
@@ -35188,7 +35188,7 @@
         "text": "Kompakti langaton kaiutin, jossa kristallinkirkas ääni."
       }
     ],
-    "image": "https://res.cloudinary.com/relewisedemodata/image/upload/v1724939993/electronics/d1e5b12f-6c55-4fcb-b7a2-dc73536bc029.png",
+    "image": "https://raw.githubusercontent.com/Relewise/adhoc-relewise-examples/main/template/assets/product-placeholder.png",
     "list_price": [
       {
         "amount": 179.95,
@@ -35376,7 +35376,7 @@
         "text": "Kompakti langaton näppäimistö, joka on mukava käyttää ja helppo asentaa."
       }
     ],
-    "image": "https://res.cloudinary.com/relewisedemodata/image/upload/v1724946185/electronics/d1f40c71-3f3c-4938-9b67-7735737b4e5b.png",
+    "image": "https://raw.githubusercontent.com/Relewise/adhoc-relewise-examples/main/template/assets/product-placeholder.png",
     "list_price": [
       {
         "amount": 49.99,
@@ -35564,7 +35564,7 @@
         "text": "Tilava jääkaappi-pakastin modernilla muotoilulla kaikkiin säilytustarpeisiisi."
       }
     ],
-    "image": "https://res.cloudinary.com/relewisedemodata/image/upload/v1724939213/electronics/d361e412-c61e-4293-a830-4905749baf18.png",
+    "image": "https://raw.githubusercontent.com/Relewise/adhoc-relewise-examples/main/template/assets/product-placeholder.png",
     "list_price": [
       {
         "amount": 749,
@@ -35752,7 +35752,7 @@
         "text": "Tyylikäs älykello, jossa on terveyden seurantaominaisuudet ja muokattavat kellotaulut."
       }
     ],
-    "image": "https://res.cloudinary.com/relewisedemodata/image/upload/v1724939527/electronics/d39c66f9-3587-4861-b3bd-4880427586b8.png",
+    "image": "https://raw.githubusercontent.com/Relewise/adhoc-relewise-examples/main/template/assets/product-placeholder.png",
     "list_price": [
       {
         "amount": 299,
@@ -35940,7 +35940,7 @@
         "text": "MagSafe-laturi uusimmille iPhone-malleille."
       }
     ],
-    "image": "https://res.cloudinary.com/relewisedemodata/image/upload/v1724945969/electronics/d3bbaab6-1af2-42e5-9613-4d83cb229e34.png",
+    "image": "https://raw.githubusercontent.com/Relewise/adhoc-relewise-examples/main/template/assets/product-placeholder.png",
     "list_price": [
       {
         "amount": 45,
@@ -36128,7 +36128,7 @@
         "text": "Liitä kannettava tietokoneesi HDMI-näyttöihin vaivattomasti."
       }
     ],
-    "image": "https://res.cloudinary.com/relewisedemodata/image/upload/v1724946051/electronics/d3cde6ab-ad1c-4cb8-bced-3b37b52ae582.png",
+    "image": "https://raw.githubusercontent.com/Relewise/adhoc-relewise-examples/main/template/assets/product-placeholder.png",
     "list_price": [
       {
         "amount": 29.99,
@@ -36316,7 +36316,7 @@
         "text": "Korkealaatuiset pelikuulokkeet, joissa on tilasarjaäänet ja mukava istuvuus."
       }
     ],
-    "image": "https://res.cloudinary.com/relewisedemodata/image/upload/v1724945630/electronics/d3f2d8dd-1228-4b37-81aa-fc191749b6ff.png",
+    "image": "https://raw.githubusercontent.com/Relewise/adhoc-relewise-examples/main/template/assets/product-placeholder.png",
     "list_price": [
       {
         "amount": 99.99,
@@ -36504,7 +36504,7 @@
         "text": "Pelikuulokkeet, joissa on mukaansatempaava ääni ja mukavat korvatyynyt."
       }
     ],
-    "image": "https://res.cloudinary.com/relewisedemodata/image/upload/v1724943986/electronics/d44f2921-d4a4-4c2d-8e97-2c0aac4ff511.png",
+    "image": "https://raw.githubusercontent.com/Relewise/adhoc-relewise-examples/main/template/assets/product-placeholder.png",
     "list_price": [
       {
         "amount": 89.99,
@@ -36692,7 +36692,7 @@
         "text": "Aito langaton kuulokemalli, jossa on premium-laatuinen ääni ja pitkäakkukesto."
       }
     ],
-    "image": "https://res.cloudinary.com/relewisedemodata/image/upload/v1724945649/electronics/d46c2a8d-9c14-4297-b57e-2ac75b8af743.png",
+    "image": "https://raw.githubusercontent.com/Relewise/adhoc-relewise-examples/main/template/assets/product-placeholder.png",
     "list_price": [
       {
         "amount": 149.99,
@@ -36880,7 +36880,7 @@
         "text": "Langattomat aktiivisen melunvaimennuksen kuulokkeet, joissa on jopa 35 tuntia akkuaika."
       }
     ],
-    "image": "https://res.cloudinary.com/relewisedemodata/image/upload/v1724944343/electronics/d49bc415-4c13-4362-8f87-93275c199c71.png",
+    "image": "https://raw.githubusercontent.com/Relewise/adhoc-relewise-examples/main/template/assets/product-placeholder.png",
     "list_price": [
       {
         "amount": 199.99,
@@ -37068,7 +37068,7 @@
         "text": "Korkean suorituskyvyn pelihiiri, jossa on muokattava RGB-valaistus."
       }
     ],
-    "image": "https://res.cloudinary.com/relewisedemodata/image/upload/v1724943912/electronics/d5b5c0c5-2c7f-411c-9cee-833c3651e4e4.png",
+    "image": "https://raw.githubusercontent.com/Relewise/adhoc-relewise-examples/main/template/assets/product-placeholder.png",
     "list_price": [
       {
         "amount": 69.99,
@@ -37256,7 +37256,7 @@
         "text": "Langaton valaistu näppäimistö mukavaan kirjoittamiseen."
       }
     ],
-    "image": "https://res.cloudinary.com/relewisedemodata/image/upload/v1724944265/electronics/d5f92161-8f3d-41c8-b7c5-e7aae8562736.png",
+    "image": "https://raw.githubusercontent.com/Relewise/adhoc-relewise-examples/main/template/assets/product-placeholder.png",
     "list_price": [
       {
         "amount": 79.99,
@@ -37444,7 +37444,7 @@
         "text": "Huippuluokan älypuhelin, jossa on huipputeknologian näyttö ja kamerat."
       }
     ],
-    "image": "https://res.cloudinary.com/relewisedemodata/image/upload/v1724940289/electronics/d632d10b-5c58-4e16-8a6a-f5a5ef305360.png",
+    "image": "https://raw.githubusercontent.com/Relewise/adhoc-relewise-examples/main/template/assets/product-placeholder.png",
     "list_price": [
       {
         "amount": 1099,
@@ -37632,7 +37632,7 @@
         "text": "Monipuolinen hybridikannettava, jossa on kosketusnäyttö ja vankka suorituskyky."
       }
     ],
-    "image": "https://res.cloudinary.com/relewisedemodata/image/upload/v1724943950/electronics/d72591a8-d753-41c1-a194-12c1e632e6eb.png",
+    "image": "https://raw.githubusercontent.com/Relewise/adhoc-relewise-examples/main/template/assets/product-placeholder.png",
     "list_price": [
       {
         "amount": 799.99,
@@ -37820,7 +37820,7 @@
         "text": "Älykäs LED-lamppu, jonka avulla voit ohjata valaistustasi älypuhelimeltasi."
       }
     ],
-    "image": "https://res.cloudinary.com/relewisedemodata/image/upload/v1724946165/electronics/d812cd4d-6798-4a67-9da9-1714006f7936.png",
+    "image": "https://raw.githubusercontent.com/Relewise/adhoc-relewise-examples/main/template/assets/product-placeholder.png",
     "list_price": [
       {
         "amount": 19.99,
@@ -38008,7 +38008,7 @@
         "text": "Nauti suosikkielokuvistasi upeassa 4K-laadussa."
       }
     ],
-    "image": "https://res.cloudinary.com/relewisedemodata/image/upload/v1724939149/electronics/d9ec04dc-42b5-4960-b07d-cdf6034f64cd.png",
+    "image": "https://raw.githubusercontent.com/Relewise/adhoc-relewise-examples/main/template/assets/product-placeholder.png",
     "list_price": [
       {
         "amount": 249.99,
@@ -38196,7 +38196,7 @@
         "text": "Suunniteltu mukavaa käyttöä varten, vähentäen rannekivun riskiä pitkien kirjoitussessioiden aikana."
       }
     ],
-    "image": "https://res.cloudinary.com/relewisedemodata/image/upload/v1724939115/electronics/da7c0482-b6bb-4c34-87bb-295df3441953.png",
+    "image": "https://raw.githubusercontent.com/Relewise/adhoc-relewise-examples/main/template/assets/product-placeholder.png",
     "list_price": [
       {
         "amount": 119.99,
@@ -38384,7 +38384,7 @@
         "text": "Nauti upeista väreistä ja kontrasteista Quantum Dot -tekniikalla tässä upeassa QLED-televisiossa."
       }
     ],
-    "image": "https://res.cloudinary.com/relewisedemodata/image/upload/v1724940039/electronics/dc321236-c76b-456d-b0d3-6c5d4c2f1b74.png",
+    "image": "https://raw.githubusercontent.com/Relewise/adhoc-relewise-examples/main/template/assets/product-placeholder.png",
     "list_price": [
       {
         "amount": 1999.99,
@@ -38572,7 +38572,7 @@
         "text": "Premium-tason langattomat kuulokkeet aktiivisella melunsuojauksella."
       }
     ],
-    "image": "https://res.cloudinary.com/relewisedemodata/image/upload/v1724944284/electronics/dd7be781-8cc9-4c5a-ba1e-e67e68fd631d.png",
+    "image": "https://raw.githubusercontent.com/Relewise/adhoc-relewise-examples/main/template/assets/product-placeholder.png",
     "list_price": [
       {
         "amount": 229.99,
@@ -38760,7 +38760,7 @@
         "text": "Tyylikäs soittimen jossa on tarkka vyöohjattu moottori ja korkealaatuiset komponentit."
       }
     ],
-    "image": "https://res.cloudinary.com/relewisedemodata/image/upload/v1724939538/electronics/de208aea-cb04-4dd5-a290-4ef78d9829b5.png",
+    "image": "https://raw.githubusercontent.com/Relewise/adhoc-relewise-examples/main/template/assets/product-placeholder.png",
     "list_price": [
       {
         "amount": 359,
@@ -38948,7 +38948,7 @@
         "text": "Paras näyttö väritarkkuudelle suunnittelussa ja videoprojekteissa."
       }
     ],
-    "image": "https://res.cloudinary.com/relewisedemodata/image/upload/v1724939071/electronics/df5bbd2a-2439-4bc1-9019-ab26b86400c3.png",
+    "image": "https://raw.githubusercontent.com/Relewise/adhoc-relewise-examples/main/template/assets/product-placeholder.png",
     "list_price": [
       {
         "amount": 1399.99,
@@ -39136,7 +39136,7 @@
         "text": "Kompakti ja tehokas etukuormallinen pyykinpesukone, jossa on useita pesutiloja."
       }
     ],
-    "image": "https://res.cloudinary.com/relewisedemodata/image/upload/v1724939479/electronics/dfe5d47c-b273-4e50-b44e-1e1f7168bdf1.png",
+    "image": "https://raw.githubusercontent.com/Relewise/adhoc-relewise-examples/main/template/assets/product-placeholder.png",
     "list_price": [
       {
         "amount": 479.99,
@@ -39324,7 +39324,7 @@
         "text": "Edistynein Apple Watch, suuremmalla näytöllä ja nopeammalla latauksella."
       }
     ],
-    "image": "https://res.cloudinary.com/relewisedemodata/image/upload/v1724939535/electronics/e0413416-d40a-4380-bcd4-483d642c6402.png",
+    "image": "https://raw.githubusercontent.com/Relewise/adhoc-relewise-examples/main/template/assets/product-placeholder.png",
     "list_price": [
       {
         "amount": 399,
@@ -39512,7 +39512,7 @@
         "text": "Kapea ja kompakti näppäimistö, jossa on sisäänrakennettu ladattava akku."
       }
     ],
-    "image": "https://res.cloudinary.com/relewisedemodata/image/upload/v1724945649/electronics/e12048ab-5461-4f31-94b8-cd068f80de9d.png",
+    "image": "https://raw.githubusercontent.com/Relewise/adhoc-relewise-examples/main/template/assets/product-placeholder.png",
     "list_price": [
       {
         "amount": 109.99,
@@ -39700,7 +39700,7 @@
         "text": "Tyylikäs ja kevyt kannettava tietokone, jossa on upea näyttö, täydellinen opiskelijoille ja ammattilaisille."
       }
     ],
-    "image": "https://res.cloudinary.com/relewisedemodata/image/upload/v1724940382/electronics/e1523a5a-1c0a-4f6c-bf9c-fb2043bd19d0.png",
+    "image": "https://raw.githubusercontent.com/Relewise/adhoc-relewise-examples/main/template/assets/product-placeholder.png",
     "list_price": [
       {
         "amount": 949.99,
@@ -39888,7 +39888,7 @@
         "text": "Premium-ääni ja tyylikäs muotoilu säädettävällä taustamelun poistolla ja 35 tunnin akkukestolla."
       }
     ],
-    "image": "https://res.cloudinary.com/relewisedemodata/image/upload/v1724940188/electronics/e26768c9-7b2e-4c73-a7e4-6211132d24f9.png",
+    "image": "https://raw.githubusercontent.com/Relewise/adhoc-relewise-examples/main/template/assets/product-placeholder.png",
     "list_price": [
       {
         "amount": 329.95,
@@ -40076,7 +40076,7 @@
         "text": "Edistyksellinen etukuormallinen pyykinpesukone, jossa on useita pesuvalintoja ja energiatehokkuus."
       }
     ],
-    "image": "https://res.cloudinary.com/relewisedemodata/image/upload/v1724939435/electronics/e2e1a191-b23b-4f11-9b6a-8d5c798c8a22.png",
+    "image": "https://raw.githubusercontent.com/Relewise/adhoc-relewise-examples/main/template/assets/product-placeholder.png",
     "list_price": [
       {
         "amount": 499.99,
@@ -40264,7 +40264,7 @@
         "text": "Nosta televisiokokemustasi Dolby Atmos -äänellä."
       }
     ],
-    "image": "https://res.cloudinary.com/relewisedemodata/image/upload/v1724940408/electronics/e2fbc0b4-34cc-44f7-bd1c-b11efc15cfd5.png",
+    "image": "https://raw.githubusercontent.com/Relewise/adhoc-relewise-examples/main/template/assets/product-placeholder.png",
     "list_price": [
       {
         "amount": 799.99,
@@ -40452,7 +40452,7 @@
         "text": "27 tuuman QHD-pelaamisen näyttö, jossa on nopeat päivitysnopeudet ja erinomaiset väritarkkuus."
       }
     ],
-    "image": "https://res.cloudinary.com/relewisedemodata/image/upload/v1724943817/electronics/e36c1edd-c249-4012-b56b-5ce048bfc0f4.png",
+    "image": "https://raw.githubusercontent.com/Relewise/adhoc-relewise-examples/main/template/assets/product-placeholder.png",
     "list_price": [
       {
         "amount": 499.99,
@@ -40640,7 +40640,7 @@
         "text": "Edistynyt suoraan ajettava levysoitin, jossa on sisäänrakennettu phono-esivahvistin."
       }
     ],
-    "image": "https://res.cloudinary.com/relewisedemodata/image/upload/v1724939413/electronics/e3f15ef7-2f19-4e64-8ecc-e91f74f9d472.png",
+    "image": "https://raw.githubusercontent.com/Relewise/adhoc-relewise-examples/main/template/assets/product-placeholder.png",
     "list_price": [
       {
         "amount": 319,
@@ -40828,7 +40828,7 @@
         "text": "Kestävä astiakori, joka on yhteensopiva useimpien astianpesukoneiden kanssa."
       }
     ],
-    "image": "https://res.cloudinary.com/relewisedemodata/image/upload/v1724946261/electronics/e4f2b21b-5217-496f-9c43-c028e9bc529f.png",
+    "image": "https://raw.githubusercontent.com/Relewise/adhoc-relewise-examples/main/template/assets/product-placeholder.png",
     "list_price": [
       {
         "amount": 14.99,
@@ -41016,7 +41016,7 @@
         "text": "Premium langattomat korvakuulokkeet älykkäällä aktiivisella melunsuojauksella."
       }
     ],
-    "image": "https://res.cloudinary.com/relewisedemodata/image/upload/v1724944105/electronics/e53092df-dc6c-4701-8d68-4a6866ea479d.png",
+    "image": "https://raw.githubusercontent.com/Relewise/adhoc-relewise-examples/main/template/assets/product-placeholder.png",
     "list_price": [
       {
         "amount": 219.99,
@@ -41204,7 +41204,7 @@
         "text": "Premium aktiivisesti ääntä vaimentavat nappikuulokkeet, joissa on mukaansatempaava ääni."
       }
     ],
-    "image": "https://res.cloudinary.com/relewisedemodata/image/upload/v1724944244/electronics/e5e78f23-620b-4a93-9587-41d89c8c5390.png",
+    "image": "https://raw.githubusercontent.com/Relewise/adhoc-relewise-examples/main/template/assets/product-placeholder.png",
     "list_price": [
       {
         "amount": 249.99,
@@ -41392,7 +41392,7 @@
         "text": "Uusi standardi iPhonelle, jossa on tehokkaat kamerat ja pitkä akunkesto."
       }
     ],
-    "image": "https://res.cloudinary.com/relewisedemodata/image/upload/v1724939280/electronics/e6397828-5f55-4eb1-b6af-68ff96fc9c72.png",
+    "image": "https://raw.githubusercontent.com/Relewise/adhoc-relewise-examples/main/template/assets/product-placeholder.png",
     "list_price": [
       {
         "amount": 1099,
@@ -41580,7 +41580,7 @@
         "text": "Ergonominen hiiri, joka on suunniteltu vähentämään ranteen rasitusta kehittyneiden seurantaominaisuuksien avulla."
       }
     ],
-    "image": "https://res.cloudinary.com/relewisedemodata/image/upload/v1724940388/electronics/e6c8d3b0-ff48-4934-97e8-dde0b6c7buns.png",
+    "image": "https://raw.githubusercontent.com/Relewise/adhoc-relewise-examples/main/template/assets/product-placeholder.png",
     "list_price": [
       {
         "amount": 89.99,
@@ -41768,7 +41768,7 @@
         "text": "Korvakuulokkeet, joissa on huipputason äänenlaatu ja aktiivinen melunvaimennus."
       }
     ],
-    "image": "https://res.cloudinary.com/relewisedemodata/image/upload/v1724946244/electronics/e6e9f096-e69a-4b56-bcc6-7da831ee2aed.png",
+    "image": "https://raw.githubusercontent.com/Relewise/adhoc-relewise-examples/main/template/assets/product-placeholder.png",
     "list_price": [
       {
         "amount": 629.95,
@@ -41956,7 +41956,7 @@
         "text": "Alan johtava äänenvaimennus ja erinomainen äänenlaatu."
       }
     ],
-    "image": "https://res.cloudinary.com/relewisedemodata/image/upload/v1724939311/electronics/e8821b04-5e4d-4e03-9f6e-cf96cf0e374a.png",
+    "image": "https://raw.githubusercontent.com/Relewise/adhoc-relewise-examples/main/template/assets/product-placeholder.png",
     "list_price": [
       {
         "amount": 349.95,
@@ -42144,7 +42144,7 @@
         "text": "Monipuolinen langaton näppäimistö, joka voi yhdistää useisiin laitteisiin."
       }
     ],
-    "image": "https://res.cloudinary.com/relewisedemodata/image/upload/v1724944163/electronics/e8bfb6ae-24a8-4b8e-9991-d92a8ed784a0.png",
+    "image": "https://raw.githubusercontent.com/Relewise/adhoc-relewise-examples/main/template/assets/product-placeholder.png",
     "list_price": [
       {
         "amount": 89.99,
@@ -42332,7 +42332,7 @@
         "text": "Seuraavan sukupolven pelikonsole, joka mullistaa pelaamisen."
       }
     ],
-    "image": "https://res.cloudinary.com/relewisedemodata/image/upload/v1724944246/electronics/e8cc22c1-7aad-4a4c-83a6-928d4b92bcbf.png",
+    "image": "https://raw.githubusercontent.com/Relewise/adhoc-relewise-examples/main/template/assets/product-placeholder.png",
     "list_price": [
       {
         "amount": 499.99,
@@ -42520,7 +42520,7 @@
         "text": "Korkean suorituskyvyn langattomat nappikuulokkeet säädettävillä korvakuulokkeilla turvalliseen istuvuuteen."
       }
     ],
-    "image": "https://res.cloudinary.com/relewisedemodata/image/upload/v1724945709/electronics/e8d28914-7eb4-43ee-b186-db8e6b070f30.png",
+    "image": "https://raw.githubusercontent.com/Relewise/adhoc-relewise-examples/main/template/assets/product-placeholder.png",
     "list_price": [
       {
         "amount": 249.95,
@@ -42708,7 +42708,7 @@
         "text": "Räätälöi melunvaimennuskokemuksesi erinomaisella äänenlaadulla."
       }
     ],
-    "image": "https://res.cloudinary.com/relewisedemodata/image/upload/v1724939437/electronics/eaa3b596-1c47-4cb4-8b39-4c25e05c5a12.png",
+    "image": "https://raw.githubusercontent.com/Relewise/adhoc-relewise-examples/main/template/assets/product-placeholder.png",
     "list_price": [
       {
         "amount": 299.95,
@@ -42896,7 +42896,7 @@
         "text": "Älykäs lamppu, joka antaa sinun säätää kirkkautta ja väriä älypuhelimesi avulla."
       }
     ],
-    "image": "https://res.cloudinary.com/relewisedemodata/image/upload/v1724944123/electronics/ec85ff14-4999-4756-bd86-256e79c09674.png",
+    "image": "https://raw.githubusercontent.com/Relewise/adhoc-relewise-examples/main/template/assets/product-placeholder.png",
     "list_price": [
       {
         "amount": 59.99,
@@ -43084,7 +43084,7 @@
         "text": "Premium soittimen joka on elegantissa suunnittelussa ja erinomaisessa äänentoistossa."
       }
     ],
-    "image": "https://res.cloudinary.com/relewisedemodata/image/upload/v1724939504/electronics/ef2b4bde-dc55-4011-9fa3-84d7d747a0e7.png",
+    "image": "https://raw.githubusercontent.com/Relewise/adhoc-relewise-examples/main/template/assets/product-placeholder.png",
     "list_price": [
       {
         "amount": 449,
@@ -43272,7 +43272,7 @@
         "text": "Monipuolinen telakka-asema, joka tarjoaa useita liitäntöjä laitteille."
       }
     ],
-    "image": "https://res.cloudinary.com/relewisedemodata/image/upload/v1724945892/electronics/f00bcf54-0284-4a73-abc2-6365cb84f4ef.png",
+    "image": "https://raw.githubusercontent.com/Relewise/adhoc-relewise-examples/main/template/assets/product-placeholder.png",
     "list_price": [
       {
         "amount": 229.99,
@@ -43460,7 +43460,7 @@
         "text": "Langattomat melua vaimentavat kuulokkeet, jotka tuottavat poikkeuksellista ääntä."
       }
     ],
-    "image": "https://res.cloudinary.com/relewisedemodata/image/upload/v1724944221/electronics/f020b9a9-e4b6-44d4-8bdf-aeaa5ed68f84.png",
+    "image": "https://raw.githubusercontent.com/Relewise/adhoc-relewise-examples/main/template/assets/product-placeholder.png",
     "list_price": [
       {
         "amount": 349.95,
@@ -43648,7 +43648,7 @@
         "text": "Ammattilaistason pelinäyttö, joka on suunniteltu uskomattomaan nopeuteen ja realismiin."
       }
     ],
-    "image": "https://res.cloudinary.com/relewisedemodata/image/upload/v1724940241/electronics/f0d3f4e5-9617-4dde-bdad-82f3ae75594e.png",
+    "image": "https://raw.githubusercontent.com/Relewise/adhoc-relewise-examples/main/template/assets/product-placeholder.png",
     "list_price": [
       {
         "amount": 749,
@@ -43836,7 +43836,7 @@
         "text": "Nosta katselukokemustasi upealla QLED-teknologialla ja älykkäillä ominaisuuksilla."
       }
     ],
-    "image": "https://res.cloudinary.com/relewisedemodata/image/upload/v1724940043/electronics/f0e8b015-cc56-47fb-8f45-551bb4cfb7c7.png",
+    "image": "https://raw.githubusercontent.com/Relewise/adhoc-relewise-examples/main/template/assets/product-placeholder.png",
     "list_price": [
       {
         "amount": 1399.99,
@@ -44024,7 +44024,7 @@
         "text": "Tyylikäs ultrabook nopealla suorituskyvyllä, täydellinen ammattilaisille."
       }
     ],
-    "image": "https://res.cloudinary.com/relewisedemodata/image/upload/v1724943771/electronics/f10fc3c9-0368-4dc7-a452-1a3ea0ed3d23.png",
+    "image": "https://raw.githubusercontent.com/Relewise/adhoc-relewise-examples/main/template/assets/product-placeholder.png",
     "list_price": [
       {
         "amount": 799.99,
@@ -44212,7 +44212,7 @@
         "text": "Monipuolinen täyden kennon peilittömä kamera, jolla on vaikuttava hämäräkuvauskyky."
       }
     ],
-    "image": "https://res.cloudinary.com/relewisedemodata/image/upload/v1724944147/electronics/f12f4721-3b5d-4d1d-b388-926334711694.png",
+    "image": "https://raw.githubusercontent.com/Relewise/adhoc-relewise-examples/main/template/assets/product-placeholder.png",
     "list_price": [
       {
         "amount": 2499.99,
@@ -44400,7 +44400,7 @@
         "text": "Kompakti ja tehokas jääkaappi säädettävillä hyllyillä."
       }
     ],
-    "image": "https://res.cloudinary.com/relewisedemodata/image/upload/v1724940072/electronics/f138ef3e-0b1d-41d5-bd98-b7d85028382a.png",
+    "image": "https://raw.githubusercontent.com/Relewise/adhoc-relewise-examples/main/template/assets/product-placeholder.png",
     "list_price": [
       {
         "amount": 729,
@@ -44588,7 +44588,7 @@
         "text": "Monipuolinen peilirless-kamera, jossa on 16 MP anturi ja 4K-videokyky."
       }
     ],
-    "image": "https://res.cloudinary.com/relewisedemodata/image/upload/v1724945728/electronics/f1671560-5f0e-4189-a057-2d067986330d.png",
+    "image": "https://raw.githubusercontent.com/Relewise/adhoc-relewise-examples/main/template/assets/product-placeholder.png",
     "list_price": [
       {
         "amount": 599,
@@ -44776,7 +44776,7 @@
         "text": "Korkean suorituskyvyn kannettava tietokone, jossa on tehokas grafiikka, ihanteellinen sekä työhön että multimediahuviin."
       }
     ],
-    "image": "https://res.cloudinary.com/relewisedemodata/image/upload/v1724940378/electronics/f1a680fc-e8b9-4d2f-9a48-31be691d9c9f.png",
+    "image": "https://raw.githubusercontent.com/Relewise/adhoc-relewise-examples/main/template/assets/product-placeholder.png",
     "list_price": [
       {
         "amount": 1099.99,
@@ -44964,7 +44964,7 @@
         "text": "Melua vaimentavat kuulokkeet, jotka on suunniteltu mukavuudelle ja korkealaatuiselle äänelle."
       }
     ],
-    "image": "https://res.cloudinary.com/relewisedemodata/image/upload/v1724944146/electronics/f1a6dad4-0dee-4ed8-9e5f-51b3c09e1293.png",
+    "image": "https://raw.githubusercontent.com/Relewise/adhoc-relewise-examples/main/template/assets/product-placeholder.png",
     "list_price": [
       {
         "amount": 349.95,
@@ -45152,7 +45152,7 @@
         "text": "Edistynyt soittimen jossa on hiilikuitu äänivarsi huipputason äänenlaadulle."
       }
     ],
-    "image": "https://res.cloudinary.com/relewisedemodata/image/upload/v1724939526/electronics/f1a7f8a5-6c62-4d88-85d3-b8f1f4e5b741.png",
+    "image": "https://raw.githubusercontent.com/Relewise/adhoc-relewise-examples/main/template/assets/product-placeholder.png",
     "list_price": [
       {
         "amount": 399,
@@ -45340,7 +45340,7 @@
         "text": "Löydä upea kuvanlaatu, joka tarjoaa erinomaisen kontrastin ja värit."
       }
     ],
-    "image": "https://res.cloudinary.com/relewisedemodata/image/upload/v1724940260/electronics/f1d08e91-5b41-4c7a-ba91-e2c7e4cad6d2.png",
+    "image": "https://raw.githubusercontent.com/Relewise/adhoc-relewise-examples/main/template/assets/product-placeholder.png",
     "list_price": [
       {
         "amount": 3499.99,
@@ -45528,7 +45528,7 @@
         "text": "Peilittömiin kameroihin suunniteltu kamera, joka on tarkoitettu ammattilaisvideokuvaukseen."
       }
     ],
-    "image": "https://res.cloudinary.com/relewisedemodata/image/upload/v1724944225/electronics/f255257e-b099-4b76-97cb-0ef9adf65aac.png",
+    "image": "https://raw.githubusercontent.com/Relewise/adhoc-relewise-examples/main/template/assets/product-placeholder.png",
     "list_price": [
       {
         "amount": 1399.99,
@@ -45716,7 +45716,7 @@
         "text": "Tilava jääkaappi pakastin tehokkaalla lämpötilan hallinnalla ja ympäristöystävällisellä muotoilulla."
       }
     ],
-    "image": "https://res.cloudinary.com/relewisedemodata/image/upload/v1724939620/electronics/f28ded1a-5273-45f6-93bb-54ae268ed89e.png",
+    "image": "https://raw.githubusercontent.com/Relewise/adhoc-relewise-examples/main/template/assets/product-placeholder.png",
     "list_price": [
       {
         "amount": 750,
@@ -45904,7 +45904,7 @@
         "text": "Sukella huipputarkkuuden 4K-kuvanlaatuun upeilla väreillä."
       }
     ],
-    "image": "https://res.cloudinary.com/relewisedemodata/image/upload/v1724943772/electronics/f2c45f14-d6b6-42ff-8067-a8efb63a43f3.png",
+    "image": "https://raw.githubusercontent.com/Relewise/adhoc-relewise-examples/main/template/assets/product-placeholder.png",
     "list_price": [
       {
         "amount": 1199.99,
@@ -46092,7 +46092,7 @@
         "text": "Tyylikäs ja toiminnallinen näppäimistö, joka yhdistää hienostuneen muotoilun edistyksellisiin teknologioihin."
       }
     ],
-    "image": "https://res.cloudinary.com/relewisedemodata/image/upload/v1724939659/electronics/f2c4e7e6-5c7e-48e8-beb4-6aed98210a09.png",
+    "image": "https://raw.githubusercontent.com/Relewise/adhoc-relewise-examples/main/template/assets/product-placeholder.png",
     "list_price": [
       {
         "amount": 109.99,
@@ -46280,7 +46280,7 @@
         "text": "Kompakti ja kevyt Bluetooth-kaiutin, jossa on ylimääräinen basso ja vedenkestävät ominaisuudet."
       }
     ],
-    "image": "https://res.cloudinary.com/relewisedemodata/image/upload/v1724939648/electronics/f3aefc9a-1cb3-418b-bc92-5f5a7ca55e15.png",
+    "image": "https://raw.githubusercontent.com/Relewise/adhoc-relewise-examples/main/template/assets/product-placeholder.png",
     "list_price": [
       {
         "amount": 129.95,
@@ -46468,7 +46468,7 @@
         "text": "Korkean suorituskyvyn astianpesukone, joka on suunniteltu lisämukavuutta varten."
       }
     ],
-    "image": "https://res.cloudinary.com/relewisedemodata/image/upload/v1724939272/electronics/f44007d3-0850-429e-bf51-0980ad7fdce8.png",
+    "image": "https://raw.githubusercontent.com/Relewise/adhoc-relewise-examples/main/template/assets/product-placeholder.png",
     "list_price": [
       {
         "amount": 699,
@@ -46656,7 +46656,7 @@
         "text": "Muuta elokuvailtasi hämmästyttäväksi Sony'n 4K Blu-ray-soittimella."
       }
     ],
-    "image": "https://res.cloudinary.com/relewisedemodata/image/upload/v1724940306/electronics/f49a6a8f-1f7d-4e06-98b1-55e8cf26d295.png",
+    "image": "https://raw.githubusercontent.com/Relewise/adhoc-relewise-examples/main/template/assets/product-placeholder.png",
     "list_price": [
       {
         "amount": 249.99,
@@ -46844,7 +46844,7 @@
         "text": "Ultra-premium älypuhelin, jolla on erinomaiset valokuvausominaisuudet."
       }
     ],
-    "image": "https://res.cloudinary.com/relewisedemodata/image/upload/v1724939271/electronics/f5a35672-3921-40c6-8dc8-badf69382e5b.png",
+    "image": "https://raw.githubusercontent.com/Relewise/adhoc-relewise-examples/main/template/assets/product-placeholder.png",
     "list_price": [
       {
         "amount": 899,
@@ -47032,7 +47032,7 @@
         "text": "Mukautettava pelinäppäimistö mekaanisilla kytkimillä ja RGB-valaistuksella."
       }
     ],
-    "image": "https://res.cloudinary.com/relewisedemodata/image/upload/v1724943791/electronics/f5b61967-4b27-4b2d-8d83-fb6d6b9d491d.png",
+    "image": "https://raw.githubusercontent.com/Relewise/adhoc-relewise-examples/main/template/assets/product-placeholder.png",
     "list_price": [
       {
         "amount": 129.99,
@@ -47220,7 +47220,7 @@
         "text": "Langattomat kuulokkeet dynaamisella äänellä ja jopa 40 tunnin käyttöajalla."
       }
     ],
-    "image": "https://res.cloudinary.com/relewisedemodata/image/upload/v1724940198/electronics/f60c67da-4d5f-4a6a-88e8-1964d20d206b.png",
+    "image": "https://raw.githubusercontent.com/Relewise/adhoc-relewise-examples/main/template/assets/product-placeholder.png",
     "list_price": [
       {
         "amount": 299.95,
@@ -47408,7 +47408,7 @@
         "text": "Langattomat kuulokkeet, joissa on häiriönpoistotoiminto ja jopa 35 tuntia akkukestoa."
       }
     ],
-    "image": "https://res.cloudinary.com/relewisedemodata/image/upload/v1724943985/electronics/f6e0b73b-a4da-499d-8d7c-dfa3c8ab28b5.png",
+    "image": "https://raw.githubusercontent.com/Relewise/adhoc-relewise-examples/main/template/assets/product-placeholder.png",
     "list_price": [
       {
         "amount": 199.99,
@@ -47596,7 +47596,7 @@
         "text": "Premium-tason langattomat nappikuulokkeet, joissa on erinomainen äänenlaatu ja melunvaimennus."
       }
     ],
-    "image": "https://res.cloudinary.com/relewisedemodata/image/upload/v1724944121/electronics/f79b5768-082a-4a51-a5a5-cfa3cf3bb6d0.png",
+    "image": "https://raw.githubusercontent.com/Relewise/adhoc-relewise-examples/main/template/assets/product-placeholder.png",
     "list_price": [
       {
         "amount": 199.99,
@@ -47784,7 +47784,7 @@
         "text": "Koe älykäs terveydenhallinta tyylikkäällä Samsung Galaxy Watch 4:llä."
       }
     ],
-    "image": "https://res.cloudinary.com/relewisedemodata/image/upload/v1724940193/electronics/f7e5c77b-8cbb-4f5f-a6cb-b07d9eae58f9.png",
+    "image": "https://raw.githubusercontent.com/Relewise/adhoc-relewise-examples/main/template/assets/product-placeholder.png",
     "list_price": [
       {
         "amount": 399,
@@ -47972,7 +47972,7 @@
         "text": "Kompakti langaton näppäimistö, jossa on integroitu kosketusalusta."
       }
     ],
-    "image": "https://res.cloudinary.com/relewisedemodata/image/upload/v1724946050/electronics/f7fe2c1e-b77f-4d45-adbb-d51cf0bc915c.png",
+    "image": "https://raw.githubusercontent.com/Relewise/adhoc-relewise-examples/main/template/assets/product-placeholder.png",
     "list_price": [
       {
         "amount": 49.99,
@@ -48160,7 +48160,7 @@
         "text": "Avaa todella mukaansatempaava ääni TV-ohjelmillesi ja elokuvillesi."
       }
     ],
-    "image": "https://res.cloudinary.com/relewisedemodata/image/upload/v1724939116/electronics/f823f5e8-9897-482d-8f1a-93fcaa9e0ef8.png",
+    "image": "https://raw.githubusercontent.com/Relewise/adhoc-relewise-examples/main/template/assets/product-placeholder.png",
     "list_price": [
       {
         "amount": 799.99,
@@ -48348,7 +48348,7 @@
         "text": "Melua vaimentavat kuulokkeet, jotka tarjoavat korkealaatuisen äänen ja mukavuuden."
       }
     ],
-    "image": "https://res.cloudinary.com/relewisedemodata/image/upload/v1724946203/electronics/f8509f08-c9fe-4d9b-a141-c8c1c6870225.png",
+    "image": "https://raw.githubusercontent.com/Relewise/adhoc-relewise-examples/main/template/assets/product-placeholder.png",
     "list_price": [
       {
         "amount": 299.95,
@@ -48536,7 +48536,7 @@
         "text": "Koe taika ohjata televisiotasi ja laitteitasi liikkeellä."
       }
     ],
-    "image": "https://res.cloudinary.com/relewisedemodata/image/upload/v1724940353/electronics/f88d6e70-f56b-4dbe-b2b8-4d74e8de8bde.png",
+    "image": "https://raw.githubusercontent.com/Relewise/adhoc-relewise-examples/main/template/assets/product-placeholder.png",
     "list_price": [
       {
         "amount": 349.99,
@@ -48724,7 +48724,7 @@
         "text": "Tehokas ja kannettava, täydellinen työskentelyyn ja leikkimiseen upealla näytöllä."
       }
     ],
-    "image": "https://res.cloudinary.com/relewisedemodata/image/upload/v1724943853/electronics/f8b1274d-f43a-41ed-be01-b2d64be1f848.png",
+    "image": "https://raw.githubusercontent.com/Relewise/adhoc-relewise-examples/main/template/assets/product-placeholder.png",
     "list_price": [
       {
         "amount": 599,
@@ -48912,7 +48912,7 @@
         "text": "Kannettava vedenkestävä kaiutin, joka tuottaa voimakasta ääntä ja pitkää akkukestoa."
       }
     ],
-    "image": "https://res.cloudinary.com/relewisedemodata/image/upload/v1724945709/electronics/f8f73d45-59a7-418b-ba55-29cf6702e982.png",
+    "image": "https://raw.githubusercontent.com/Relewise/adhoc-relewise-examples/main/template/assets/product-placeholder.png",
     "list_price": [
       {
         "amount": 179.95,
@@ -49100,7 +49100,7 @@
         "text": "Kannettava Bluetooth-kaiutin, jossa on pitkäkestoinen akku ja voimakas ääni."
       }
     ],
-    "image": "https://res.cloudinary.com/relewisedemodata/image/upload/v1724943928/electronics/f9560e05-5109-451f-8970-7a178a9d0bcb.png",
+    "image": "https://raw.githubusercontent.com/Relewise/adhoc-relewise-examples/main/template/assets/product-placeholder.png",
     "list_price": [
       {
         "amount": 179.95,
@@ -49288,7 +49288,7 @@
         "text": "Edistynyt teknologia tehokkaaseen puhdistamiseen ja kuivaamiseen."
       }
     ],
-    "image": "https://res.cloudinary.com/relewisedemodata/image/upload/v1724940075/electronics/f98b4d52-8ba9-42a1-9d76-5a5abb5b1d09.png",
+    "image": "https://raw.githubusercontent.com/Relewise/adhoc-relewise-examples/main/template/assets/product-placeholder.png",
     "list_price": [
       {
         "amount": 799.99,
@@ -49476,7 +49476,7 @@
         "text": "Älykäs soundbar, jossa on sisäänrakennettu Alexa ääniohjausta varten."
       }
     ],
-    "image": "https://res.cloudinary.com/relewisedemodata/image/upload/v1724944049/electronics/fa065203-e000-4e7f-9126-e345006cfb8c.png",
+    "image": "https://raw.githubusercontent.com/Relewise/adhoc-relewise-examples/main/template/assets/product-placeholder.png",
     "list_price": [
       {
         "amount": 499.99,
@@ -49664,7 +49664,7 @@
         "text": "Langattomat melua vaimentavat kuulokkeet, joissa on erinomainen äänenlaatu ja mukavuus."
       }
     ],
-    "image": "https://res.cloudinary.com/relewisedemodata/image/upload/v1724940381/electronics/fa0983a2-7236-4c95-b96c-fc1e478da6b3.png",
+    "image": "https://raw.githubusercontent.com/Relewise/adhoc-relewise-examples/main/template/assets/product-placeholder.png",
     "list_price": [
       {
         "amount": 299,
@@ -49852,7 +49852,7 @@
         "text": "27 tuuman 4K UHD -näyttö HDR- ja USB-C-yhteydellä lisääntyneeseen tuottavuuteen."
       }
     ],
-    "image": "https://res.cloudinary.com/relewisedemodata/image/upload/v1724946204/electronics/fa2b6f1c-eb50-461b-94f2-fbca8b89afc2.png",
+    "image": "https://raw.githubusercontent.com/Relewise/adhoc-relewise-examples/main/template/assets/product-placeholder.png",
     "list_price": [
       {
         "amount": 599.99,
@@ -50040,7 +50040,7 @@
         "text": "Kaikki yhdessä ratkaisussa viihdejärjestelmäsi ohjaamiseen vaivattomasti."
       }
     ],
-    "image": "https://res.cloudinary.com/relewisedemodata/image/upload/v1724940318/electronics/fa5e8b79-2660-4a3f-bc47-c716c5eeb12b.png",
+    "image": "https://raw.githubusercontent.com/Relewise/adhoc-relewise-examples/main/template/assets/product-placeholder.png",
     "list_price": [
       {
         "amount": 289.99,
@@ -50228,7 +50228,7 @@
         "text": "Innovatiivinen jääkaappi, jossa on edistyksellistä jäähdytysteknologiaa ihanteelliseen tuoreuteen."
       }
     ],
-    "image": "https://res.cloudinary.com/relewisedemodata/image/upload/v1724940071/electronics/fbd687e2-0a97-4b3c-97aa-8375d1e4fcb6.png",
+    "image": "https://raw.githubusercontent.com/Relewise/adhoc-relewise-examples/main/template/assets/product-placeholder.png",
     "list_price": [
       {
         "amount": 849,
@@ -50416,7 +50416,7 @@
         "text": "Siro ja kevyt kannettava tietokone, jossa on tehokas i7-suoritin ja upea näyttö."
       }
     ],
-    "image": "https://res.cloudinary.com/relewisedemodata/image/upload/v1724943773/electronics/fbf29692-cb7e-4cf8-8e84-d9bbf94f8992.png",
+    "image": "https://raw.githubusercontent.com/Relewise/adhoc-relewise-examples/main/template/assets/product-placeholder.png",
     "list_price": [
       {
         "amount": 1099.99,
@@ -50604,7 +50604,7 @@
         "text": "Koe uskomaton kuvanlaatu OLED-teknologialla, joka herättää visuaalisuutesi eloon."
       }
     ],
-    "image": "https://res.cloudinary.com/relewisedemodata/image/upload/v1724940014/electronics/fd3a2d67-8c9b-4fe4-992e-47f8e3967ca9.png",
+    "image": "https://raw.githubusercontent.com/Relewise/adhoc-relewise-examples/main/template/assets/product-placeholder.png",
     "list_price": [
       {
         "amount": 1799.99,
@@ -50792,7 +50792,7 @@
         "text": "Tallenna korkean tarkkuuden videoita ja ääntä tällä luotettavalla verkkokameralla."
       }
     ],
-    "image": "https://res.cloudinary.com/relewisedemodata/image/upload/v1724945952/electronics/fd5a614a-8bb5-45af-84dc-70c5a4c8c447.png",
+    "image": "https://raw.githubusercontent.com/Relewise/adhoc-relewise-examples/main/template/assets/product-placeholder.png",
     "list_price": [
       {
         "amount": 89.99,
@@ -50980,7 +50980,7 @@
         "text": "Uuden sukupolven melua vaimentavat kuulokkeet, joissa on erinomainen äänenlaatu."
       }
     ],
-    "image": "https://res.cloudinary.com/relewisedemodata/image/upload/v1724943930/electronics/fda5ba40-d804-4c6e-bb44-3c9dbaa2ebd7.png",
+    "image": "https://raw.githubusercontent.com/Relewise/adhoc-relewise-examples/main/template/assets/product-placeholder.png",
     "list_price": [
       {
         "amount": 399.95,
@@ -51168,7 +51168,7 @@
         "text": "Koe maailmanluokan melunvaimennus ja äänenlaatu."
       }
     ],
-    "image": "https://res.cloudinary.com/relewisedemodata/image/upload/v1724945967/electronics/fda64732-0d94-4861-9a86-c70d6b74725d.png",
+    "image": "https://raw.githubusercontent.com/Relewise/adhoc-relewise-examples/main/template/assets/product-placeholder.png",
     "list_price": [
       {
         "amount": 349.95,
@@ -51356,7 +51356,7 @@
         "text": "Erittäin kestävä yrityskannettava, joka tunnetaan suorituskyvystään ja pitkäikäisyydestään."
       }
     ],
-    "image": "https://res.cloudinary.com/relewisedemodata/image/upload/v1724943773/electronics/fe0a5a03-29d8-4e26-9e61-6dc448dd6ae3.png",
+    "image": "https://raw.githubusercontent.com/Relewise/adhoc-relewise-examples/main/template/assets/product-placeholder.png",
     "list_price": [
       {
         "amount": 1399.99,

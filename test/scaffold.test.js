@@ -29,6 +29,7 @@ test('packed CLI creates a usable project without overwriting existing files', a
     const names = files.map((file) => file.path);
     assert.ok(names.includes('template/gitignore.template'));
     assert.ok(names.includes('template/.env.local'));
+    assert.ok(names.includes('template/assets/product-placeholder.png'));
     assert.ok(!names.includes('template/package-lock.json'));
     assert.ok(!names.some((name) => name.includes('/node_modules/') || name.includes('/dist/')));
     execFileSync('tar', ['-xf', path.join(directory, filename), '-C', directory]);
