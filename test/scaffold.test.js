@@ -25,7 +25,8 @@ test('packed CLI creates a usable project without overwriting existing files', a
             encoding: 'utf8',
         },
     );
-    const [{ filename, files }] = JSON.parse(packed);
+    // npm 12 returns an object keyed by package name; earlier versions return an array.
+    const [{ filename, files }] = Object.values(JSON.parse(packed));
     const names = files.map((file) => file.path);
     assert.ok(names.includes('template/gitignore.template'));
     assert.ok(names.includes('template/.env.local'));
