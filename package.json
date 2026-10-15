@@ -4,8 +4,12 @@
     "description": "Create a TypeScript project for learning Relewise",
     "author": "Relewise",
     "license": "MIT",
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/Relewise/relewise-learning-examples.git"
+    },
     "bugs": {
-        "url": "https://github.com/Relewise/adhoc-relewise-examples/issues"
+        "url": "https://github.com/Relewise/relewise-learning-examples/issues"
     },
     "keywords": [
         "relewise",
