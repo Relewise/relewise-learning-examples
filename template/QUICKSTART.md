@@ -146,7 +146,7 @@ npm run dev -- customDataImportExample
 
 Read [customDataImportExample.ts](src/examples/import/customDataImportExample.ts) to see two custom data types: multilingual descriptions and string image URLs. It updates those fields on the same products without replacing their names, prices, categories, or stock. In My Relewise, inspect the product's `Description` and `Image` data values. To search descriptions, also configure `Description` in the search index; importing a field alone does not make it searchable.
 
-All sample products use the same [generated placeholder image](assets/product-placeholder.png). Its URL points to the asset on this repository's public `main` branch, so it becomes accessible after the asset is merged and the repository is public. The image is also included in the generated project. For your own catalog, supply publicly accessible image URLs that you have permission to use.
+All sample products use the same [placeholder image](assets/product-placeholder.png), included in this project and hosted on the repository's public `main` branch. For your own catalog, supply publicly accessible image URLs that you have permission to use.
 
 ### Historical orders
 
