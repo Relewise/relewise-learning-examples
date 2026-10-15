@@ -1,49 +1,7 @@
-# Relewise SDK: Common Response Patterns
+# Reading SDK responses
 
-## Product Search
+Use the response type provided by the installed Relewise SDK. The examples read its result and facet properties directly; they do not need a second set of runtime type guards around SDK responses.
 
-**Type:** `ProductSearchResponse`
+Treat a failed request differently from a successful request with no results. Let request failures reach the runner, which reports the error and exits unsuccessfully. When a successful response is empty, check the catalog, filters, language, currency, and search index as described in [QUICKSTART.md](../QUICKSTART.md).
 
-```typescript
-{
-  results?: ProductResult[] | null;
-  facets?: ProductFacetResult | null;
-  // ...other fields
-}
-```
-
-**How to safely access products:**
-```typescript
-import { isProductSearchResponse } from '../src/utils/relewiseTypeGuards';
-
-if (isProductSearchResponse(response)) {
-  const products = response.results;
-  // Use products array
-}
-```
-
-## Search Term Prediction
-
-**Type:** `SearchTermPredictionResponse`
-
-```typescript
-{
-  predictions?: SearchTermPredictionResult[] | null;
-  // ...other fields
-}
-```
-
-**How to safely access predictions:**
-```typescript
-import { isSearchTermPredictionResponse } from '../src/utils/relewiseTypeGuards';
-
-if (isSearchTermPredictionResponse(response)) {
-  const predictions = response.predictions;
-  // Use predictions array
-}
-```
-
-## General Tips
-
-- Always use type guards before accessing properties on union types.
-- When in doubt, log the full response and compare with the SDK type definitions.
+For exact response fields, consult the installed SDK's TypeScript declarations and the [official SDK examples](https://docs.relewise.com/docs/developer/sdks/ts.html).

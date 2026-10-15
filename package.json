@@ -1,7 +1,7 @@
 {
     "name": "@relewise/create-relewise-learning-example",
-    "version": "1.0.1",
-    "description": "CLI tool to scaffold new Relewise learning projects with TypeScript, examples, and AI instructions",
+    "version": "2.0.0",
+    "description": "Create a TypeScript project for learning Relewise",
     "author": "Relewise",
     "license": "MIT",
     "bugs": {
@@ -25,28 +25,22 @@
     },
     "type": "module",
     "engines": {
-        "node": ">=16.0.0"
+        "node": ">=22"
     },
     "files": [
         "bin/",
         "template/",
-        "template/tsconfig.json",
         "template/.env.local",
         "README.md",
         "LICENSE"
     ],
     "scripts": {
-        "test": "node test/validate-cli.js",
+        "test": "node --test test/*.test.js",
         "prepublishOnly": "npm test",
-        "validate": "npm test"
+        "validate": "npm test",
+        "test:examples": "npm --prefix template run build && node --test test-examples/*.test.js"
     },
     "dependencies": {
-        "fs-extra": "^11.1.1",
-        "inquirer": "^9.0.0"
-    },
-    "devDependencies": {
-        "@types/fs-extra": "^11.0.4",
-        "@types/inquirer": "^9.0.7",
-        "@types/node": "^20.0.0"
+        "inquirer": "^9.3.8"
     }
 }

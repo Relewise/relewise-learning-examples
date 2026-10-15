@@ -12,7 +12,7 @@
     },
     "keywords": [],
     "author": "",
-    "license": "ISC",
+    "license": "MIT",
     "description": "",
     "devDependencies": {
         "@types/node": "^24.1.0",
@@ -23,11 +23,16 @@
         "eslint-plugin-prettier": "^5.5.3",
         "prettier": "^3.6.2",
         "ts-node": "^10.9.2",
-        "typescript": "^5.8.3"
+        "typescript": "^5.8.3",
+        "@eslint/js": "^9.39.5"
     },
     "dependencies": {
-        "@relewise/client": "^2.13.0",
-        "@relewise/integrations": "^1.1.0",
+        "@relewise/client": "^2.27.0",
+        "@relewise/integrations": "^1.1.2",
         "dotenv": "^17.2.1"
+    },
+    "private": true,
+    "engines": {
+        "node": ">=22"
     }
 }

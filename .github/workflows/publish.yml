@@ -9,6 +9,7 @@ permissions:
 
 jobs:
   publish:
+    if: github.ref == 'refs/heads/main'
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -23,7 +24,17 @@ jobs:
 
       - run: npm ci
 
-      - run: npm run test
+      - run: npm test
+        env:
+          VERIFY_PACKED_PROJECT: 'true'
+
+      - run: npm install --ignore-scripts
+        working-directory: template
+      - run: git diff --exit-code -- template/package.json
+
+      - run: npm run test:examples
+
+      - run: npm run lint --prefix template
 
       - name: Determine NPM Tag
         id: determine-tag

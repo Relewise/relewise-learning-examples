@@ -1,72 +1,27 @@
-/**
- * Example: "Purchased With Product" Recommendations with Relewise SDK
- *
- * This file demonstrates how to request product recommendations for items frequently purchased together with a given product.
- *
- * Key Features:
- * - Uses the builder pattern (`PurchasedWithProductBuilder`) for request construction.
- * - Demonstrates context-based recommendations (using a specific product ID).
- * - Handles responses with strict type guards for safety.
- * - Designed for clarity and as a template for other context-based recommendation scenarios.
- *
- * Usage:
- * 1. Ensure your `.env` file contains RELEWISE_DATASET_ID, RELEWISE_API_KEY, and RELEWISE_SERVER_URL.
- * 2. Build with `npx tsc` and run with `node dist/purchasedWithProductExample.js` or import/run from `index.ts`.
- * 3. Use this as a reference for implementing context-based recommendations.
- *
- * For more, see:
- * - https://github.com/Relewise/relewise-sdk-javascript
- * - Project's .github/copilot-instructions.md
- */
+import { PurchasedWithProductBuilder, UserFactory } from '@relewise/client';
+import { recommender, LANGUAGE, CURRENCY, DEMO_USER_ID } from '../../config/relewiseConfig.js';
 
-import dotenv from 'dotenv';
-dotenv.config();
-
-import { PurchasedWithProductBuilder } from '@relewise/client';
-import { isProductRecommendationResponse } from '../../utils/relewiseTypeGuards.js';
-import { recommender, createSettings } from '../../config/relewiseConfig.js';
-
-/**
- * Requests recommendations for products frequently purchased with the given product.
- *
- * @param {string} productId - The product ID to base recommendations on
- * @param {number} [take=8] - Number of recommendations to return
- * @returns {Promise<any[]>} - The recommended products
- */
-export async function getPurchasedWithProductRecommendations(productId: string, take: number = 8) {
-    // Set up the builder and specify the context product using .product({ productId })
-    const builder = new PurchasedWithProductBuilder(createSettings('Product Detail Page'))
+export default async function runPurchasedWithProductExample(
+    productId = '0bc52835-3346-4b53-9b82-1ae6355eb3f1',
+) {
+    const request = new PurchasedWithProductBuilder({
+        language: LANGUAGE,
+        currency: CURRENCY,
+        displayedAtLocation: 'Product Details Page',
+        user: UserFactory.byTemporaryId(DEMO_USER_ID),
+    })
         .product({ productId })
-        .setNumberOfRecommendations(take)
-        .setSelectedProductProperties({ displayName: true, pricing: true });
+        .setNumberOfRecommendations(8)
+        .setSelectedProductProperties({ displayName: true, pricing: true })
+        .filters((filters) =>
+            filters.addProductDataFilter(`${LANGUAGE}_StockLevel`, (conditions) =>
+                conditions.addGreaterThanCondition(0),
+            ),
+        )
+        .build();
 
-    const request = builder.build();
     const response = await recommender.recommendPurchasedWithProduct(request);
-
-    if (isProductRecommendationResponse(response) && Array.isArray(response.recommendations)) {
-        return response.recommendations;
-    }
-    return [];
-}
-
-/**
- * Default export: Runs a sample recommendation and logs results.
- *
- * This function can be run directly or imported from `index.ts`.
- * It demonstrates safe handling and output of recommended products.
- * 
- * Note: Results include a 'rank' score where lower values indicate stronger relevance.
- * Rank 1 = most commonly purchased together, rank 2 = second most common, etc.
- * Results are sorted in ascending order by rank for optimal relevance.
- */
-export default async function runPurchasedWithProductExample(productIdArg?: string) {
-    const productId = productIdArg || '00198c54-6c62-4e08-be40-a539963985d0'; // Real product ID from actual data
-    const recommendations = await getPurchasedWithProductRecommendations(productId);
-    if (Array.isArray(recommendations) && recommendations.length > 0) {
-        console.log('Purchased With Product Recommendations (sorted by relevance):');
-        console.log('Note: Lower rank = higher relevance (rank 1 = most commonly purchased together)');
-        console.log(recommendations);
-    } else {
-        console.log('No recommendations found.');
-    }
+    // This catalog ID is in stock. Co-purchase results also need order history.
+    console.log('Products purchased together:');
+    console.dir(response?.recommendations, { depth: null });
 }
